@@ -1,0 +1,100 @@
+/* font-face  */
+
+/* font-family: 'Aladin', cursive;
+font-family: 'Amatic SC', cursive; */
+
+/* bulter  */
+
+@font-face {
+    font-family: 'Bulter';
+    src: url('../assets/fonts/butler_black-webfont.woff2') format('woff2'),
+         url('../assets/fonts/butler_black-webfont.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bulter';
+    src: url('../assets/fonts/butler_extrabold-webfont.woff2') format('woff2'),
+         url('../assets/fonts/butler_extrabold-webfont.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bulter';
+    src: url('../assets/fonts/butler_bold-webfont.woff2') format('woff2'),
+         url('../assets/fonts/butler_bold-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bulter';
+    src: url('../assets/fonts/butler_medium-webfont.woff2') format('woff2'),
+         url('../assets/fonts/butler_medium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bulter';
+    src: url('../assets/fonts/butler_regular-webfont.woff2') format('woff2'),
+         url('../assets/fonts/butler_regular-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bulter';
+    src: url('../assets/fonts/butler_light-webfont.woff2') format('woff2'),
+         url('../assets/fonts/butler_light-webfont.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Bulter';
+    src: url('../assets/fonts/butler_ultra_light-webfont.woff2') format('woff2'),
+         url('../assets/fonts/butler_ultra_light-webfont.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+/* iskry */
+@font-face {
+    font-family: 'Iskry';
+    src: url('../assets/fonts/Iskry-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* union */
+@font-face {
+    font-family: 'Union';
+    src: url('../assets/fonts/Union-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    font-family: 'Bulter', Courier, monospace;
+    font-weight: 700;
+}
+
+h2{
+    font-family: 'Iskry', Courier, monospace;
+}
+
+h3{
+    font-family: 'Union', Courier, monospace;
+}
