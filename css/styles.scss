@@ -1,0 +1,28 @@
+@import 'variables';
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #D7CECD;
+    overflow: hidden;
+
+}
+
+h1{
+    font-family: $font-bulter;
+    font-weight: 700;
+}
+
+h2{
+    font-family: $font-iskry;
+}
+
+h3{
+    font-family: $font-union;
+}
