@@ -106,5 +106,10 @@ h3 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 22vw;
 }
 /*# sourceMappingURL=styles.css.map */
