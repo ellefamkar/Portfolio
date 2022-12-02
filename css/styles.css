@@ -93,4 +93,18 @@ h2 {
 h3 {
   font-family: "Union", Courier, monospace;
 }
+
+.title-box {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
 /*# sourceMappingURL=styles.css.map */
