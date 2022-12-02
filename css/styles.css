@@ -110,6 +110,18 @@ h3 {
 }
 
 .title {
-  font-size: 22vw;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 20vw;
+  margin-left: -34px;
+}
+
+.char {
+  -webkit-transform: translateY(115px);
+          transform: translateY(115px);
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
 }
 /*# sourceMappingURL=styles.css.map */

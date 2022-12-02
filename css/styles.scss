@@ -37,5 +37,13 @@ h3{
 }
 
 .title {
-    font-size: 22vw;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 20vw;
+    margin-left: -34px;
+}
+
+.char {
+    transform: translateY(115px);
+    transition: transform .2s;
 }
