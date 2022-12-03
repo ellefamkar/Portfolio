@@ -114,6 +114,7 @@ h3 {
   overflow: hidden;
   font-size: 20vw;
   margin-left: -34px;
+  margin-bottom: 100px;
 }
 
 .char {
@@ -123,5 +124,29 @@ h3 {
   transition: -webkit-transform .2s;
   transition: transform .2s;
   transition: transform .2s, -webkit-transform .2s;
+}
+
+.mobile-menu-nav {
+  top: 5%;
+  z-index: 10;
+}
+
+.desktop-menu-nav {
+  bottom: 5%;
+  left: 5%;
+}
+
+.desktop-menu-nav .nav-item.active {
+  color: #ffefd9;
+}
+
+.desktop-menu-nav .nav-item.active .nav-link {
+  font-size: 36px;
+}
+
+.desktop-menu-nav .nav-item .nav-link {
+  font-size: 30px;
+  line-height: 1.2;
+  font-family: 'Iskry';
 }
 /*# sourceMappingURL=styles.css.map */

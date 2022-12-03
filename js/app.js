@@ -41,7 +41,7 @@ tl.from("h1 span", 1.8, {
   ease: "Power3.out",
   stagger: 1.5
 }).from("li", {
-  duration: 0.75,
+  duration: 1,
   x: 300,
   autoAlpha: 0,
   ease: "elastic.out(1, 1)",

@@ -41,9 +41,38 @@ h3{
     overflow: hidden;
     font-size: 20vw;
     margin-left: -34px;
+    margin-bottom: 100px;
 }
 
 .char {
     transform: translateY(115px);
     transition: transform .2s;
+}
+
+.mobile-menu-nav{
+    top: 5%;
+    z-index: 10;
+}
+
+.desktop-menu-nav{
+    bottom: 5%;
+    left: 5%;
+
+    .nav-item {
+        &.active {
+            color: #ffefd9;
+
+             .nav-link {
+                font-size: 36px;
+             }
+        }
+
+        .nav-link {
+            font-size: 30px;
+            line-height: 1.2;
+            font-family: 'Iskry';
+        }
+    }
+
+
 }
