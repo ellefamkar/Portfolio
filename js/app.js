@@ -33,7 +33,11 @@ gsap.from(".title", {
 
 let tl = gsap.timeline();
 
-tl.from("h1 span", 1.8, {
+tl.from(".home-img",{
+  duration: 0.85,
+  scale: 0.9, 
+  ease: "Power3",
+}).from("h1 span", 1.8, {
   duration: 0.85,
   y: 150,
   scale: 0.9, 

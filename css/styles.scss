@@ -42,6 +42,10 @@ h3{
     font-size: 20vw;
     margin-left: -34px;
     margin-bottom: 100px;
+
+     span {
+        z-index: 1;
+     }
 }
 
 .char {
@@ -75,4 +79,13 @@ h3{
     }
 
 
+}
+
+
+.home-img {
+    width: 130px;
+    transform: rotateZ(344deg);
+    right: 23%;
+    bottom: 24%;
+    z-index: 0;
 }
