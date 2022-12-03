@@ -6,58 +6,8 @@ let circleStyle = cursorCircle.style;
 let links = document.querySelectorAll("a");
 let images = document.querySelectorAll("img");
 
-document.addEventListener('mousemove', function(e){
-  window.requestAnimationFrame(() => {
-    circleStyle.top = `${e.clientY - cursorCircle.offsetHeight / 2}px`;
-    circleStyle.left = `${e.clientX - cursorCircle.offsetWidth / 2}px`;
-  });
-  let x = e.clientX;
-  let y = e.clientY;
-  cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
-});
-
-document.addEventListener('mousedown', function(){
-  cursor.classList.add('click');
-  cursorCircle.classList.add('cursorinnerhover')
-});
-
-document.addEventListener('mouseup', function(){
-  cursor.classList.remove('click')
-  cursorCircle.classList.remove('cursorinnerhover')
-});
-
-links.forEach((link) => {
-  link.addEventListener("mouseenter", (e) => {
-    cursorCircle.classList.add("enlarged");
-  });
-  link.addEventListener("mouseout", (e) => {
-    cursorCircle.classList.remove("enlarged");
-  });
-  link.addEventListener('mouseover', () => {
-    cursor.classList.add('hover');
-  });
-  link.addEventListener('mouseleave', () => {
-    cursor.classList.remove('hover');
-  });
-});
-
-
-// gsap.registerPlugin(ScrollTrigger);
-// gsap.registerPlugin( Draggable , MotionPathPlugin, TextPlugin);
-
-// Draggable.create("#draggable", {
-//     type:"x",
-//     bounds: document.getElementById("title"),
-//     inertia: true,
-//     onClick: function() {
-//          console.log("clicked");
-//     },
-//     onDragEnd: function() {
-//          console.log("drag is complete");
-//     }
-// });
-
-gsap.from(".title", {
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.from(".title", {
     duration: 5,
     ease: "power4.out",
     scale: 0.9, 
@@ -96,6 +46,62 @@ tl.from("img",{
     amount: 0.5
   }
 }, "+=0.25");
+
+})
+
+
+document.addEventListener('mousemove', function(e){
+  window.requestAnimationFrame(() => {
+    circleStyle.top = `${e.clientY - cursorCircle.offsetHeight / 2}px`;
+    circleStyle.left = `${e.clientX - cursorCircle.offsetWidth / 2}px`;
+  });
+  let x = e.clientX;
+  let y = e.clientY;
+  cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
+});
+
+document.addEventListener('mousedown', function(){
+  cursor.classList.add('click');
+  cursorCircle.classList.add('cursorinnerhover')
+});
+
+document.addEventListener('mouseup', function(){
+  cursor.classList.remove('click')
+  cursorCircle.classList.remove('cursorinnerhover')
+});
+
+links.forEach((link) => {
+  link.addEventListener("mouseenter", (e) => {
+    cursorCircle.classList.add("enlarged");
+  });
+  link.addEventListener("mouseout", (e) => {
+    cursorCircle.classList.remove("enlarged");
+  });
+  link.addEventListener('mouseover', () => {
+    cursor.classList.add('hover');
+  });
+  link.addEventListener('mouseleave', () => {
+    cursor.classList.remove('hover');
+  });
+});
+
+
+
+// gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin( Draggable , MotionPathPlugin, TextPlugin);
+
+// Draggable.create("#draggable", {
+//     type:"x",
+//     bounds: document.getElementById("title"),
+//     inertia: true,
+//     onClick: function() {
+//          console.log("clicked");
+//     },
+//     onDragEnd: function() {
+//          console.log("drag is complete");
+//     }
+// });
+
 
 
 
