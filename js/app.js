@@ -75,7 +75,7 @@ gsap.from(".title", {
 
 let tl = gsap.timeline();
 
-tl.from(".home-img",{
+tl.from("img",{
   duration: 0.85,
   scale: 0.9, 
   ease: "Power3",
@@ -88,7 +88,7 @@ tl.from(".home-img",{
   stagger: 1.5
 }).from("li", {
   duration: 1,
-  x: 300,
+  x: 200,
   autoAlpha: 0,
   ease: "elastic.out(1, 1)",
   stagger: {
