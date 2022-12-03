@@ -7,6 +7,7 @@ let links = document.querySelectorAll("a");
 let images = document.querySelectorAll("img");
 
 document.addEventListener("DOMContentLoaded", () => {
+
   gsap.from(".title", {
     duration: 5,
     ease: "power4.out",
@@ -84,33 +85,5 @@ links.forEach((link) => {
     cursor.classList.remove('hover');
   });
 });
-
-
-
-// gsap.registerPlugin(ScrollTrigger);
-// gsap.registerPlugin( Draggable , MotionPathPlugin, TextPlugin);
-
-// Draggable.create("#draggable", {
-//     type:"x",
-//     bounds: document.getElementById("title"),
-//     inertia: true,
-//     onClick: function() {
-//          console.log("clicked");
-//     },
-//     onDragEnd: function() {
-//          console.log("drag is complete");
-//     }
-// });
-
-
-
-
-// const myText = document.querySelector(".title-one");
-// gsap.to(".char",{
-//     y:0,
-//     stagger: 0.05,
-//     delay: 0.2,
-//     duration: 0.1
-// })
 
 
