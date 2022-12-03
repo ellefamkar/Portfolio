@@ -17,23 +17,28 @@
 
 gsap.from(".title", {
     duration: 5,
+    ease: "power4.out",
     scale: 0.9, 
     opacity: 0, 
     delay: 0.02, 
-    // yPercent: 50,
-    stagger: 0.3,
+    yPercent: -50,
+    skewX: 5,
+    stagger: {
+      amount: 0.3
+    },
     // ease: "elastic", 
     force3D: true
   });
 
+
 let tl = gsap.timeline();
 
-tl.from("h1 span", {
-  duration: 0.75,
+tl.from("h1 span", 1.8, {
+  duration: 0.85,
   y: 150,
   scale: 0.9, 
   autoAlpha: 0,
-  ease: Power3.out,
+  ease: "Power3.out",
   stagger: 1.5
 }).from("li", {
   duration: 0.75,
@@ -45,6 +50,7 @@ tl.from("h1 span", {
     amount: 0.5
   }
 }, "+=0.25");
+
 
 
 // const myText = document.querySelector(".title-one");
