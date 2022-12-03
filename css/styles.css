@@ -164,7 +164,7 @@ h3 {
   z-index: 0;
 }
 
-.c-cursor-outline {
+.c-cursor--outline {
   width: 50px;
   height: 50px;
   border-radius: 100%;
@@ -179,18 +179,7 @@ h3 {
           transform: translate(calc(-50% + 15px), -50%);
 }
 
-.hover {
-  background-color: #ffc869;
-  opacity: 0.5;
-}
-
-.cursorinnerhover {
-  width: 50px;
-  height: 50px;
-  opacity: .5;
-}
-
-#circle-cursor {
+.c-cursor--inline {
   position: fixed;
   z-index: 100;
   width: 64px;
@@ -207,9 +196,21 @@ h3 {
   mix-blend-mode: difference;
 }
 
-#circle-cursor.enlarged {
+.c-cursor--inline.enlarged {
   transform: scale(1) translate3d(0, 0, 0);
   -webkit-transform: scale(1) translate3d(0, 0, 0);
-  mix-blend-mode: initial;
+}
+
+.hover {
+  background-color: transparent;
+  opacity: 0.1;
+}
+
+.cursorinnerhover {
+  width: 50px;
+  height: 50px;
+  opacity: .9;
+  z-index: -1;
+  background-color: rgba(255, 199, 115, 0.883) ea;
 }
 /*# sourceMappingURL=styles.css.map */

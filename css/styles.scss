@@ -92,7 +92,8 @@ h3{
 }
 
 // cursor 
-.c-cursor-outline {
+.c-cursor{
+ &--outline {
     width: 50px;
     height: 50px;
     border-radius: 100%;
@@ -104,21 +105,8 @@ h3{
     top: 0;
     transform: translate(calc(-50% + 15px), -50%);
   }
-  
-.hover {
-    background-color: rgb(255, 200, 105);
-    opacity: 0.5;
-}
-  
-.cursorinnerhover {
-    width: 50px;
-    height: 50px;
-    opacity: .5;
-}
 
-
-  
-#circle-cursor {
+  &--inline{
     position: fixed;
     z-index: 100;
     width: 64px;
@@ -131,10 +119,27 @@ h3{
     transform: scale(0.5) translate3d(0, 0, 0);
     -webkit-transform: scale(0.5) translate3d(0, 0, 0);
     mix-blend-mode: difference;
+
     &.enlarged {
       transform: scale(1) translate3d(0, 0, 0);
       -webkit-transform: scale(1) translate3d(0, 0, 0);
     //   background-color: rgba(rgb(255, 204, 110), 0.75);
-      mix-blend-mode: initial;
+    //   mix-blend-mode: initial;
     }
   }
+
+}
+
+
+.hover {
+    background-color: transparent;
+    opacity: 0.1;
+}
+
+.cursorinnerhover {
+    width: 50px;
+    height: 50px;
+    opacity: .9;
+    z-index: -1;
+    background-color: rgba(255, 199, 115, 0.883)ea;
+}
