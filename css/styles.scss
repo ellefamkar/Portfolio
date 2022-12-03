@@ -91,8 +91,8 @@ h3{
     z-index: 0;
 }
 
-
-.cursor {
+// cursor 
+.cursor-outline {
     width: 50px;
     height: 50px;
     border-radius: 100%;
@@ -105,25 +105,36 @@ h3{
     transform: translate(calc(-50% + 15px), -50%);
   }
   
-  .cursor2 {
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background-color: black;
-    opacity: .3;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    transition: width .3s, height .3s, opacity .3s;
-  }
-  
-  .hover {
-    background-color: red;
+.hover {
+    background-color: rgb(255, 200, 105);
     opacity: 0.5;
-  }
+}
   
-  .cursorinnerhover {
+.cursorinnerhover {
     width: 50px;
     height: 50px;
     opacity: .5;
+}
+
+
+  
+#circle-cursor {
+    position: fixed;
+    z-index: 100;
+    width: 64px;
+    height: 64px;
+    background-color: rgba(#fff, 0.75);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: transform ease 0.34s, background-color ease 0.34s,
+      mix-blend-mode ease 0.34s;
+    transform: scale(0.5) translate3d(0, 0, 0);
+    -webkit-transform: scale(0.5) translate3d(0, 0, 0);
+    mix-blend-mode: difference;
+    &.enlarged {
+      transform: scale(1) translate3d(0, 0, 0);
+      -webkit-transform: scale(1) translate3d(0, 0, 0);
+    //   background-color: rgba(rgb(255, 204, 110), 0.75);
+      mix-blend-mode: initial;
+    }
   }

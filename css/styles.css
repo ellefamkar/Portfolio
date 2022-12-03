@@ -164,7 +164,7 @@ h3 {
   z-index: 0;
 }
 
-.cursor {
+.cursor-outline {
   width: 50px;
   height: 50px;
   border-radius: 100%;
@@ -179,22 +179,8 @@ h3 {
           transform: translate(calc(-50% + 15px), -50%);
 }
 
-.cursor2 {
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  background-color: black;
-  opacity: .3;
-  position: fixed;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  pointer-events: none;
-  -webkit-transition: width .3s, height .3s, opacity .3s;
-  transition: width .3s, height .3s, opacity .3s;
-}
-
 .hover {
-  background-color: red;
+  background-color: #ffc869;
   opacity: 0.5;
 }
 
@@ -202,5 +188,28 @@ h3 {
   width: 50px;
   height: 50px;
   opacity: .5;
+}
+
+#circle-cursor {
+  position: fixed;
+  z-index: 100;
+  width: 64px;
+  height: 64px;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
+  pointer-events: none;
+  -webkit-transition: background-color ease 0.34s, mix-blend-mode ease 0.34s, -webkit-transform ease 0.34s;
+  transition: background-color ease 0.34s, mix-blend-mode ease 0.34s, -webkit-transform ease 0.34s;
+  transition: transform ease 0.34s, background-color ease 0.34s, mix-blend-mode ease 0.34s;
+  transition: transform ease 0.34s, background-color ease 0.34s, mix-blend-mode ease 0.34s, -webkit-transform ease 0.34s;
+  transform: scale(0.5) translate3d(0, 0, 0);
+  -webkit-transform: scale(0.5) translate3d(0, 0, 0);
+  mix-blend-mode: difference;
+}
+
+#circle-cursor.enlarged {
+  transform: scale(1) translate3d(0, 0, 0);
+  -webkit-transform: scale(1) translate3d(0, 0, 0);
+  mix-blend-mode: initial;
 }
 /*# sourceMappingURL=styles.css.map */

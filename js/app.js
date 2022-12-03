@@ -1,3 +1,138 @@
+// cursor 
+
+let cursor = document.querySelector('.cursor-outline');
+let cursorinner = document.querySelector('.cursor2');
+let a = document.querySelectorAll('a');
+
+document.addEventListener('mousemove', function(e){
+  let x = e.clientX;
+  let y = e.clientY;
+  cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
+});
+
+document.addEventListener('mousemove', function(e){
+  let x = e.clientX;
+  let y = e.clientY;
+  cursorinner.style.left = x + 'px';
+  cursorinner.style.top = y + 'px';
+});
+
+document.addEventListener('mousedown', function(){
+  cursor.classList.add('click');
+  cursorinner.classList.add('cursorinnerhover')
+});
+
+document.addEventListener('mouseup', function(){
+  cursor.classList.remove('click')
+  cursorinner.classList.remove('cursorinnerhover')
+});
+
+a.forEach(item => {
+  item.addEventListener('mouseover', () => {
+    cursor.classList.add('hover');
+  });
+  item.addEventListener('mouseleave', () => {
+    cursor.classList.remove('hover');
+  });
+});
+
+
+const circle = document.getElementById("circle-cursor");
+const links = document.querySelectorAll("a,button,input,.js-big-cursor");
+const circleStyle = circle.style;
+
+links.forEach((link) => {
+  link.addEventListener("mouseenter", (e) => {
+    circle.classList.add("enlarged");
+  });
+  link.addEventListener("mouseout", (e) => {
+    circle.classList.remove("enlarged");
+  });
+});
+
+document.addEventListener("mousemove", (e) => {
+  window.requestAnimationFrame(() => {
+    circleStyle.top = `${e.clientY - circle.offsetHeight / 2}px`;
+    circleStyle.left = `${e.clientX - circle.offsetWidth / 2}px`;
+  });
+});
+
+
+
+
+
+const mouseCursor = document.getElementById("mouse_cursor");
+const li = document.querySelectorAll("li");
+const line = document.querySelector(".menu_btn :nth-child(1)");
+const menu = document.querySelector(".menu_btn");
+
+menu.addEventListener("mouseover", () => {
+  line.style.width = `100%`;
+
+  setTimeout(() => {
+    line.style.marginBottom = `0.7em`;
+  }, 530);
+});
+
+menu.addEventListener("mouseleave", () => {
+  line.style.width = `30px`;
+
+  setTimeout(() => {
+    line.style.marginBottom = `0.3em`;
+  }, 530);
+});
+
+let cursorX = 0,
+  cursorY = 0,
+  currentX = 0,
+  currentY = 0;
+
+function lerp(start, end, t) {
+  return start * (1 - t) + end * t;
+}
+
+window.addEventListener("mousemove", (e) => {
+  mouseCursor.style.display = "inline-block";
+  cursorX = e.clientX;
+  cursorY = e.clientY;
+});
+
+function styling(s) {
+  mouseCursor.style.width = `${s}px`;
+  mouseCursor.style.height = `${s}px`;
+}
+
+menu.a;
+
+li.forEach((l) => {
+  l.addEventListener("mouseover", () => {
+    styling(90);
+  });
+
+  l.addEventListener("mouseleave", () => {
+    styling(50);
+  });
+});
+
+function animate() {
+  currentX = lerp(currentX, cursorX, 0.05);
+  currentY = lerp(currentY, cursorY, 0.05);
+  mouseCursor.style.transform = `translate(calc(-50% + ${currentX}px), calc(-50% + ${currentY}px)) `;
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+
+
+
+
+
+
+
+
+
+
 // gsap.registerPlugin(ScrollTrigger);
 // gsap.registerPlugin( Draggable , MotionPathPlugin, TextPlugin);
 
@@ -66,39 +201,3 @@ tl.from(".home-img",{
 // })
 
 
-
-var cursor = document.querySelector('.cursor');
-var cursorinner = document.querySelector('.cursor2');
-var a = document.querySelectorAll('a');
-
-document.addEventListener('mousemove', function(e){
-  var x = e.clientX;
-  var y = e.clientY;
-  cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`
-});
-
-document.addEventListener('mousemove', function(e){
-  var x = e.clientX;
-  var y = e.clientY;
-  cursorinner.style.left = x + 'px';
-  cursorinner.style.top = y + 'px';
-});
-
-document.addEventListener('mousedown', function(){
-  cursor.classList.add('click');
-  cursorinner.classList.add('cursorinnerhover')
-});
-
-document.addEventListener('mouseup', function(){
-  cursor.classList.remove('click')
-  cursorinner.classList.remove('cursorinnerhover')
-});
-
-a.forEach(item => {
-  item.addEventListener('mouseover', () => {
-    cursor.classList.add('hover');
-  });
-  item.addEventListener('mouseleave', () => {
-    cursor.classList.remove('hover');
-  });
-})
