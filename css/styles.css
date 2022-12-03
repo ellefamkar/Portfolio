@@ -219,6 +219,10 @@ h3 {
   right: 3%;
 }
 
+.c-social-icons .fa-brands {
+  color: #000000;
+}
+
 @media (max-width: 767px) {
   .title {
     white-space: pre-wrap;
