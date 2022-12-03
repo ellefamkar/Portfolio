@@ -219,8 +219,13 @@ h3 {
   right: 3%;
 }
 
+.c-social-icons a {
+  text-decoration: none;
+}
+
 .c-social-icons .fa-brands {
-  color: #000000;
+  color: #ffffffe6;
+  font-size: 29px;
 }
 
 @media (max-width: 767px) {
