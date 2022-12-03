@@ -1,6 +1,6 @@
 // cursor 
 
-let cursor = document.querySelector('.cursor-outline');
+let cursor = document.querySelector('.c-cursor-outline');
 let cursorinner = document.querySelector('.cursor2');
 let a = document.querySelectorAll('a');
 
