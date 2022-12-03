@@ -213,4 +213,26 @@ h3 {
   z-index: -1;
   background-color: rgba(255, 199, 115, 0.883) ea;
 }
+
+@media (max-width: 767px) {
+  .title {
+    white-space: pre-wrap;
+    font-size: 24vw;
+    text-align: center;
+    margin-left: 0px;
+    margin-bottom: 261px;
+    line-height: 45px;
+  }
+  .title-two {
+    z-index: 10;
+  }
+  .desktop-menu-nav .nav-item .nav-link {
+    font-size: 22px;
+  }
+  .home-img {
+    z-index: -1;
+    bottom: 31%;
+    width: 38vw;
+  }
+}
 /*# sourceMappingURL=styles.css.map */
