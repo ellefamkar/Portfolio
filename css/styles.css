@@ -235,6 +235,11 @@ h3 {
 }
 
 @media (max-width: 767px) {
+  .o-main-container {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
   .desktop-menu-nav {
     left: 0;
   }
@@ -246,11 +251,20 @@ h3 {
     font-size: 23vw;
     text-align: center;
     margin-left: 0px;
-    margin-bottom: 261px;
-    line-height: 45px;
+    margin-bottom: 10px;
+    line-height: 33px;
+    margin-top: 18vh;
+  }
+  .c-main-title span {
+    line-height: 61px;
   }
   .c-main-title--two {
     z-index: 10;
+  }
+  .c-main-job-title {
+    margin-top: -24%;
+    margin-left: -2%;
+    font-size: 29px;
   }
   .desktop-menu-nav .nav-item .nav-link {
     font-size: 22px;
