@@ -28,14 +28,22 @@ h3{
     font-family: $font-union;
 }
 
-.c-main-title-box{
-    width: 100vw;
+.o-main-container{
     height: 100vh;
+    width: 100vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
+// .c-main-title-box{
+//     width: 100vw;
+//     height: 100vh;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     overflow: hidden;
+// }
 
 .c-main-title {
     white-space: nowrap;
@@ -51,7 +59,7 @@ h3{
 }
 
 .mobile-menu-nav{
-    top: 2%;
+    top: 1%;
     left: 0;
     right: 0;
     z-index: 10;
@@ -84,8 +92,8 @@ h3{
 .home-img {
     width: 130px;
     transform: rotateZ(344deg);
-    right: 23%;
-    bottom: 24%;
+    right: 24%;
+    bottom: -7%;
     z-index: 0;
 }
 
