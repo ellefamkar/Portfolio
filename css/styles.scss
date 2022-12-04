@@ -36,14 +36,9 @@ h3{
     justify-content: center;
     align-items: center;
 }
+
 .c-main-title-box{
-    // width: 100vw;
-    // height: 100vh;
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-    // overflow: hidden;
-    margin-bottom: 100px;
+    margin-bottom: 40px;
 }
 
 .c-main-title {
@@ -52,7 +47,6 @@ h3{
     font-size: 14.4vw;
     margin-left: -34px;
     line-height:1;
-
     text-transform: uppercase;
 
      span {
@@ -68,12 +62,6 @@ h3{
     z-index: 1000;
     opacity: 0.4;
     font-size: 46px;
-}
-.mobile-menu-nav{
-    top: 1%;
-    left: 0;
-    right: 0;
-    z-index: 10;
 }
 
 .desktop-menu-nav{
@@ -103,8 +91,8 @@ h3{
 .home-img {
     width: 130px;
     transform: rotateZ(344deg);
-    right: 24%;
-    bottom: -7%;
+    margin-left: 40%;
+    margin-top: -28px;
     z-index: 0;
 }
 

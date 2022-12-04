@@ -115,7 +115,7 @@ h3 {
 }
 
 .c-main-title-box {
-  margin-bottom: 100px;
+  margin-bottom: 40px;
 }
 
 .c-main-title {
@@ -141,13 +141,6 @@ h3 {
   font-size: 46px;
 }
 
-.mobile-menu-nav {
-  top: 1%;
-  left: 0;
-  right: 0;
-  z-index: 10;
-}
-
 .desktop-menu-nav {
   bottom: 5%;
   left: 0%;
@@ -171,8 +164,8 @@ h3 {
   width: 130px;
   -webkit-transform: rotateZ(344deg);
           transform: rotateZ(344deg);
-  right: 24%;
-  bottom: -7%;
+  margin-left: 40%;
+  margin-top: -28px;
   z-index: 0;
 }
 
