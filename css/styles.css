@@ -114,17 +114,31 @@ h3 {
           align-items: center;
 }
 
+.c-main-title-box {
+  margin-bottom: 100px;
+}
+
 .c-main-title {
   white-space: nowrap;
   overflow: hidden;
   font-size: 14.4vw;
   margin-left: -34px;
-  margin-bottom: 100px;
+  line-height: 1;
   text-transform: uppercase;
 }
 
 .c-main-title span {
   z-index: 1;
+}
+
+.c-main-job-title {
+  font-family: 'iskry';
+  margin-top: -8%;
+  margin-bottom: 10%;
+  margin-left: 19%;
+  z-index: 1000;
+  opacity: 0.4;
+  font-size: 46px;
 }
 
 .mobile-menu-nav {
