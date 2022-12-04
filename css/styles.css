@@ -234,6 +234,12 @@ h3 {
   font-size: 29px;
 }
 
+.c-social-logo {
+  width: 29px;
+  -webkit-filter: brightness(0) invert(1);
+          filter: brightness(0) invert(1);
+}
+
 @media (max-width: 767px) {
   .o-main-container {
     -webkit-box-pack: start;
