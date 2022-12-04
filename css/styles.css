@@ -241,6 +241,9 @@ h3 {
 }
 
 @media (max-width: 767px) {
+  body {
+    height: 98vh;
+  }
   .o-main-container {
     -webkit-box-pack: start;
         -ms-flex-pack: start;

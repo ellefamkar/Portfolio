@@ -171,6 +171,9 @@ h3{
 
 @media (max-width : 767px){
 
+    body{
+        height: 98vh;
+    }
     .o-main-container{
         justify-content: start;
     }
