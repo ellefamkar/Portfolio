@@ -79,7 +79,8 @@ font-family: 'Amatic SC', cursive; */
 
 body {
   background-color: #D7CECD;
-  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 }
 
 h1 {
@@ -132,7 +133,7 @@ h3 {
 
 .desktop-menu-nav {
   bottom: 5%;
-  left: 5%;
+  left: 0%;
 }
 
 .desktop-menu-nav .nav-item.active {
@@ -248,6 +249,22 @@ h3 {
     z-index: -1;
     bottom: 31%;
     width: 38vw;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .c-main-title {
+    white-space: pre-wrap;
+    font-size: 23vw;
+    text-align: center;
+    margin-bottom: 216px;
+    line-height: 86px;
+    z-index: 1;
+  }
+  .home-img {
+    width: 170px;
+    bottom: 21%;
+    z-index: 0;
   }
 }
 /*# sourceMappingURL=styles.css.map */
