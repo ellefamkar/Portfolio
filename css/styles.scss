@@ -29,8 +29,8 @@ h3{
 }
 
 .o-main-container{
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -172,14 +172,14 @@ h3{
 @media (max-width : 767px){
 
     body{
-        height: 98vh;
+        height: 100%;
+        min-height: 100vh;
     }
     .o-main-container{
         justify-content: start;
+        overflow: hidden;
     }
-    .desktop-menu-nav{
-        left: 0;
-    }
+
 
     .c-cursor{
         display: none;
@@ -192,7 +192,7 @@ h3{
         margin-left: 0px;
         margin-bottom: 10px;
         line-height: 33px;
-        margin-top: 18vh;
+        margin-top: 10vh;
 
         span {
             line-height: 61px;
@@ -206,15 +206,23 @@ h3{
         margin-top: -24%;
         margin-left: -2%;
         font-size: 29px;
+        z-index: 0;
     }
 
     .desktop-menu-nav {
+        left: 0;
+        bottom: 7%;
+
         .nav-item {
             .nav-link {
                 font-size: 22px;
             }
         }
 
+    }
+
+    .c-social-icons {
+        bottom: 5%;
     }
 
     .home-img {
