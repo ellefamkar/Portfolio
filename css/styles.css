@@ -95,7 +95,7 @@ h3 {
   font-family: "Union", Courier, monospace;
 }
 
-.title-box {
+.c-main-title-box {
   width: 100vw;
   height: 100vh;
   display: -webkit-box;
@@ -110,15 +110,16 @@ h3 {
   overflow: hidden;
 }
 
-.title {
+.c-main-title {
   white-space: nowrap;
   overflow: hidden;
-  font-size: 20vw;
+  font-size: 14.4vw;
   margin-left: -34px;
   margin-bottom: 100px;
+  text-transform: uppercase;
 }
 
-.title span {
+.c-main-title span {
   z-index: 1;
 }
 
@@ -229,15 +230,15 @@ h3 {
   .c-cursor {
     display: none;
   }
-  .title {
+  .c-main-title {
     white-space: pre-wrap;
-    font-size: 24vw;
+    font-size: 23vw;
     text-align: center;
     margin-left: 0px;
     margin-bottom: 261px;
     line-height: 45px;
   }
-  .title-two {
+  .c-main-title--two {
     z-index: 10;
   }
   .desktop-menu-nav .nav-item .nav-link {

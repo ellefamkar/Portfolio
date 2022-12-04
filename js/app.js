@@ -8,7 +8,7 @@ let images = document.querySelectorAll("img");
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  gsap.from(".title", {
+  gsap.from(".main-title", {
     duration: 5,
     ease: "power4.out",
     scale: 0.9, 

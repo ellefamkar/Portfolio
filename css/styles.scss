@@ -28,7 +28,7 @@ h3{
     font-family: $font-union;
 }
 
-.title-box{
+.c-main-title-box{
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -37,12 +37,13 @@ h3{
     overflow: hidden;
 }
 
-.title {
+.c-main-title {
     white-space: nowrap;
     overflow: hidden;
-    font-size: 20vw;
+    font-size: 14.4vw;
     margin-left: -34px;
     margin-bottom: 100px;
+    text-transform: uppercase;
 
      span {
         z-index: 1;
@@ -167,15 +168,15 @@ h3{
         display: none;
     }
 
-    .title {
+    .c-main-title {
         white-space: pre-wrap;
-        font-size: 24vw;
+        font-size: 23vw;
         text-align: center;
         margin-left: 0px;
         margin-bottom: 261px;
         line-height: 45px;
 
-        &-two {
+        &--two {
             z-index: 10;
         }
     }
