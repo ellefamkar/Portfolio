@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     cursor: none;
+    user-select: none;
 }
 
 body {
@@ -211,7 +212,7 @@ h3{
 
     .desktop-menu-nav {
         left: 0;
-        bottom: 14%;
+        bottom: 7%;
 
         .nav-item {
             .nav-link {
@@ -222,7 +223,7 @@ h3{
     }
 
     .c-social-icons {
-        bottom: 13%;
+        bottom: 5%;
     }
 
     .home-img {
@@ -250,4 +251,31 @@ h3{
         bottom: 21%;
         z-index: 0;
     }
+}
+
+// ------------------------
+
+
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #D7CECD;
+  color: #ffffff;
+  transition: all .375s ease-in-out;
+  
+  &.is-light {
+    background-color: #ffffff;
+    color: #333333;
+  }
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 7vw;
 }

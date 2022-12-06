@@ -1,10 +1,11 @@
 // cursor 
 
+const body = document.querySelector('body');
 let cursor = document.querySelector('.js-cursor-outline');
 let cursorCircle = document.querySelector(".js-cursor-inline");
 let circleStyle = cursorCircle.style;
 let links = document.querySelectorAll("a");
-let images = document.querySelectorAll("img");
+let image = document.querySelectorAll("img");
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -87,3 +88,27 @@ links.forEach((link) => {
 });
 
 
+// --------------------
+
+
+
+function toggleBg(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.intersectionRatio > 0) {
+      body.classList.toggle('is-light');
+    } else {
+      entry.target.classList.remove('in-viewport');
+    }
+  });
+}
+
+let target = document.querySelector('.bg-white');
+let observer = new IntersectionObserver(toggleBg, {threshold: .3});
+
+observer.observe(target);
+
+
+
+
+// let tl = gsap.timeline({})
+// tl.from(".textList li",{opacity:0,x : -100,stagger:0.3})
