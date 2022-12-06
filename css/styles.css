@@ -83,6 +83,7 @@ font-family: 'Amatic SC', cursive; */
 
 body {
   background-color: #D7CECD;
+  color: #000000;
   width: 100vw;
   height: 100vh;
 }
@@ -310,35 +311,5 @@ h3 {
     bottom: 21%;
     z-index: 0;
   }
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #D7CECD;
-  color: #ffffff;
-  -webkit-transition: all .375s ease-in-out;
-  transition: all .375s ease-in-out;
-}
-
-body.is-light {
-  background-color: #ffffff;
-  color: #333333;
-}
-
-section {
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-h1 {
-  font-size: 7vw;
 }
 /*# sourceMappingURL=styles.css.map */
