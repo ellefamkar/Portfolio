@@ -49,6 +49,31 @@ tl.from("img",{
   }
 }, "+=0.25");
 
+
+
+var tlx = new TimelineMax({
+    paused:true
+  });
+  // letter animation
+  tlx.fromTo(".anim-typewriter", 8, {
+    width: "0",
+  }, {
+    width: "10em", /* same as CSS .line-1 width */
+    ease:  SteppedEase.config(37)
+  }, 0);
+  // text cursor animation
+  tlx.fromTo(".anim-typewriter", 0.5, {
+    "border-right-color": "rgba(255,255,255,0.75)",
+    repeat: 0,
+  }, {
+    "border-right-color": "rgba(255,255,255,0)",
+    // repeat: -1,
+    ease:  SteppedEase.config(37)
+  }, 0);
+  
+  tlx.play();
+
+
 })
 
 
@@ -90,8 +115,26 @@ links.forEach((link) => {
 
 // --------------------
 
+function toggleBg(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.intersectionRatio > 0) {
+      body.classList.toggle('is-light');
+    } else {
+      entry.target.classList.remove('in-viewport');
+    }
+  });
+}
 
+let target = document.querySelector('.js-bg');
+let observer = new IntersectionObserver(toggleBg, {threshold: .3});
+
+observer.observe(target);
 
 
 // let tl = gsap.timeline({})
 // tl.from(".textList li",{opacity:0,x : -100,stagger:0.3})
+
+
+
+// ------------------------
+

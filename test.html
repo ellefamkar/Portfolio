@@ -21,121 +21,27 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/styles.css">
-
-    <style>
-        
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #D7CECD;
-  color: #ffffff;
-  transition: all .375s ease-in-out;
-  
-  
-}
-body.is-light {
-    background-color: #ffffff;
-    color: #333333;
-  }
-
-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-h1 {
-  font-size: 7vw;
-}
-    </style>
 </head>
-<body class=" dark-section">
-    <section>
-        <main class="o-main-container container-fluid m-0 p-0">
-            <div class="c-main-title-box position-relative d-flex flex-column align-items-center">
-                <h1 class="c-main-title" id="c-main-title">
-                    <span class="c-main-title--one">Elle</span>
-                    <span class="c-main-title--two">Famkar</span>
-                </h1>
-                <p class="c-main-job-title mb-0 text-white">Front-end developer</p>
-                <img class="img-fluid home-img" src="/assets/images/ellefamkar.jpg" alt="Elle Famkar">
-            </div>
-        </main>
-        <nav class="position-fixed w-100 desktop-menu-nav px-2 px-md-5">
-          <ul class="navbar-nav mx-3 mx-md-4">
-            <li class="nav-item active d-flex align-items-center">
-              <i class="fas fa-long-arrow-right mx-3"></i>
-              <a class="nav-link d-inline-block" href="/">Home</a>
-            </li>
-            <li class="nav-item ms-1">
-                <i class="fas fa-long-arrow-right d-none"></i>
-                <a class="nav-link d-inline-block" href="/about.html">About me</a>
-              </li>
-            <li class="nav-item ms-4">
-              <i class="fas fa-long-arrow-right d-none"></i>
-              <a class="nav-link d-inline-block" href="/portfolio.html">portfolio</a>
-            </li>
-            <li class="nav-item ms-2">
-              <i class="fas fa-long-arrow-right d-none"></i>
-              <a class="nav-link d-inline-block" href="/contact.html">contact</a>
-            </li>
-          </ul>
-        </nav>
-        <div class="c-social-icons position-fixed d-flex flex-column flex-md-row">
-          <a href="https://github.com/ellefamkar" target="_blank" title="github Elle famkar" class="text-decoration-none d-inline-block mx-2">
-              <i class="fa-brands fa-github"></i>
-          </a>
-          <a href="https://www.instagram.com/ellefamkar" target="_blank"  title="instagram Elle famkar" class="text-decoration-none d-inline-block mx-2">
-              <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/elle-famkar-2086b0230/" target="_blank"  title="linkedin Elle famkar" class="text-decoration-none d-inline-block mx-2">
-              <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a href="https://www.shecodes.io/graduates/58531-elle-elnaz-famkar" target="_blank"  title="SheCodes Elle famkar" class="text-decoration-none d-inline-block mx-2">
-            <img class="c-social-logo" src="/assets/images/shecodes-logo.png" alt="shecodes logo">
-          </a>
-       </div>
-    </section>
-<section class="bg-white">
-ddgdgd
-</section>
+<body class=" w-100">
+  <section class="js-bg">
+      <div id="text-plugin"></div>
+  </section>
+
 
   <div class="c-cursor">
       <div class="c-cursor--outline js-cursor-outline"></div>
       <div class="c-cursor--inline js-cursor-inline"></div>
   </div>
 
-      <script src="/js/all.js" type="module"></script>
-      
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
-    <script src="/js/TextPlugin.js"></script>
-    <script src="/js/ScrollToPlugin.js"></script>
-    <script src="/js/ScrollTrigger.js"></script> -->
-    <script src="/js/Observer.js"></script>
-    <script src="/js/app.js" type="module"></script>
-    <script>
-        
-
-function toggleBg(entries, observer) {
-  entries.forEach(entry => {
-    if (entry.intersectionRatio > 0) {
-      body.classList.toggle('is-light');
-    } else {
-      entry.target.classList.remove('in-viewport');
-    }
-  });
-}
-
-let target = document.querySelector('.bg-white');
-let observer = new IntersectionObserver(toggleBg, {threshold: .3});
-
-observer.observe(target);
-
-
-    </script>
-  <!-- <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText3.min.js"></script> -->
-
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+ 
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script> -->
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrollTrigger.min.js"></script>
+  <script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.19.0_643d6911392a3398cb1607993edabfa7_min.js"></script>
+  <script src="https://s0.2mdn.net/ads/studio/cached_libs/textplugin_1.19.0_ee0a9b7420a65afd44a2fd958cd72d16_min.js"></script>
+  <script src="/js/app.js"></script>
+  
 </body>
 </html>
