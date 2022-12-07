@@ -55,11 +55,11 @@ var tlx = new TimelineMax({
     paused:true
   });
   // letter animation
-  tlx.fromTo(".anim-typewriter", 8, {
+  tlx.fromTo(".anim-typewriter", 5, {
     width: "0",
   }, {
     width: "10em", /* same as CSS .line-1 width */
-    ease:  SteppedEase.config(37)
+    ease:  SteppedEase.config(77)
   }, 0);
   // text cursor animation
   tlx.fromTo(".anim-typewriter", 0.5, {
@@ -68,7 +68,7 @@ var tlx = new TimelineMax({
   }, {
     "border-right-color": "rgba(255,255,255,0)",
     // repeat: -1,
-    ease:  SteppedEase.config(37)
+    ease:  SteppedEase.config(77)
   }, 0);
   
   tlx.play();
@@ -126,7 +126,7 @@ function toggleBg(entries, observer) {
 }
 
 let target = document.querySelector('.js-bg');
-let observer = new IntersectionObserver(toggleBg, {threshold: .3});
+let observer = new IntersectionObserver(toggleBg, {threshold: .2});
 
 observer.observe(target);
 

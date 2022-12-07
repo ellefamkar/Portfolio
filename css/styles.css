@@ -95,6 +95,23 @@ body.is-light {
   color: #333333;
 }
 
+body.is-light .c-social-icons .fa-brands {
+  color: #333333;
+}
+
+body.is-light .c-social-logo {
+  -webkit-filter: brightness(0) invert(0.2);
+  filter: brightness(0) invert(0.2);
+}
+
+body.is-light .desktop-menu-nav .nav-item {
+  color: #d7cecd;
+}
+
+body.is-light .desktop-menu-nav .nav-item.active {
+  color: #1a1919;
+}
+
 h1 {
   font-family: "Bulter", Courier, monospace;
   font-weight: 700;
@@ -127,7 +144,7 @@ h3 {
 }
 
 .c-main-title-box {
-  margin-bottom: 40px;
+  margin-bottom: 10%;
 }
 
 .c-main-title {
@@ -176,9 +193,9 @@ h3 {
   width: 130px;
   -webkit-transform: rotateZ(344deg);
           transform: rotateZ(344deg);
-  margin-left: 40%;
-  margin-top: -28px;
-  z-index: 0;
+  position: absolute;
+  right: 28%;
+  top: 88%;
 }
 
 .c-cursor--outline {

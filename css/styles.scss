@@ -21,6 +21,23 @@ body {
 body.is-light {
     background-color: #ffffff;
     color: #333333;
+
+    .c-social-icons .fa-brands{
+        color: #333333;
+    }
+
+    .c-social-logo {
+        -webkit-filter: brightness(0) invert(0.2);
+        filter: brightness(0) invert(0.2);
+    }
+
+
+    .desktop-menu-nav .nav-item {
+        color: #d7cecd;
+    }
+    .desktop-menu-nav .nav-item.active {
+        color: #1a1919;
+    }
   }
 
 
@@ -47,7 +64,7 @@ h3{
 }
 
 .c-main-title-box{
-    margin-bottom: 40px;
+    margin-bottom: 10%;
 }
 
 .c-main-title {
@@ -100,9 +117,12 @@ h3{
 .home-img {
     width: 130px;
     transform: rotateZ(344deg);
-    margin-left: 40%;
-    margin-top: -28px;
-    z-index: 0;
+    // margin-left: 40%;
+    // margin-top: -28px;
+    // z-index: 0;
+    position: absolute;
+    right: 28%;
+    top: 88%;
 }
 
 // cursor 
