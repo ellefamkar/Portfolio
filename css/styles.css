@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* font-face  */
 /* font-family: 'Aladin', cursive;
 font-family: 'Amatic SC', cursive; */
@@ -437,6 +438,22 @@ html, body {
 .c-panel__description {
   text-align: center;
   max-width: 450px;
+}
+
+.c-panel__description p {
+  text-align: center;
+  font-size: 18px;
+  font-family: 'union';
+}
+
+.c-panel li {
+  padding-left: 8px;
+  font-family: 'union';
+}
+
+.c-panel li::marker {
+  content: "◌";
+  margin-right: 6px;
 }
 
 /* SCROLL DOWN */

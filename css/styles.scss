@@ -394,7 +394,25 @@ justify-content: center;
     &__description {
         text-align: center;
         max-width: 450px;
+        
+        p{
+            text-align: center;
+            font-size: 18px;
+            font-family: 'union';
+        }
     }
+
+    li{
+        padding-left: 8px;
+        font-family: 'union';
+
+        &::marker {
+            content: "◌";
+            margin-right: 6px;
+        }
+    
+    }
+    
 }
 
 
