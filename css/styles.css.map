@@ -6,7 +6,8 @@
         "_variables.scss",
         "_fonts.scss",
         "_settings.scss",
-        "_animations.scss"
+        "_animations.scss",
+        "_query.scss"
     ],
     "names": [],
     "file": "styles.css"
