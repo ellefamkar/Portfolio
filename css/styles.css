@@ -521,6 +521,9 @@ section {
   border-radius: 10px;
   overflow: hidden;
   visibility: hidden;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   opacity: 0;
 }
 
@@ -591,6 +594,7 @@ section {
 .menu__items-list {
   position: relative;
   z-index: 1;
+  list-style: none;
 }
 
 .menu__items-list li {
@@ -598,9 +602,10 @@ section {
 }
 
 .menu__items-list li a {
+  font-family: 'Iskry';
   color: #282828;
   text-decoration: none;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 50px;
   text-transform: uppercase;
   display: block;
@@ -625,6 +630,7 @@ section {
 
 @media screen and (max-width: 767.9px) {
   .menu__container {
+    z-index: 1;
     display: block;
   }
 }

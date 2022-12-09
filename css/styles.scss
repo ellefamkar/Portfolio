@@ -396,6 +396,7 @@ justify-content: center;
       border-radius: 10px;
       overflow: hidden;
       visibility: hidden;
+      justify-content: center;
       opacity: 0;
     }
     &__inner-background {
@@ -449,19 +450,24 @@ justify-content: center;
         }
       }
     }
+
     &__items-wrapper {
       position: relative;
       padding-left: 22px;
     }
+
     &__items-list {
       position: relative;
       z-index: 1;
+      list-style: none;
+
       li {
         margin-bottom: 8px;
         a {
+            font-family: 'Iskry';
           color: #282828;
           text-decoration: none;
-          font-size: 50px;
+          font-size: 40px;
           line-height: 50px;
           text-transform: uppercase;
           display: block;
@@ -489,6 +495,7 @@ justify-content: center;
   @media screen and (max-width:767.9px) {
     .menu{
         &__container{
+            z-index: 1;
             display: block;
         }
     }
