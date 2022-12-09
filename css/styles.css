@@ -595,6 +595,8 @@ section {
   position: relative;
   z-index: 1;
   list-style: none;
+  padding: 0;
+  text-align: center;
 }
 
 .menu__items-list li {
