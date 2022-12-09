@@ -505,5 +505,15 @@ justify-content: center;
     .c-panel__description {
         max-width: 310px;
     }
+
+    .c-panel {
+        h2{
+            font-size: 1.3rem;
+        }
+        h3{
+            font-size: 1rem;
+            font-weight: 600;
+        }
+    }
     
   }
