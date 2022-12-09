@@ -502,11 +502,8 @@ justify-content: center;
         }
     }
 
-    .c-panel__description {
-        max-width: 310px;
-    }
+    .c-panel{
 
-    .c-panel {
         h2{
             font-size: 1.3rem;
         }
@@ -514,6 +511,11 @@ justify-content: center;
             font-size: 1rem;
             font-weight: 600;
         }
+
+        &__description {
+            max-width: 310px;
+        }
+
+
     }
-    
   }

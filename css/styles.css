@@ -633,15 +633,15 @@ section {
     z-index: 1;
     display: block;
   }
-  .c-panel__description {
-    max-width: 310px;
-  }
   .c-panel h2 {
     font-size: 1.3rem;
   }
   .c-panel h3 {
     font-size: 1rem;
     font-weight: 600;
+  }
+  .c-panel__description {
+    max-width: 310px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
