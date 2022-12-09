@@ -82,6 +82,23 @@ font-family: 'Amatic SC', cursive; */
           user-select: none;
 }
 
+html::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+html::-webkit-scrollbar {
+  width: 12px;
+  background-color: #F5F5F5;
+}
+
+html::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #D62929;
+}
+
 body {
   background-color: #D7CECD;
   color: #000000;
@@ -384,36 +401,9 @@ section {
           align-items: flex-start;
 }
 
-.c-panel h1 {
-  margin: 0 auto;
-}
-
-.c-panel.description {
-  padding-bottom: 60px;
-}
-
-.c-panel p, .c-panel li {
-  text-align: left;
-  margin: 0.3em 0 1em 0;
-}
-
-.c-panel p strong, .c-panel li strong {
-  font-weight: 400;
-}
-
 .c-panel p code, .c-panel li code {
   padding: 2px 4px;
   border-radius: 5px;
-}
-
-.c-panel li {
-  margin: 0;
-}
-
-html, body {
-  margin: 0;
-  height: 100%;
-  -webkit-overflow-scrolling: touch;
 }
 
 .c-panel {
@@ -430,14 +420,19 @@ html, body {
           align-items: center;
   text-align: center;
   position: relative;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
   padding: 10px;
+  padding-bottom: 7rem !important;
+}
+
+.c-panel h3,
+.c-panel li {
+  text-align: left;
 }
 
 .c-panel__description {
   text-align: center;
   max-width: 450px;
+  padding-bottom: 60px;
 }
 
 .c-panel__description p {
@@ -449,6 +444,8 @@ html, body {
 .c-panel li {
   padding-left: 8px;
   font-family: 'union';
+  margin: 0.3em 0 0.3em 0;
+  text-align: left;
 }
 
 .c-panel li::marker {

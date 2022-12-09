@@ -10,6 +10,28 @@
     user-select: none;
 }
 
+
+html::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+html::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+html::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #D62929;
+}
+
+
 body {
     background-color: #D7CECD;
     color: #000000;
@@ -198,16 +220,12 @@ h3{
     filter: brightness(0) invert(1);
 }
 
-
-
-
 section {
 min-height: 100vh;
 display: flex;
 align-items: center;
 justify-content: center;
 }
-
 
 .anim-typewriter{
     // position: relative;
@@ -335,46 +353,12 @@ justify-content: center;
 .c-panel.align-top {
     align-items: flex-start;
   }
-  
-  .c-panel h1 {
-    // font-size: 1.8em;
-    // color: white;
-    // font-weight: 300;
-    margin: 0 auto;
-  }
-  .c-panel.description {
-    padding-bottom: 60px;
-  }
-  .c-panel p, .c-panel li {
-    // color: black;
-    // font-weight: 400;
-    text-align: left;
-    // font-size: 0.8em;
-    // line-height: 1.5em;
-    margin: 0.3em 0 1em 0;
-  }
-  .c-panel p strong, .c-panel li strong {
-    // color: white;
-    font-weight: 400;
-  }
+ 
   .c-panel p code, .c-panel li code {
     // background-color: rgba(255,255,255,0.15);
     padding: 2px 4px;
     border-radius: 5px;
   }
-  .c-panel li {
-    margin: 0;
-  }
- 
-  html, body {
-    margin: 0;
-    height: 100%;
-    -webkit-overflow-scrolling: touch;
-    // overflow-scrolling: touch;
-    // font-family: "Signika Negative", sans-serif, Arial;
-  }
-  
-
 
 .c-panel {
 
@@ -383,17 +367,20 @@ justify-content: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    // font-weight: 600;
-    // font-size: 1.5em;
     text-align: center;
-    // color: white;
     position: relative;
-    box-sizing: border-box;
     padding: 10px;
+    padding-bottom: 7rem !important;
+
+    h3,
+    li{
+        text-align: left;
+    }
 
     &__description {
         text-align: center;
         max-width: 450px;
+        padding-bottom: 60px;
         
         p{
             text-align: center;
@@ -404,7 +391,9 @@ justify-content: center;
 
     li{
         padding-left: 8px;
-        font-family: 'union';
+        font-family: 'union'; 
+        margin: 0.3em 0 0.3em 0;
+        text-align: left;
 
         &::marker {
             content: "◌";
