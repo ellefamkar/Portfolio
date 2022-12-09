@@ -296,6 +296,12 @@ justify-content: center;
         text-align: left;
     }
 
+    h4,
+    p,
+    li{
+        font-family: 'union';
+    }
+    
     &__description {
         text-align: center;
         max-width: 450px;
@@ -304,13 +310,11 @@ justify-content: center;
         p{
             text-align: center;
             font-size: 18px;
-            font-family: 'union';
         }
     }
 
     li{
         padding-left: 8px;
-        font-family: 'union'; 
         margin: 0.3em 0 0.3em 0;
         text-align: left;
 

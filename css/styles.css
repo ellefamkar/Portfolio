@@ -418,6 +418,12 @@ section {
   text-align: left;
 }
 
+.c-panel h4,
+.c-panel p,
+.c-panel li {
+  font-family: 'union';
+}
+
 .c-panel__description {
   text-align: center;
   max-width: 450px;
@@ -427,12 +433,10 @@ section {
 .c-panel__description p {
   text-align: center;
   font-size: 18px;
-  font-family: 'union';
 }
 
 .c-panel li {
   padding-left: 8px;
-  font-family: 'union';
   margin: 0.3em 0 0.3em 0;
   text-align: left;
 }
