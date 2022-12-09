@@ -359,7 +359,7 @@ justify-content: center;
         left: 0;
         transform: translateX(-7px);
         top: 8px;
-        background-image: linear-gradient(0deg, #ffdfb8 0%, #b9b9b933 100%);
+        // background-image: linear-gradient(0deg, #ffdfb8 0%, #b9b9b933 100%);
         transition: all 0.2s ease;
         will-change: transform;
       }
@@ -501,4 +501,9 @@ justify-content: center;
             display: block;
         }
     }
+
+    .c-panel__description {
+        max-width: 310px;
+    }
+    
   }

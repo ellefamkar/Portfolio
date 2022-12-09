@@ -478,8 +478,6 @@ section {
   -webkit-transform: translateX(-7px);
           transform: translateX(-7px);
   top: 8px;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#ffdfb8), to(#b9b9b933));
-  background-image: linear-gradient(0deg, #ffdfb8 0%, #b9b9b933 100%);
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   will-change: transform;
@@ -634,6 +632,9 @@ section {
   .menu__container {
     z-index: 1;
     display: block;
+  }
+  .c-panel__description {
+    max-width: 310px;
   }
 }
 /*# sourceMappingURL=styles.css.map */
