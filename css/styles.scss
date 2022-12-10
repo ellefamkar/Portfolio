@@ -131,7 +131,7 @@ h3{
     height: 50px;
     opacity: .9;
     z-index: -1;
-    background-color: rgba(255, 199, 115, 0.883)ea;
+    background-color: rgba(255, 199, 115, 0.883);
 }
 
 .c-social-icons {
@@ -343,7 +343,7 @@ justify-content: center;
     height: 100vh;
     overflow: hidden;
     position: relative;
-    background: transparent;
+    background-color: #d7cecd;
 
     &__trigger {
       position: absolute;
@@ -381,6 +381,7 @@ justify-content: center;
       &--close {
         visibility: hidden;
         opacity: 0;
+        background-color: #d7cecd;
       }
     }
    
