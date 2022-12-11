@@ -223,7 +223,7 @@ h3 {
   font-family: 'Iskry';
 }
 
-.home-img {
+.c-title-img {
   width: 130px;
   -webkit-transform: rotateZ(344deg);
           transform: rotateZ(344deg);
@@ -640,7 +640,7 @@ body.is-light .c-destop-menu .nav-item.active {
   .c-social-icons {
     bottom: 5%;
   }
-  .home-img {
+  .c-title-img {
     z-index: -1;
     bottom: 31%;
     width: 38vw;
@@ -677,7 +677,7 @@ body.is-light .c-destop-menu .nav-item.active {
     line-height: 86px;
     z-index: 1;
   }
-  .home-img {
+  .c-title-img {
     width: 170px;
     bottom: 21%;
     z-index: 0;
