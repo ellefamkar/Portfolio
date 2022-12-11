@@ -176,6 +176,20 @@ justify-content: center;
     }
 
 }
+
+.o-home-container {
+    .img-nav-item {
+        position: relative;
+            
+        img{
+            opacity: 0;
+            visibility: hidden;
+            filter: blur(2px);
+        }
+    
+    }
+    
+}
   
   
 .js-bg{

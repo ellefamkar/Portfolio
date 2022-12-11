@@ -7,7 +7,6 @@ let circleStyle = cursorCircle.style;
 let links = document.querySelectorAll("a");
 let image = document.querySelectorAll("img");
 let target = document.querySelector('.js-bg');
-let observer = new IntersectionObserver(toggleBg, {threshold: .2});
 let imageMenuItems = document.querySelectorAll('.img-nav-item');
 let tl = gsap.timeline();
 gsap.registerPlugin(ScrollTrigger);
@@ -114,17 +113,21 @@ links.forEach((link) => {
 
 
 // horizontal panel on scroll
-
-function toggleBg(entries, observer) {
-  entries.forEach(entry => {
-    if (entry.intersectionRatio > 0) {
-      body.classList.toggle('is-light');
-    } else {
-      entry.target.classList.remove('in-viewport');
-    }
-  });
+if(body.classList.contains("o-scrollable-body")){
+  
+  function toggleBg(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.intersectionRatio > 0) {
+        body.classList.toggle('is-light');
+      } else {
+        entry.target.classList.remove('in-viewport');
+      }
+    });
+  }
+  let observer = new IntersectionObserver(toggleBg, {threshold: .2});
+  observer.observe(target);
+  
 }
-observer.observe(target);
 
 gsap.to(sections, {
   xPercent: -100 * (sections.length - 1),

@@ -314,6 +314,17 @@ section {
   pointer-events: none;
 }
 
+.o-home-container .img-nav-item {
+  position: relative;
+}
+
+.o-home-container .img-nav-item img {
+  opacity: 0;
+  visibility: hidden;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+}
+
 .js-bg {
   height: 100vh;
 }
