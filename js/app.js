@@ -310,3 +310,42 @@ function menu() {
 
 menu();
 
+
+// const items = document.querySelectorAll('.img-hover-ul .img-nav-item')
+// const imagess = document.querySelector('.img-hover-image')
+
+// items.forEach((el) => {
+//   el.addEventListener('mouseover', (e) => {
+//     imageData = e.target.getAttribute('data-image')
+//     console.log(imageData)
+//     e.target.style.zIndex = 99
+//     imagess.setAttribute('src', imageData)
+//   })
+//   el.addEventListener('mousemove', (e) => {
+//     imagess.style.top = e.clientY + 'px'
+//     imagess.style.left = e.clientX + 'px'
+//   })
+//   el.addEventListener('mouseleave', (e) => {
+//     e.target.style.zIndex = 1
+//     imagess.setAttribute('src', '')
+//   })
+// })
+
+
+const items = document.querySelectorAll('.img-nav-item')
+
+items.forEach((el) => {
+  const image = el.querySelector('img')
+  
+  el.addEventListener('mouseenter', (e) => {
+    gsap.to(image, { autoAlpha: 1 })
+  })
+  
+   el.addEventListener('mouseleave', (e) => {
+    gsap.to(image, { autoAlpha: 0 })
+  })
+  
+  el.addEventListener('mousemove', (e) => {
+    gsap.set(image, { x: e.offsetX - 200 })
+  })
+})

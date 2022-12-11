@@ -522,4 +522,30 @@ justify-content: center;
   }
 
 
+
+  
+.img-nav-item {
+    position: relative;
+    z-index: 1;
+
+    img{
+        position: absolute;
+        width: auto;
+        height: 100px;
+        object-fit: cover;
+        transform: translateX(-50%) translateY(-50%);
+        top: 50%;
+        right: 15%;
+        z-index: -10;
+        opacity: 0;
+        visibily: hidden;
+        pointer-events: none;
+    }
+
+  }
+  
+
+
+
+
   @import 'query';
