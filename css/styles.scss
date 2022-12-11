@@ -61,7 +61,7 @@ h3{
     font-size: 46px;
 }
 
-.desktop-menu-nav{
+.c-destop-menu{
     bottom: 5%;
     left: 0%;
 
@@ -441,10 +441,10 @@ body.is-light {
         filter: brightness(0) invert(0.2);
     }
 
-    .desktop-menu-nav .nav-item {
+    .c-destop-menu .nav-item {
         color: #d7cecd;
     }
-    .desktop-menu-nav .nav-item.active {
+    .c-destop-menu .nav-item.active {
         color: #1a1919;
     }
 }
@@ -489,7 +489,7 @@ body.is-light {
         z-index: 0;
     }
 
-    .desktop-menu-nav {
+    .c-destop-menu {
         left: 0;
         bottom: 7%;
 
