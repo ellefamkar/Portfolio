@@ -10,6 +10,8 @@ let target = document.querySelector('.js-bg');
 let observer = new IntersectionObserver(toggleBg, {threshold: .2});
 let imageMenuItems = document.querySelectorAll('.img-nav-item');
 let tl = gsap.timeline();
+gsap.registerPlugin(ScrollTrigger);
+let sections = gsap.utils.toArray(".js-panel");
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -124,10 +126,6 @@ function toggleBg(entries, observer) {
 }
 observer.observe(target);
 
-gsap.registerPlugin(ScrollTrigger);
-
-let sections = gsap.utils.toArray(".js-panel");
-
 gsap.to(sections, {
   xPercent: -100 * (sections.length - 1),
   ease: "none",
@@ -143,7 +141,7 @@ gsap.to(sections, {
 
 // mobile menu with GSAP
 function menu() {
-  var menuInner = $(".js-menu-inner"),
+  let menuInner = $(".js-menu-inner"),
     menuTrigger = $(".js-menu-trigger"),
     menuInnerBackgroundItem = $(".js-menu-inner-background").find("i"),
     menuItem = $(".js-menu-items-list").find("li"),

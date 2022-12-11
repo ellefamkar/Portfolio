@@ -151,7 +151,8 @@ body.is-light {
   color: #333333;
 }
 
-body.is-light .c-social-icons .fa-brands {
+body.is-light .c-social-icons .fa-brands,
+body.is-light .menu__trigger span {
   color: #333333;
 }
 
@@ -489,6 +490,7 @@ section {
   letter-spacing: -1px;
   text-transform: uppercase;
   font-size: 16px;
+  color: #ffffff;
 }
 
 .menu__trigger:hover:after {

@@ -16,7 +16,8 @@ body.is-light {
     background-color: #ffffff;
     color: #333333;
 
-    .c-social-icons .fa-brands{
+    .c-social-icons .fa-brands,
+    .menu__trigger span{
         color: #333333;
     }
 
@@ -24,7 +25,6 @@ body.is-light {
         -webkit-filter: brightness(0) invert(0.2);
         filter: brightness(0) invert(0.2);
     }
-
 
     .desktop-menu-nav .nav-item {
         color: #d7cecd;
@@ -370,6 +370,7 @@ justify-content: center;
         letter-spacing: -1px;
         text-transform: uppercase;
         font-size: 16px;
+        color: #ffffff;
       }
       &:hover {
         &:after {
@@ -500,7 +501,7 @@ justify-content: center;
             margin-bottom: 52%;
         }
     }
-    
+
     .menu{
         &__container{
             z-index: 1;
