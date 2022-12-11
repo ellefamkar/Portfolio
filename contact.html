@@ -74,27 +74,31 @@
   <div class="js-bg h-100 d-flex flex-column justify-content-center align-items-center o-form-container">
       <div class="c-contact-form__container d-flex flex-column">
               <h1 class="c-contact-form__title">Let's Get in touch</h1>
-              <form class="c-contact-form">
+              <form action="https://api.web3forms.com/submit" method="POST" class="c-contact-form" id="form">
+                <input type="hidden" name="access_key" value="b0da23fd-e4ed-4582-a45c-0149f6f5746d">
+                <input type="hidden" name="subject" value="Message from ElleFamkar" />
+
                  <div class="c-contact-form__field w-75">
-                    <input id="name" class="c-contact-form__input js-contact-input" type="text" required>
+                    <input id="name" type="text" name="name" class="c-contact-form__input js-contact-input" required>
                     <label class="c-contact-form__label" for="name">Name</label>
                  </div>
                  <div class="c-contact-form__field w-50">
-                  <input id="number" class="c-contact-form__input js-contact-input" type="text" required>
+                  <input id="number" type="text" name="number"  class="c-contact-form__input js-contact-input" required>
                   <label class="c-contact-form__label" for="number">Mobile number</label>
                </div>
                  <div class="c-contact-form__field w-100">
-                    <input id="email" class="c-contact-form__input js-contact-input" type="email" required>
+                    <input id="email" type="email" name="email" class="c-contact-form__input js-contact-input" required>
                     <label class="c-contact-form__label" for="email">E-mail</label>
                  </div>
                  <div class="c-contact-form__field w-100">
-                    <input id="message" class="c-contact-form__input js-contact-input" type="text" required>
-                    <label class="c-contact-form__label" for="message">Message</label>
+                    <label class="c-contact-form__label text-area__label" for="message">Message</label>
+                    <textarea name="message" id="message" class="c-contact-form__input js-contact-input" rows="5" required></textarea>
                  </div>
                  <div class="c-contact-form__field text-center w-100">
-                    <input class="c-contact-form__submit-btn bg-black text-white w-100" type="submit" value="Submit">
+                    <button class="c-contact-form__submit-btn bg-black text-white w-100" type="submit">SUBMIT</button>
                  </div>
-              </form>
+                </form>
+                <p class="text-base text-center" id="result"></p>
       </div>
   </div>
 

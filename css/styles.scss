@@ -478,7 +478,7 @@ justify-content: center;
           }
        }
     }
-    &__label {
+    &__label:not(.text-area__label) {
        position: absolute;
        left: 20px;
        bottom: 11px;
