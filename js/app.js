@@ -1,15 +1,19 @@
 // cursor 
 
-const body = document.querySelector('body');
+let body = document.querySelector('body');
 let cursor = document.querySelector('.js-cursor-outline');
 let cursorCircle = document.querySelector(".js-cursor-inline");
 let circleStyle = cursorCircle.style;
 let links = document.querySelectorAll("a");
 let image = document.querySelectorAll("img");
+let target = document.querySelector('.js-bg');
+let observer = new IntersectionObserver(toggleBg, {threshold: .2});
+let imageMenuItems = document.querySelectorAll('.img-nav-item');
+let tl = gsap.timeline();
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  gsap.from(".main-title", {
+gsap.from(".main-title", {
     duration: 5,
     ease: "power4.out",
     scale: 0.9, 
@@ -22,10 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     // ease: "elastic", 
     force3D: true
-  });
-
-
-let tl = gsap.timeline();
+});
 
 tl.from("img",{
   duration: 0.85,
@@ -49,9 +50,7 @@ tl.from("img",{
   }
 }, "+=0.25");
 
-
-
-var tlx = new TimelineMax({
+let tlx = new TimelineMax({
     paused:true
   });
   // letter animation
@@ -73,10 +72,9 @@ var tlx = new TimelineMax({
   
   tlx.play();
 
+});
 
-})
-
-
+// mouse and cursor events 
 document.addEventListener('mousemove', function(e){
   window.requestAnimationFrame(() => {
     circleStyle.top = `${e.clientY - cursorCircle.offsetHeight / 2}px`;
@@ -113,7 +111,7 @@ links.forEach((link) => {
 });
 
 
-// --------------------
+// horizontal panel on scroll
 
 function toggleBg(entries, observer) {
   entries.forEach(entry => {
@@ -124,19 +122,8 @@ function toggleBg(entries, observer) {
     }
   });
 }
-
-let target = document.querySelector('.js-bg');
-let observer = new IntersectionObserver(toggleBg, {threshold: .2});
-
 observer.observe(target);
 
-
-// let tl = gsap.timeline({})
-// tl.from(".textList li",{opacity:0,x : -100,stagger:0.3})
-
-
-
-// ------------------------
 gsap.registerPlugin(ScrollTrigger);
 
 let sections = gsap.utils.toArray(".js-panel");
@@ -154,7 +141,7 @@ gsap.to(sections, {
   }
 });
 
-
+// mobile menu with GSAP
 function menu() {
   var menuInner = $(".js-menu-inner"),
     menuTrigger = $(".js-menu-trigger"),
@@ -310,13 +297,8 @@ function menu() {
 
 menu();
 
-
-
 // image hover menu 
-
-const items = document.querySelectorAll('.img-nav-item')
-
-items.forEach((el) => {
+imageMenuItems.forEach((el) => {
   const image = el.querySelector('img');
 
   el.addEventListener('mouseenter', (e) => {
@@ -331,3 +313,9 @@ items.forEach((el) => {
     gsap.set(image, { x: e.offsetX - 200 })
   })
 })
+
+
+
+// let tl = gsap.timeline({})
+// tl.from(".textList li",{opacity:0,x : -100,stagger:0.3})
+
