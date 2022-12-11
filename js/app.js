@@ -10,7 +10,8 @@ let target = document.querySelector('.js-bg');
 let imageMenuItems = document.querySelectorAll('.img-nav-item');
 let tl = gsap.timeline();
 gsap.registerPlugin(ScrollTrigger);
-let sections = gsap.utils.toArray(".js-panel");
+let sections = gsap.utils.toArray(".js-about-panel");
+let contactSections = gsap.utils.toArray(".js-contact-panel");
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -141,6 +142,8 @@ gsap.to(sections, {
     end: "+=3500",
   }
 });
+
+
 
 // mobile menu with GSAP
 function menu() {
