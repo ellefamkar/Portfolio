@@ -325,7 +325,7 @@ imageMenuItems.forEach((el) => {
 
 
 
-$( '.js-input' ).keyup(function() {
+$('.js-contact-input').keyup(function() {
   if( $(this).val() ) {
      $(this).addClass('not-empty');
   } else {

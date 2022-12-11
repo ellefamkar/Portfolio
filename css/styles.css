@@ -581,28 +581,28 @@ section {
   text-align: center;
 }
 
-.get-in-touch .row {
+.c-contact-form .row {
   margin: -20px 0;
 }
 
-.get-in-touch .row:after {
+.c-contact-form .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.get-in-touch .row .col {
+.c-contact-form .row .col {
   padding: 0 20px;
   float: left;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
-.get-in-touch .row .col.x-50 {
+.c-contact-form .row .col.x-50 {
   width: 50%;
 }
 
-.get-in-touch .row .col.x-100 {
+.c-contact-form .row .col.x-100 {
   width: 100%;
 }
 
@@ -611,13 +611,13 @@ section {
   position: relative;
 }
 
-.get-in-touch {
+.c-contact-form__container {
   max-width: 650px;
   margin: 0 auto;
   position: relative;
 }
 
-.get-in-touch .title {
+.c-contact-form__title {
   text-align: center;
   font-family: Raleway, sans-serif;
   text-transform: uppercase;
@@ -627,12 +627,12 @@ section {
   padding-bottom: 48px;
 }
 
-.contact-form .form-field {
+.c-contact-form__field {
   position: relative;
   margin: 32px 0;
 }
 
-.contact-form .input-text {
+.c-contact-form__input {
   display: block;
   width: 100%;
   height: 36px;
@@ -644,16 +644,16 @@ section {
   font-weight: 400;
 }
 
-.contact-form .input-text:focus {
+.c-contact-form__input:focus {
   outline: none;
 }
 
-.contact-form .input-text:focus + .label, .contact-form .input-text.not-empty + .label {
+.c-contact-form__input:focus + .label, .c-contact-form__input.not-empty + .label {
   -webkit-transform: translateY(-24px);
           transform: translateY(-24px);
 }
 
-.contact-form .label {
+.c-contact-form__label {
   position: absolute;
   left: 20px;
   bottom: 11px;
@@ -669,7 +669,7 @@ section {
   transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
 }
 
-.contact-form .submit-btn {
+.c-contact-form__submit-btn {
   display: inline-block;
   background-color: #000;
   color: #fff;
