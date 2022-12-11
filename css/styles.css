@@ -594,7 +594,7 @@ section {
 }
 
 .c-contact-form {
-  z-index: 1000;
+  z-index: 100;
 }
 
 .c-contact-form__field {
@@ -641,8 +641,7 @@ section {
 }
 
 .c-contact-form__submit-btn {
-  display: inline-block;
-  font-family: Raleway, sans-serif;
+  font-family: 'Bulter', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 16px;
