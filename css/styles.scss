@@ -170,14 +170,13 @@ justify-content: center;
         left: 100%;
         z-index: -10;
         opacity: 0;
-        visibily: hidden;
+        visibility: hidden;
         filter: blur(2px);
         pointer-events: none;
     }
 
-  }
+}
   
-
   
 .js-bg{
     height: 100vh;
@@ -239,8 +238,6 @@ justify-content: center;
     
 }
 
-
-
 .menu {
 
     &__container{
@@ -274,7 +271,7 @@ justify-content: center;
         transition: all 0.2s ease;
         will-change: transform;
       }
-      
+
       span {
         position: relative;
         font-family: 'Iskry';
@@ -415,9 +412,8 @@ justify-content: center;
         margin: 0 auto;
       }
     }
-  }
+}
   
-
 body.is-light {
     background-color: #ffffff;
     color: #333333;

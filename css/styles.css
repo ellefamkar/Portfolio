@@ -308,7 +308,7 @@ section {
   left: 100%;
   z-index: -10;
   opacity: 0;
-  visibily: hidden;
+  visibility: hidden;
   -webkit-filter: blur(2px);
           filter: blur(2px);
   pointer-events: none;
