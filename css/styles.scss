@@ -535,10 +535,12 @@ justify-content: center;
         object-fit: cover;
         transform: translateX(-50%) translateY(-50%);
         top: 50%;
-        right: 15%;
+        right: -130%;
+        left: 100%;
         z-index: -10;
         opacity: 0;
         visibily: hidden;
+        filter: blur(2px);
         pointer-events: none;
     }
 
