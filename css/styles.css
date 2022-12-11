@@ -663,7 +663,8 @@ body.is-light .c-destop-menu .nav-item.active {
   .c-panel__description {
     max-width: 310px;
   }
-  .o-about-container .c-main-title-box {
+  .o-about-container .c-main-title-box,
+  .o-contact-container .c-main-title-box {
     margin-bottom: 52%;
   }
 }
