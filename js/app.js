@@ -55,14 +55,14 @@ let tlx = new TimelineMax({
     paused:true
   });
   // letter animation
-  tlx.fromTo(".anim-typewriter", 5, {
+  tlx.fromTo(".js-typewriter", 5, {
     width: "0",
   }, {
     width: "10em", /* same as CSS .line-1 width */
     ease:  SteppedEase.config(77)
   }, 0);
   // text cursor animation
-  tlx.fromTo(".anim-typewriter", 0.5, {
+  tlx.fromTo(".js-typewriter", 0.5, {
     "border-right-color": "rgba(255,255,255,0.75)",
     repeat: 0,
   }, {
@@ -114,7 +114,7 @@ links.forEach((link) => {
 
 // horizontal panel on scroll
 if(body.classList.contains("o-scrollable-body")){
-  
+
   function toggleBg(entries, observer) {
     entries.forEach(entry => {
       if (entry.intersectionRatio > 0) {

@@ -279,7 +279,7 @@ section {
           justify-content: center;
 }
 
-.anim-typewriter {
+.c-typewriter {
   border-right: 2px solid rgba(255, 255, 255, 0.75);
   text-align: center;
   white-space: nowrap;
