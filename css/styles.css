@@ -659,7 +659,7 @@ section {
      object-fit: cover;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
-  top: 50%;
+  top: 20%;
   right: -130%;
   left: 100%;
   z-index: -10;
