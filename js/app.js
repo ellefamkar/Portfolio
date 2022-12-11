@@ -323,3 +323,12 @@ imageMenuItems.forEach((el) => {
 // let tl = gsap.timeline({})
 // tl.from(".textList li",{opacity:0,x : -100,stagger:0.3})
 
+
+
+$( '.js-input' ).keyup(function() {
+  if( $(this).val() ) {
+     $(this).addClass('not-empty');
+  } else {
+     $(this).removeClass('not-empty');
+  }
+});

@@ -71,13 +71,28 @@
           </div>
     </main>
   </section>
-  <div class="js-bg">
-        <div class="description c-panel js-contact-panel">
-          <div class="c-panel__description">
-            <p>Hey Everyone! Welcome to my portfolio! This is Elnaz but you can call me Elle/ˈɛl.le/! I am a frontend developer and wordpress developer</p>
-            <p><strong>Keep scrolling</strong> if you are interested to know more about my skills and experiences as a frontend developer both in coding area and soft skills</p>
-          </div>
-        </div>
+  <div class="js-bg h-100 d-flex flex-column justify-content-center align-items-center o-form-container">
+      <p>Hey Everyone! Welcome to my portfolio! This is Elnaz but you can call me Elle/ˈɛl.le/! I am a frontend developer and wordpress developer</p>
+      <div class="get-in-touch">
+              <h1 class="title">Get in touch</h1>
+              <form class="contact-form row">
+                 <div class="form-field col x-50">
+                    <input id="name" class="input-text js-input" type="text" required>
+                    <label class="label" for="name">Name</label>
+                 </div>
+                 <div class="form-field col x-50">
+                    <input id="email" class="input-text js-input" type="email" required>
+                    <label class="label" for="email">E-mail</label>
+                 </div>
+                 <div class="form-field col x-100">
+                    <input id="message" class="input-text js-input" type="text" required>
+                    <label class="label" for="message">Message</label>
+                 </div>
+                 <div class="form-field col x-100 align-center">
+                    <input class="submit-btn" type="submit" value="Submit">
+                 </div>
+              </form>
+      </div>
   </div>
 
   <nav class="position-fixed w-100 c-destop-menu js-desktop-menu px-2 px-md-5 d-none d-md-block">
