@@ -573,58 +573,28 @@ section {
 }
 
 .o-form-container {
-  max-width: 450px;
+  max-width: 385px;
   margin: 0 auto;
 }
 
-.align-center {
-  text-align: center;
-}
-
-.c-contact-form .row {
-  margin: -20px 0;
-}
-
-.c-contact-form .row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-.c-contact-form .row .col {
-  padding: 0 20px;
-  float: left;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-.c-contact-form .row .col.x-50 {
-  width: 50%;
-}
-
-.c-contact-form .row .col.x-100 {
-  width: 100%;
-}
-
-.content-wrapper {
-  min-height: 100%;
-  position: relative;
-}
-
 .c-contact-form__container {
-  max-width: 650px;
+  max-width: 385px;
   margin: 0 auto;
   position: relative;
 }
 
 .c-contact-form__title {
   text-align: center;
-  font-family: Raleway, sans-serif;
+  font-family: 'Iskry', sans-serif;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 13px;
   font-size: 36px;
   line-height: 48px;
-  padding-bottom: 48px;
+  padding-bottom: 32px;
+}
+
+.c-contact-form {
+  z-index: 1000;
 }
 
 .c-contact-form__field {
@@ -638,7 +608,7 @@ section {
   height: 36px;
   border-width: 0 0 2px 0;
   border-color: #000;
-  font-family: Lusitana, serif;
+  font-family: 'Bulter', sans-serif;
   font-size: 18px;
   line-height: 26px;
   font-weight: 400;
@@ -648,16 +618,17 @@ section {
   outline: none;
 }
 
-.c-contact-form__input:focus + .label, .c-contact-form__input.not-empty + .label {
+.c-contact-form__input:focus + .c-contact-form__label, .c-contact-form__input.not-empty + .c-contact-form__label {
   -webkit-transform: translateY(-24px);
           transform: translateY(-24px);
+  left: 0;
 }
 
 .c-contact-form__label {
   position: absolute;
   left: 20px;
   bottom: 11px;
-  font-family: Lusitana, serif;
+  font-family: 'Bulter', sans-serif;
   font-size: 18px;
   line-height: 26px;
   font-weight: 400;
@@ -671,8 +642,6 @@ section {
 
 .c-contact-form__submit-btn {
   display: inline-block;
-  background-color: #000;
-  color: #fff;
   font-family: Raleway, sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -681,26 +650,6 @@ section {
   padding: 8px 16px;
   border: none;
   cursor: pointer;
-}
-
-.note {
-  position: absolute;
-  left: 0;
-  bottom: 10px;
-  width: 100%;
-  text-align: center;
-  font-family: Lusitana, serif;
-  font-size: 16px;
-  line-height: 21px;
-}
-
-.note .link {
-  color: #888;
-  text-decoration: none;
-}
-
-.note .link:hover {
-  text-decoration: underline;
 }
 
 body.is-light {

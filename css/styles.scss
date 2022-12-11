@@ -428,67 +428,29 @@ justify-content: center;
 }
   
 .o-form-container{
-    max-width: 450px;
+    max-width: 385px;
     margin: 0 auto;
 }
 
-
-// Helpers
-@mixin clearfix {
-    &:after {
-       content: "";
-       display: table;
-       clear: both;
-   }
- }
- 
- .align-center {
-    text-align: center;
- }
- 
- 
-
- // Grid
- .c-contact-form .row {
-    @include clearfix;
-    margin: -20px 0;
-    .col {
-       padding: 0 20px;
-       float: left;
-       box-sizing: border-box;
-       &.x-50 {
-          width: 50%;
-       }
-       &.x-100 {
-          width: 100%;
-       }
-    }
- }
- 
- .content-wrapper {
-    min-height: 100%;
-    position: relative;
- }
- 
- .c-contact-form__container {
-    max-width: 650px;
+.c-contact-form__container {
+    max-width: 385px;
     margin: 0 auto;
     position: relative;
-    // top: 50%;
-    // transform: translateY(-50%);
  }
 
  .c-contact-form__title {
     text-align: center;
-    font-family: Raleway, sans-serif;
+    font-family: 'Iskry', sans-serif;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 13px;
     font-size: 36px;
     line-height: 48px;
-    padding-bottom: 48px;
+    padding-bottom: 32px;
  }
  
  .c-contact-form {
+    z-index: 1000;
+
     &__field {
        position: relative;
        margin: 32px 0;
@@ -499,7 +461,7 @@ justify-content: center;
        height: 36px;
        border-width: 0 0 2px 0;
        border-color: #000;
-       font-family: Lusitana, serif;
+       font-family: 'Bulter', sans-serif;
        font-size: 18px;
        line-height: 26px;
        font-weight: 400;
@@ -510,8 +472,9 @@ justify-content: center;
        
        &:focus,
        &.not-empty {
-          + .label {
+          + .c-contact-form__label {
              transform: translateY(-24px);
+             left:0;
           }
        }
     }
@@ -519,7 +482,7 @@ justify-content: center;
        position: absolute;
        left: 20px;
        bottom: 11px;
-       font-family: Lusitana, serif;
+       font-family: 'Bulter', sans-serif;
        font-size: 18px;
        line-height: 26px;
        font-weight: 400;
@@ -530,8 +493,6 @@ justify-content: center;
     
     &__submit-btn {
        display: inline-block;
-       background-color: #000;
-       color: #fff;
        font-family: Raleway, sans-serif;
        text-transform: uppercase;
        letter-spacing: 2px;
@@ -542,44 +503,6 @@ justify-content: center;
        cursor: pointer;
     }
  }
- 
- .note {
-    position: absolute;
-    left: 0;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-    font-family: Lusitana, serif;
-    font-size: 16px;
-    line-height: 21px;
-    
-    .link {
-       color: #888;
-       text-decoration: none;
-       &:hover {
-          text-decoration: underline;
-       }
-    }
- }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 body.is-light {
     background-color: #ffffff;

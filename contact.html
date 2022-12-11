@@ -75,20 +75,24 @@
       <div class="c-contact-form__container d-flex flex-column">
               <h1 class="c-contact-form__title">Let's Get in touch</h1>
               <form class="c-contact-form">
-                 <div class="c-contact-form__field">
+                 <div class="c-contact-form__field w-75">
                     <input id="name" class="c-contact-form__input js-contact-input" type="text" required>
                     <label class="c-contact-form__label" for="name">Name</label>
                  </div>
-                 <div class="c-contact-form__field">
+                 <div class="c-contact-form__field w-50">
+                  <input id="number" class="c-contact-form__input js-contact-input" type="text" required>
+                  <label class="c-contact-form__label" for="number">Mobile number</label>
+               </div>
+                 <div class="c-contact-form__field w-100">
                     <input id="email" class="c-contact-form__input js-contact-input" type="email" required>
                     <label class="c-contact-form__label" for="email">E-mail</label>
                  </div>
-                 <div class="c-contact-form__field">
+                 <div class="c-contact-form__field w-100">
                     <input id="message" class="c-contact-form__input js-contact-input" type="text" required>
                     <label class="c-contact-form__label" for="message">Message</label>
                  </div>
-                 <div class="c-contact-form__field text-center">
-                    <input class="c-contact-form__submit-btn" type="submit" value="Submit">
+                 <div class="c-contact-form__field text-center w-100">
+                    <input class="c-contact-form__submit-btn bg-black text-white w-100" type="submit" value="Submit">
                  </div>
               </form>
       </div>
@@ -96,7 +100,7 @@
 
   <nav class="position-fixed w-100 c-destop-menu js-desktop-menu px-2 px-md-5 d-none d-md-block">
     <ul class="navbar-nav mx-3 mx-md-4">
-      <li class="nav-item d-flex align-items-center">
+      <li class="nav-item align-items-center">
         <i class="fas fa-long-arrow-right d-none"></i>
         <a class="nav-link d-inline-block img-nav-item" href="/" title="homepage" target="_blank">
           <img src="/assets/images/menu-home.png">
