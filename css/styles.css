@@ -590,7 +590,7 @@ section {
   letter-spacing: 13px;
   font-size: 36px;
   line-height: 48px;
-  padding-bottom: 32px;
+  padding-bottom: 12px;
 }
 
 .c-contact-form {
@@ -609,7 +609,7 @@ section {
   border-width: 0 0 2px 0;
   border-color: #000;
   font-family: 'Bulter', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 26px;
   font-weight: 400;
 }
@@ -624,7 +624,28 @@ section {
   left: 0;
 }
 
-.c-contact-form__label:not(.text-area__label) {
+.c-contact-form__textarea {
+  display: block;
+  width: 100%;
+  border-width: 0 0 2px 0;
+  border-color: #000;
+  font-family: 'Bulter', sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.c-contact-form__textarea:focus {
+  outline: none;
+}
+
+.c-contact-form__textarea:focus + .c-contact-form__label, .c-contact-form__textarea.not-empty + .c-contact-form__label {
+  -webkit-transform: translateY(-24px);
+          transform: translateY(-24px);
+  left: 0;
+}
+
+.c-contact-form__label {
   position: absolute;
   left: 20px;
   bottom: 11px;
@@ -638,6 +659,23 @@ section {
   transition: -webkit-transform .2s ease-in-out;
   transition: transform .2s ease-in-out;
   transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+}
+
+.c-contact-form .text-area__label {
+  position: absolute;
+  left: 20px;
+  top: 0px;
+  bottom: auto;
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+  font-family: 'Bulter', sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #888;
+  cursor: text;
 }
 
 .c-contact-form__submit-btn {

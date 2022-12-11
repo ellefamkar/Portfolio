@@ -77,6 +77,7 @@
               <form action="https://api.web3forms.com/submit" method="POST" class="c-contact-form" id="form">
                 <input type="hidden" name="access_key" value="b0da23fd-e4ed-4582-a45c-0149f6f5746d">
                 <input type="hidden" name="subject" value="Message from ElleFamkar" />
+                <input type="hidden" name="from_name" value="Elle Famkar website">
 
                  <div class="c-contact-form__field w-75">
                     <input id="name" type="text" name="name" class="c-contact-form__input js-contact-input" required>
@@ -90,11 +91,11 @@
                     <input id="email" type="email" name="email" class="c-contact-form__input js-contact-input" required>
                     <label class="c-contact-form__label" for="email">E-mail</label>
                  </div>
-                 <div class="c-contact-form__field w-100">
-                    <label class="c-contact-form__label text-area__label" for="message">Message</label>
-                    <textarea name="message" id="message" class="c-contact-form__input js-contact-input" rows="5" required></textarea>
+                 <div class="c-contact-form__field w-100 mb-3">
+                   <textarea name="message" id="message" class="c-contact-form__textarea js-contact-input" rows="4" required></textarea>
+                   <label class="c-contact-form__label text-area__label" for="message">Message</label>
                  </div>
-                 <div class="c-contact-form__field text-center w-100">
+                 <div class="c-contact-form__field text-center w-100 mt-3 mb-2">
                     <button class="c-contact-form__submit-btn bg-black text-white w-100" type="submit">SUBMIT</button>
                  </div>
                 </form>
@@ -125,7 +126,7 @@
       <li class="nav-item ms-1 active">
         <i class="fas fa-long-arrow-right"></i>
         <a class="nav-link d-inline-block img-nav-item" href="#" title="contact">
-          <img src="/assets/images/ellefamkar.jpg">
+          <img src="/assets/images/ellefamkar.jpg" class="d-none">
           contact</a>
       </li>
     </ul>
