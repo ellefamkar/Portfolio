@@ -180,7 +180,7 @@ justify-content: center;
 .o-home-container {
     .img-nav-item {
         position: relative;
-            
+
         img{
             opacity: 0;
             visibility: hidden;
@@ -252,15 +252,14 @@ justify-content: center;
     
 }
 
-.menu {
+.o-menu__container{
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 
-    &__container{
-        top:0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-
+.c-menu {
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -512,11 +511,13 @@ body.is-light {
         width: 38vw;
     }
 
-    .menu{
-        &__container{
-            z-index: 1;
+    .o-menu__container{
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
             display: block;
-        }
     }
 
     .c-panel{
