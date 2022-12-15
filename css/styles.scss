@@ -636,7 +636,8 @@ section {
         max-height: 560px;
 
         figcaption{
-            margin-top: 2rem;
+            margin-top: -5rem;
+            margin-left: -24rem;
         }
     }
 
@@ -653,24 +654,24 @@ section {
     }
 
     &--nine{
-        left: 23%;
-        top: 15%;
-        height: 460px;
-        max-height: 460px;
+        left: 16%;
+        top: 5%;
+        height: 420px;
+        max-height: 420px;
 
         figcaption{
-            margin-top: 2rem;
+            margin-top: 1rem;
         }
     }
 
     &--ten{
         left: 45%;
-        top: 15%;
+        top: 5%;
         height: 560px;
         max-height: 560px;
 
         figcaption{
-            margin-top: 2rem;
+            margin-top: -12rem;
         }
     }
 

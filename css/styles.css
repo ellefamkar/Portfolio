@@ -862,7 +862,8 @@ section {
 }
 
 .c-figure--seven figcaption {
-  margin-top: 2rem;
+  margin-top: -5rem;
+  margin-left: -24rem;
 }
 
 .c-figure--eight {
@@ -878,25 +879,25 @@ section {
 }
 
 .c-figure--nine {
-  left: 23%;
-  top: 15%;
-  height: 460px;
-  max-height: 460px;
+  left: 16%;
+  top: 5%;
+  height: 420px;
+  max-height: 420px;
 }
 
 .c-figure--nine figcaption {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .c-figure--ten {
   left: 45%;
-  top: 15%;
+  top: 5%;
   height: 560px;
   max-height: 560px;
 }
 
 .c-figure--ten figcaption {
-  margin-top: 2rem;
+  margin-top: -12rem;
 }
 
 body.is-light {
