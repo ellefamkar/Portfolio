@@ -143,8 +143,6 @@ gsap.to(sections, {
   }
 });
 
-
-
 // mobile menu with GSAP
 function menu() {
   let menuInner = $(".js-menu-inner"),
@@ -318,12 +316,8 @@ imageMenuItems.forEach((el) => {
   })
 })
 
-
-
 // let tl = gsap.timeline({})
 // tl.from(".textList li",{opacity:0,x : -100,stagger:0.3})
-
-
 
 $('.js-contact-input').keyup(function() {
   if( $(this).val() ) {
@@ -332,7 +326,6 @@ $('.js-contact-input').keyup(function() {
      $(this).removeClass('not-empty');
   }
 });
-
 
 const form = document.getElementById("form");
 const result = document.getElementById("result");
@@ -375,3 +368,7 @@ form.addEventListener("submit", function (e) {
       }, 5000);
     });
 });
+
+console.clear();
+
+

@@ -770,6 +770,14 @@ section {
   cursor: pointer;
 }
 
+.c-figure--one {
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  height: auto;
+  max-height: 500px;
+}
+
 body.is-light {
   background-color: #ffffff;
   color: #333333;
