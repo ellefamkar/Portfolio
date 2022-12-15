@@ -546,6 +546,7 @@ section {
 
 // portfolio 
 .c-figure{
+    position: absolute;
     
     a {
         color: #000000;
@@ -559,7 +560,6 @@ section {
     }
 
     &--one{
-        position: absolute;
         left: 10%;
         top: 10%;
         height: 300px;
@@ -572,7 +572,6 @@ section {
     }
 
     &--two{
-        position: absolute;
         left: 40%;
         top: 8%;
         height: 600px;
@@ -580,6 +579,18 @@ section {
 
         figcaption{
             margin-top: -1rem;
+        }
+    }
+
+    &--three{
+        left: auto;
+        right: 3%;
+        top: 9%;
+        height: 344px;
+        max-height: 354px;
+
+        figcaption{
+            margin-top: -5rem;
         }
     }
     

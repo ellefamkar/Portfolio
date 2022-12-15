@@ -770,6 +770,10 @@ section {
   cursor: pointer;
 }
 
+.c-figure {
+  position: absolute;
+}
+
 .c-figure a {
   color: #000000;
   text-decoration: none;
@@ -782,7 +786,6 @@ section {
 }
 
 .c-figure--one {
-  position: absolute;
   left: 10%;
   top: 10%;
   height: 300px;
@@ -795,7 +798,6 @@ section {
 }
 
 .c-figure--two {
-  position: absolute;
   left: 40%;
   top: 8%;
   height: 600px;
@@ -804,6 +806,18 @@ section {
 
 .c-figure--two figcaption {
   margin-top: -1rem;
+}
+
+.c-figure--three {
+  left: auto;
+  right: 3%;
+  top: 9%;
+  height: 344px;
+  max-height: 354px;
+}
+
+.c-figure--three figcaption {
+  margin-top: -5rem;
 }
 
 body.is-light {
