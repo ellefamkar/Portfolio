@@ -770,12 +770,40 @@ section {
   cursor: pointer;
 }
 
+.c-figure a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.c-figure figcaption {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: "Bulter", Courier, monospace;
+}
+
 .c-figure--one {
   position: absolute;
   left: 10%;
   top: 10%;
-  height: auto;
-  max-height: 500px;
+  height: 300px;
+  max-height: 300px;
+}
+
+.c-figure--one figcaption {
+  margin-top: -5rem;
+  margin-right: -11rem;
+}
+
+.c-figure--two {
+  position: absolute;
+  left: 40%;
+  top: 8%;
+  height: 600px;
+  max-height: 600px;
+}
+
+.c-figure--two figcaption {
+  margin-top: -1rem;
 }
 
 body.is-light {

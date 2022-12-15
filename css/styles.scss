@@ -546,13 +546,43 @@ section {
 
 // portfolio 
 .c-figure{
+    
+    a {
+        color: #000000;
+        text-decoration: none;
+    }
+
+    figcaption {
+        font-size: 2rem;
+        font-weight: 700;
+        font-family: $font-bulter;
+    }
+
     &--one{
         position: absolute;
         left: 10%;
         top: 10%;
-        height: auto;
-        max-height:500px;
+        height: 300px;
+        max-height:300px;
+
+        figcaption {
+            margin-top: -5rem;
+            margin-right: -11rem;
+        }
     }
+
+    &--two{
+        position: absolute;
+        left: 40%;
+        top: 8%;
+        height: 600px;
+        max-height:600px;
+
+        figcaption{
+            margin-top: -1rem;
+        }
+    }
+    
 }
 
 
