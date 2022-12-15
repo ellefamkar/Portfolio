@@ -5,6 +5,7 @@
         height: 100%;
         min-height: 100vh;
     }
+
     .o-main-container{
         justify-content: start;
         overflow: hidden;
@@ -21,7 +22,6 @@
         margin-left: 0px;
         margin-bottom: 10px;
         line-height: 33px;
-        // margin-top: 20vh;
 
         &-box{
             margin-top: 20vh;
@@ -61,7 +61,6 @@
 
     .c-title-img {
         z-index: -1;
-        // bottom: 31%;
         top: 103%;
         width: 40vw;
     }
@@ -88,8 +87,6 @@
         &__description {
             max-width: 310px;
         }
-
-
     }
 
     .o-about-container,
@@ -104,6 +101,15 @@
 
 @media screen and (min-width: 768px) and (max-width: 991px)  {
 
+    .c-cursor{
+        display: none;
+    }
+
+    .o-main-container{
+        justify-content: start;
+        overflow: hidden;
+    }
+
     .c-main-title {
         white-space: pre-wrap;
         font-size: 23vw;
@@ -111,10 +117,18 @@
         margin-bottom: -75px;
         line-height: 86px;
         z-index: 1;
+
+        &-box {
+            margin-top: 5vh;
+        }
+    }
+
+    .c-main-job-title {
+        margin-left: 0%;
     }
     
     .c-title-img {
-        width: 170px;
+        width: 29vw;
         bottom: 21%;
         z-index: 0;
     }

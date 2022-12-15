@@ -789,6 +789,15 @@ body.is-light .c-destop-menu .nav-item.active {
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
+  .c-cursor {
+    display: none;
+  }
+  .o-main-container {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+    overflow: hidden;
+  }
   .c-main-title {
     white-space: pre-wrap;
     font-size: 23vw;
@@ -797,8 +806,14 @@ body.is-light .c-destop-menu .nav-item.active {
     line-height: 86px;
     z-index: 1;
   }
+  .c-main-title-box {
+    margin-top: 5vh;
+  }
+  .c-main-job-title {
+    margin-left: 0%;
+  }
   .c-title-img {
-    width: 170px;
+    width: 29vw;
     bottom: 21%;
     z-index: 0;
   }
