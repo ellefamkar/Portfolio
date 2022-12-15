@@ -21,7 +21,11 @@
         margin-left: 0px;
         margin-bottom: 10px;
         line-height: 33px;
-        margin-top: 10vh;
+        // margin-top: 20vh;
+
+        &-box{
+            margin-top: 20vh;
+        }
 
         span {
             line-height: 61px;
@@ -57,17 +61,18 @@
 
     .c-title-img {
         z-index: -1;
-        bottom: 31%;
-        width: 38vw;
+        // bottom: 31%;
+        top: 103%;
+        width: 40vw;
     }
 
-    .o-menu__container{
+    .o-menu-container{
         top:0;
         bottom: 0;
         left: 0;
         right: 0;
         z-index: 1;
-            display: block;
+        display: block;
     }
 
     .c-panel{

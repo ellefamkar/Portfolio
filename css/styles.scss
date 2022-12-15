@@ -2,7 +2,6 @@
 @import 'settings';
 @import 'animations';
 
-
 body {
     background-color: #D7CECD;
     color: #000000;
@@ -25,6 +24,13 @@ h3{
     font-family: $font-union;
 }
 
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    
 .o-main-container{
     height: 100vh;
     width: 100%;
@@ -96,8 +102,6 @@ h3{
     top: 88%;
 }
 
-
-
 .hover {
     background-color: transparent;
     opacity: 0.1;
@@ -130,13 +134,6 @@ h3{
     filter: brightness(0) invert(1);
 }
 
-section {
-min-height: 100vh;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-
 .c-typewriter{
     // position: relative;
     // top: 50%;  
@@ -152,8 +149,6 @@ justify-content: center;
     -webkit-box-sizing:content-box;
     box-sizing:content-box;
 }
-
-
   
 .img-nav-item {
     position: relative;
@@ -252,7 +247,7 @@ justify-content: center;
     
 }
 
-.o-menu__container{
+.o-menu-container{
     top:0;
     bottom: 0;
     left: 0;
@@ -438,7 +433,7 @@ justify-content: center;
     position: relative;
  }
 
- .c-contact-form__title {
+.c-contact-form__title {
     text-align: center;
     font-family: 'Iskry', sans-serif;
     text-transform: uppercase;
@@ -448,7 +443,7 @@ justify-content: center;
     padding-bottom: 12px;
  }
  
- .c-contact-form {
+.c-contact-form {
     z-index: 100;
 
     &__field {
