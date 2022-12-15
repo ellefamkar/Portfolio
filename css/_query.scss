@@ -78,10 +78,13 @@
 
         h2{
             font-size: 1.3rem;
+            max-width: 300px;
         }
+
         h3{
             font-size: 1rem;
             font-weight: 600;
+            text-align: center;
         }
 
         &__description {
@@ -91,11 +94,15 @@
 
     .o-about-container,
     .o-contact-container {
-        .c-main-title-box {
-            margin-bottom: 52%;
+
+        .c-main-job-title {
+            margin-top: -22%;
+        }
+
+        .c-title-img {
+            top: 98%;
         }
     }
-
 }
 
 
@@ -131,5 +138,15 @@
         width: 29vw;
         bottom: 21%;
         z-index: 0;
+    }
+
+    // About page 
+    
+    .o-about-container,
+    .o-contact-container {
+
+        .c-title-img {
+            top: 98%;
+        }
     }
 }

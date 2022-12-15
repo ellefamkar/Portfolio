@@ -136,6 +136,82 @@ html::-webkit-scrollbar-thumb {
   -webkit-transform: scale(1) translate3d(0, 0, 0);
 }
 
+.c-scroll-wrapper {
+  width: 21px;
+  height: 41px;
+  border: 2px solid #e8ddd5;
+  border-radius: 15px;
+  position: relative;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 0.5rem;
+}
+
+.c-scroll-text {
+  position: absolute;
+  z-index: 2;
+}
+
+.c-scroll .c-scroller {
+  width: 11px;
+  border-radius: 8px;
+  background-color: #e8ddd5;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  bottom: 34px;
+  -webkit-animation: scroller 1500ms ease-out infinite;
+          animation: scroller 1500ms ease-out infinite;
+}
+
+@-webkit-keyframes scroller {
+  0% {
+    bottom: 34px;
+  }
+  5% {
+    top: 4px;
+  }
+  32% {
+    bottom: 4px;
+  }
+  66% {
+    top: 34px;
+    bottom: 4px;
+  }
+  100% {
+    top: 4px;
+    bottom: 34px;
+  }
+}
+
+@keyframes scroller {
+  0% {
+    bottom: 34px;
+  }
+  5% {
+    top: 4px;
+  }
+  32% {
+    bottom: 4px;
+  }
+  66% {
+    top: 34px;
+    bottom: 4px;
+  }
+  100% {
+    top: 4px;
+    bottom: 34px;
+  }
+}
+
 body {
   background-color: #D7CECD;
   color: #000000;
@@ -689,13 +765,22 @@ section {
   cursor: pointer;
 }
 
+.o-about-container .c-main-job-title {
+  margin-top: -8%;
+}
+
+.o-about-container .c-title-img {
+  right: 28%;
+  top: 74%;
+}
+
 body.is-light {
   background-color: #ffffff;
   color: #333333;
 }
 
 body.is-light .c-social-icons .fa-brands,
-body.is-light .menu__trigger span {
+body.is-light .c-menu__trigger span {
   color: #333333;
 }
 
@@ -774,17 +859,23 @@ body.is-light .c-destop-menu .nav-item.active {
   }
   .c-panel h2 {
     font-size: 1.3rem;
+    max-width: 300px;
   }
   .c-panel h3 {
     font-size: 1rem;
     font-weight: 600;
+    text-align: center;
   }
   .c-panel__description {
     max-width: 310px;
   }
-  .o-about-container .c-main-title-box,
-  .o-contact-container .c-main-title-box {
-    margin-bottom: 52%;
+  .o-about-container .c-main-job-title,
+  .o-contact-container .c-main-job-title {
+    margin-top: -22%;
+  }
+  .o-about-container .c-title-img,
+  .o-contact-container .c-title-img {
+    top: 98%;
   }
 }
 
@@ -816,6 +907,10 @@ body.is-light .c-destop-menu .nav-item.active {
     width: 29vw;
     bottom: 21%;
     z-index: 0;
+  }
+  .o-about-container .c-title-img,
+  .o-contact-container .c-title-img {
+    top: 98%;
   }
 }
 /*# sourceMappingURL=styles.css.map */

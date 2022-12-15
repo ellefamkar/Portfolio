@@ -185,8 +185,7 @@ section {
     }
     
 }
-  
-  
+    
 .js-bg{
     height: 100vh;
 }
@@ -535,12 +534,28 @@ section {
     }
  }
 
+//  About page 
+
+.o-about-container {
+
+    .c-main-job-title {
+        margin-top: -8%;
+    }
+
+    .c-title-img {
+        right: 28%;
+        top: 74%;
+    }
+}
+
+
+
 body.is-light {
     background-color: #ffffff;
     color: #333333;
 
     .c-social-icons .fa-brands,
-    .menu__trigger span{
+    .c-menu__trigger span{
         color: #333333;
     }
 
@@ -556,5 +571,6 @@ body.is-light {
         color: #1a1919;
     }
 }
+
 
 @import 'query';

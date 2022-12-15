@@ -1,0 +1,55 @@
+ 
+ 
+ 
+//  scroller 
+ .c-scroll {
+    &-wrapper{
+        width: 21px;
+        height: 41px;
+        border: 2px solid #e8ddd5;
+        border-radius: 15px;
+        position: relative;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 0.5rem;
+    }
+    
+    &-text{
+        position: absolute;
+        z-index: 2;
+    }
+
+    .c-scroller{
+        width: 11px;
+        border-radius: 8px;
+        background-color: #e8ddd5;
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        bottom: 34px;
+        animation: scroller 1500ms ease-out infinite;
+      }
+      
+ }
+ 
+@keyframes scroller{
+    0%{
+      bottom: 34px;
+    }
+    5%{
+      top: 4px;
+    }
+    32%{    
+      bottom: 4px;
+    }
+    66%{
+      top: 34px;
+      bottom: 4px;
+    }
+    100%{
+      top: 4px;
+      bottom: 34px;
+    }
+  }
