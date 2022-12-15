@@ -58,7 +58,7 @@ section {
 }
 
 .c-main-job-title {
-    font-family: 'iskry';
+    font-family: $font-iskry;
     margin-top: -6%;
     margin-bottom: -2%;
     margin-left: 19%;
@@ -83,7 +83,7 @@ section {
         .nav-link {
             font-size: 30px;
             line-height: 1.2;
-            font-family: 'Iskry';
+            font-family: $font-iskry;
         }
     }
 
@@ -219,7 +219,7 @@ section {
     h4,
     p,
     li{
-        font-family: 'union';
+        font-family: $font-union;
     }
 
     &__description {
@@ -282,7 +282,7 @@ section {
 
       span {
         position: relative;
-        font-family: 'Iskry';
+        font-family: $font-iskry;
         z-index: 1;
         font-weight: 900;
         letter-spacing: -1px;
@@ -394,7 +394,7 @@ section {
         margin-bottom: 8px;
 
         a {
-            font-family: 'Iskry';
+          font-family: $font-iskry;
           color: #282828;
           text-decoration: none;
           font-size: 40px;
@@ -435,7 +435,7 @@ section {
 
 .c-contact-form__title {
     text-align: center;
-    font-family: 'Iskry', sans-serif;
+    font-family: $font-iskry, sans-serif;
     text-transform: uppercase;
     letter-spacing: 13px;
     font-size: 36px;
@@ -456,7 +456,7 @@ section {
        height: 36px;
        border-width: 0 0 2px 0;
        border-color: #000;
-       font-family: 'Bulter', sans-serif;
+       font-family: $font-bulter, sans-serif;
        font-size: 16px;
        line-height: 26px;
        font-weight: 400;
@@ -478,7 +478,7 @@ section {
         width: 100%;
         border-width: 0 0 2px 0;
         border-color: #000;
-        font-family: 'Bulter', sans-serif;
+        font-family: $font-bulter, sans-serif;
         font-size: 16px;
         line-height: 26px;
         font-weight: 400;
@@ -500,7 +500,7 @@ section {
        position: absolute;
        left: 20px;
        bottom: 11px;
-       font-family: 'Bulter', sans-serif;
+       font-family: $font-bulter, sans-serif;
        font-size: 18px;
        line-height: 26px;
        font-weight: 400;
@@ -515,7 +515,7 @@ section {
         top: 0px;
         bottom: auto;
         transition: transform .2s ease-in-out;
-        font-family: 'Bulter', sans-serif;
+        font-family: $font-bulter, sans-serif;
         font-size: 18px;
         line-height: 26px;
         font-weight: 400;
@@ -524,7 +524,7 @@ section {
     }
 
     &__submit-btn {
-       font-family: 'Bulter', sans-serif;
+       font-family: $font-bulter, sans-serif;
        text-transform: uppercase;
        letter-spacing: 2px;
        font-size: 16px;

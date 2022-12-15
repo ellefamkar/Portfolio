@@ -208,7 +208,7 @@ section {
 }
 
 .c-main-job-title {
-  font-family: 'iskry';
+  font-family: "Iskry", Courier, monospace;
   margin-top: -6%;
   margin-bottom: -2%;
   margin-left: 19%;
@@ -233,7 +233,7 @@ section {
 .c-destop-menu .nav-item .nav-link {
   font-size: 30px;
   line-height: 1.2;
-  font-family: 'Iskry';
+  font-family: "Iskry", Courier, monospace;
 }
 
 .c-title-img {
@@ -366,7 +366,7 @@ section {
 .c-panel h4,
 .c-panel p,
 .c-panel li {
-  font-family: 'union';
+  font-family: "Union", Courier, monospace;
 }
 
 .c-panel__description {
@@ -428,7 +428,7 @@ section {
 
 .c-menu__trigger span {
   position: relative;
-  font-family: 'Iskry';
+  font-family: "Iskry", Courier, monospace;
   z-index: 1;
   font-weight: 900;
   letter-spacing: -1px;
@@ -546,7 +546,7 @@ section {
 }
 
 .c-menu__items-list li a {
-  font-family: 'Iskry';
+  font-family: "Iskry", Courier, monospace;
   color: #282828;
   text-decoration: none;
   font-size: 40px;
@@ -585,7 +585,7 @@ section {
 
 .c-contact-form__title {
   text-align: center;
-  font-family: 'Iskry', sans-serif;
+  font-family: "Iskry", Courier, monospace, sans-serif;
   text-transform: uppercase;
   letter-spacing: 13px;
   font-size: 36px;
@@ -608,7 +608,7 @@ section {
   height: 36px;
   border-width: 0 0 2px 0;
   border-color: #000;
-  font-family: 'Bulter', sans-serif;
+  font-family: "Bulter", Courier, monospace, sans-serif;
   font-size: 16px;
   line-height: 26px;
   font-weight: 400;
@@ -629,7 +629,7 @@ section {
   width: 100%;
   border-width: 0 0 2px 0;
   border-color: #000;
-  font-family: 'Bulter', sans-serif;
+  font-family: "Bulter", Courier, monospace, sans-serif;
   font-size: 16px;
   line-height: 26px;
   font-weight: 400;
@@ -649,7 +649,7 @@ section {
   position: absolute;
   left: 20px;
   bottom: 11px;
-  font-family: 'Bulter', sans-serif;
+  font-family: "Bulter", Courier, monospace, sans-serif;
   font-size: 18px;
   line-height: 26px;
   font-weight: 400;
@@ -670,7 +670,7 @@ section {
   transition: -webkit-transform .2s ease-in-out;
   transition: transform .2s ease-in-out;
   transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
-  font-family: 'Bulter', sans-serif;
+  font-family: "Bulter", Courier, monospace, sans-serif;
   font-size: 18px;
   line-height: 26px;
   font-weight: 400;
@@ -679,7 +679,7 @@ section {
 }
 
 .c-contact-form__submit-btn {
-  font-family: 'Bulter', sans-serif;
+  font-family: "Bulter", Courier, monospace, sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-size: 16px;
