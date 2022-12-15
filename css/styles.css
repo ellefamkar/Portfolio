@@ -812,12 +812,91 @@ section {
   left: auto;
   right: 3%;
   top: 9%;
-  height: 344px;
-  max-height: 354px;
+  height: 378px;
+  max-height: 378px;
 }
 
 .c-figure--three figcaption {
   margin-top: -5rem;
+}
+
+.c-figure--four {
+  left: 8%;
+  top: 22%;
+  height: 615px;
+  max-height: 616px;
+}
+
+.c-figure--four figcaption {
+  margin-top: -5rem;
+}
+
+.c-figure--five {
+  left: auto;
+  right: 7%;
+  top: 15%;
+  height: 344px;
+  max-height: 354px;
+}
+
+.c-figure--five figcaption {
+  margin-top: 2rem;
+}
+
+.c-figure--six {
+  left: 7%;
+  top: 6%;
+  height: 344px;
+  max-height: 354px;
+}
+
+.c-figure--six figcaption {
+  margin-top: 2rem;
+}
+
+.c-figure--seven {
+  left: 33%;
+  top: 15%;
+  height: 560px;
+  max-height: 560px;
+}
+
+.c-figure--seven figcaption {
+  margin-top: 2rem;
+}
+
+.c-figure--eight {
+  left: auto;
+  right: 4%;
+  top: 15%;
+  height: 360px;
+  max-height: 360px;
+}
+
+.c-figure--eight figcaption {
+  margin-top: -4rem;
+}
+
+.c-figure--nine {
+  left: 23%;
+  top: 15%;
+  height: 460px;
+  max-height: 460px;
+}
+
+.c-figure--nine figcaption {
+  margin-top: 2rem;
+}
+
+.c-figure--ten {
+  left: 45%;
+  top: 15%;
+  height: 560px;
+  max-height: 560px;
+}
+
+.c-figure--ten figcaption {
+  margin-top: 2rem;
 }
 
 body.is-light {

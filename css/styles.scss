@@ -586,13 +586,94 @@ section {
         left: auto;
         right: 3%;
         top: 9%;
-        height: 344px;
-        max-height: 354px;
+        height: 378px;
+        max-height: 378px;
 
         figcaption{
             margin-top: -5rem;
         }
     }
+
+    &--four{
+        left: 8%;
+        top: 22%;
+        height: 615px;
+        max-height: 616px;
+
+        figcaption{
+            margin-top: -5rem;
+        }
+    }
+
+    &--five{
+        left: auto;
+        right: 7%;
+        top: 15%;
+        height: 344px;
+        max-height: 354px;
+
+        figcaption{
+            margin-top: 2rem;
+        }
+    }
+
+    &--six{
+        left: 7%;
+        top: 6%;
+        height: 344px;
+        max-height: 354px;
+
+        figcaption{
+            margin-top: 2rem;
+        }
+    }
+
+
+    &--seven{
+        left: 33%;
+        top: 15%;
+        height: 560px;
+        max-height: 560px;
+
+        figcaption{
+            margin-top: 2rem;
+        }
+    }
+
+    &--eight{
+        left: auto;
+        right: 4%;
+        top: 15%;
+        height: 360px;
+        max-height: 360px;
+
+        figcaption{
+            margin-top: -4rem;
+        }
+    }
+
+    &--nine{
+        left: 23%;
+        top: 15%;
+        height: 460px;
+        max-height: 460px;
+
+        figcaption{
+            margin-top: 2rem;
+        }
+    }
+
+    &--ten{
+        left: 45%;
+        top: 15%;
+        height: 560px;
+        max-height: 560px;
+
+        figcaption{
+            margin-top: 2rem;
+        }
+    }
+
     
 }
 
