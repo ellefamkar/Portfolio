@@ -86,20 +86,14 @@ section {
             font-family: $font-iskry;
         }
     }
-
-
 }
 
-
 .c-title-img {
-    width: 130px;
+    width: 150px;
     transform: rotateZ(344deg);
-    // margin-left: 40%;
-    // margin-top: -28px;
-    // z-index: 0;
     position: absolute;
     right: 28%;
-    top: 88%;
+    top: 92%;
 }
 
 .hover {
@@ -187,7 +181,7 @@ section {
 }
     
 .js-bg{
-    height: 100vh;
+    height: 100vh !important;
 }
 
 .container-slider {
@@ -421,6 +415,21 @@ section {
     }
 }
   
+
+//  About page 
+.o-about-container {
+
+    .c-main-job-title {
+        margin-top: -8%;
+    }
+
+    .c-title-img {
+        right: 28%;
+        top: 82%;
+    }
+}
+
+//  Contact page 
 .o-form-container{
     max-width: 385px;
     margin: 0 auto;
@@ -443,7 +452,7 @@ section {
  }
  
 .c-contact-form {
-    z-index: 100;
+    // z-index: 100;
 
     &__field {
        position: relative;
@@ -534,22 +543,6 @@ section {
     }
  }
 
-//  About page 
-
-.o-about-container {
-
-    .c-main-job-title {
-        margin-top: -8%;
-    }
-
-    .c-title-img {
-        right: 28%;
-        top: 74%;
-    }
-}
-
-
-
 body.is-light {
     background-color: #ffffff;
     color: #333333;
@@ -561,7 +554,7 @@ body.is-light {
 
     .c-social-logo {
         -webkit-filter: brightness(0) invert(0.2);
-        filter: brightness(0) invert(0.2);
+        filter: brightness(0) invert(0.2); 
     }
 
     .c-destop-menu .nav-item {

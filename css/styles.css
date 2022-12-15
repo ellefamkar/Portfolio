@@ -313,12 +313,12 @@ section {
 }
 
 .c-title-img {
-  width: 130px;
+  width: 150px;
   -webkit-transform: rotateZ(344deg);
           transform: rotateZ(344deg);
   position: absolute;
   right: 28%;
-  top: 88%;
+  top: 92%;
 }
 
 .hover {
@@ -402,7 +402,7 @@ section {
 }
 
 .js-bg {
-  height: 100vh;
+  height: 100vh !important;
 }
 
 .container-slider {
@@ -648,6 +648,15 @@ section {
   margin: 0 auto;
 }
 
+.o-about-container .c-main-job-title {
+  margin-top: -8%;
+}
+
+.o-about-container .c-title-img {
+  right: 28%;
+  top: 82%;
+}
+
 .o-form-container {
   max-width: 385px;
   margin: 0 auto;
@@ -667,10 +676,6 @@ section {
   font-size: 36px;
   line-height: 48px;
   padding-bottom: 12px;
-}
-
-.c-contact-form {
-  z-index: 100;
 }
 
 .c-contact-form__field {
@@ -763,15 +768,6 @@ section {
   padding: 8px 16px;
   border: none;
   cursor: pointer;
-}
-
-.o-about-container .c-main-job-title {
-  margin-top: -8%;
-}
-
-.o-about-container .c-title-img {
-  right: 28%;
-  top: 74%;
 }
 
 body.is-light {
@@ -876,6 +872,9 @@ body.is-light .c-destop-menu .nav-item.active {
   .o-about-container .c-title-img,
   .o-contact-container .c-title-img {
     top: 98%;
+  }
+  .o-form-container {
+    max-width: 300px;
   }
 }
 
