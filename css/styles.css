@@ -772,6 +772,8 @@ section {
 
 .c-figure {
   position: absolute;
+  cursor: pointer;
+  height: auto;
 }
 
 .c-figure a {
@@ -785,46 +787,64 @@ section {
   font-family: "Bulter", Courier, monospace;
 }
 
+.c-figure img {
+  height: auto !important;
+  max-height: 100% !important;
+  border-radius: 3px;
+}
+
 .c-figure--one {
-  left: 10%;
+  left: 6%;
   top: 10%;
-  height: 300px;
+  max-width: 375px;
   max-height: 300px;
 }
 
 .c-figure--one figcaption {
-  margin-top: -5rem;
-  margin-right: -11rem;
+  margin-top: -1rem;
+  margin-right: -10rem;
 }
 
 .c-figure--two {
-  left: 40%;
+  left: 38%;
   top: 8%;
-  height: 600px;
   max-height: 600px;
+  max-width: 480px;
+}
+
+.c-figure--two img {
+  border-radius: 3px;
+  border: 1px solid #06060612;
 }
 
 .c-figure--two figcaption {
-  margin-top: -1rem;
+  margin-top: 1rem;
 }
 
 .c-figure--three {
   left: auto;
   right: 3%;
   top: 9%;
-  height: 378px;
   max-height: 378px;
+  max-width: 299px;
+}
+
+.c-figure--three img {
+  border: 1px solid #06060612;
 }
 
 .c-figure--three figcaption {
-  margin-top: -5rem;
+  margin-top: -3rem;
+  margin-right: -12rem;
+  color: #a5a5a5;
 }
 
 .c-figure--four {
   left: 8%;
   top: 22%;
-  height: 615px;
+  height: auto;
   max-height: 616px;
+  max-width: 659px;
 }
 
 .c-figure--four figcaption {
@@ -835,12 +855,18 @@ section {
   left: auto;
   right: 7%;
   top: 15%;
-  height: 344px;
+  height: auto;
   max-height: 354px;
+  max-width: 489px;
+}
+
+.c-figure--five img {
+  border: 1px solid #06060612;
 }
 
 .c-figure--five figcaption {
-  margin-top: 2rem;
+  margin-top: -4rem;
+  margin-right: -20rem;
 }
 
 .c-figure--six {

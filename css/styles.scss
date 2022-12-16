@@ -547,6 +547,8 @@ section {
 // portfolio 
 .c-figure{
     position: absolute;
+    cursor: pointer;
+    height: auto;
     
     a {
         color: #000000;
@@ -559,26 +561,37 @@ section {
         font-family: $font-bulter;
     }
 
+    img{
+        height:auto !important;
+        max-height: 100% !important;
+        border-radius:3px;
+    }
+
     &--one{
-        left: 10%;
+        left: 6%;
         top: 10%;
-        height: 300px;
+        max-width: 375px;
         max-height:300px;
 
         figcaption {
-            margin-top: -5rem;
-            margin-right: -11rem;
+            margin-top: -1rem;
+            margin-right: -10rem;
         }
     }
 
     &--two{
-        left: 40%;
+        left: 38%;
         top: 8%;
-        height: 600px;
         max-height:600px;
+        max-width: 480px;
+
+        img{
+            border-radius: 3px;
+            border: $border-light;
+        }
 
         figcaption{
-            margin-top: -1rem;
+            margin-top: 1rem;
         }
     }
 
@@ -586,19 +599,26 @@ section {
         left: auto;
         right: 3%;
         top: 9%;
-        height: 378px;
         max-height: 378px;
+        max-width: 299px;
+
+        img{
+            border: $border-light;
+        }
 
         figcaption{
-            margin-top: -5rem;
+            margin-top: -3rem;
+            margin-right: -12rem;
+            color: #a5a5a5;
         }
     }
 
     &--four{
         left: 8%;
         top: 22%;
-        height: 615px;
+        height: auto;
         max-height: 616px;
+        max-width: 659px;
 
         figcaption{
             margin-top: -5rem;
@@ -609,11 +629,17 @@ section {
         left: auto;
         right: 7%;
         top: 15%;
-        height: 344px;
+        height: auto;
         max-height: 354px;
+        max-width: 489px;
+
+        img{
+            border: $border-light;
+        }
 
         figcaption{
-            margin-top: 2rem;
+            margin-top: -4rem;
+            margin-right: -20rem;
         }
     }
 
