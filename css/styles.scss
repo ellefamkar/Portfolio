@@ -585,11 +585,6 @@ section {
         max-height:600px;
         max-width: 480px;
 
-        img{
-            border-radius: 3px;
-            border: $border-light;
-        }
-
         figcaption{
             margin-top: 1rem;
         }
@@ -600,11 +595,7 @@ section {
         right: 3%;
         top: 9%;
         max-height: 378px;
-        max-width: 299px;
-
-        img{
-            border: $border-light;
-        }
+        max-width: 389px;
 
         figcaption{
             margin-top: -3rem;
@@ -646,8 +637,9 @@ section {
     &--six{
         left: 7%;
         top: 6%;
-        height: 344px;
+        height: auto;
         max-height: 354px;
+        max-width: 322px;
 
         figcaption{
             margin-top: 2rem;
@@ -671,8 +663,9 @@ section {
         left: auto;
         right: 4%;
         top: 15%;
-        height: 360px;
+        height: auto;
         max-height: 360px;
+        max-width: 366px;
 
         figcaption{
             margin-top: -4rem;
