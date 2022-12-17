@@ -774,12 +774,13 @@ section {
   cursor: pointer;
 }
 
-.o-portfolio-container .c-main-job-title {
+.o-portfolio-container .c-main-job-title,
+.o-about-container .c-main-job-title {
   margin-top: -5%;
   margin-bottom: -3% !important;
 }
 
-.o-portfolio-container .c-scroll {
+.c-scroll--heading {
   margin-top: 1rem;
   margin-bottom: -2rem;
   margin-left: 10rem;
@@ -788,7 +789,43 @@ section {
   font-weight: 300;
 }
 
-.o-portfolio-container .c-scroll-text {
+.c-scroll--heading .c-scroll-text {
+  position: relative;
+  opacity: 0.5;
+}
+
+.o-about-container .c-main-job-title {
+  margin-bottom: -3% !important;
+  margin-top: -7%;
+  text-align: inherit;
+}
+
+.o-about-container .c-scroll--heading {
+  margin-top: 0rem;
+  margin-bottom: -2rem;
+  margin-left: -1rem;
+  z-index: 1;
+  font-size: 1.9rem;
+  font-family: "Iskry", Courier, monospace;
+  font-weight: 300;
+}
+
+.o-about-container .c-scroll--heading .c-scroll-text {
+  position: relative;
+  opacity: 0.5;
+}
+
+.o-contact-container .c-scroll--heading {
+  margin-top: -1rem;
+  margin-bottom: -2rem;
+  margin-left: 7rem;
+  z-index: 1;
+  font-size: 1.9rem;
+  font-family: "Iskry", Courier, monospace;
+  font-weight: 300;
+}
+
+.o-contact-container .c-scroll--heading .c-scroll-text {
   position: relative;
   opacity: 0.5;
 }
@@ -996,6 +1033,9 @@ body.is-light .c-destop-menu .nav-item.active {
   }
   .c-main-title--two {
     z-index: 10;
+  }
+  .o-about-container .c-main-job-title {
+    text-align: center;
   }
   .o-portfolio-container .c-main-title {
     line-height: 36px;

@@ -553,26 +553,70 @@ section {
 
 // portfolio 
 
-.o-portfolio-container{
+.o-portfolio-container,
+.o-about-container{
     .c-main-job-title {
         margin-top: -5%;
         margin-bottom: -3% !important;
     }
+}
 
-    .c-scroll{
-        margin-top: 1rem;
+.c-scroll--heading{
+    margin-top: 1rem;
+    margin-bottom: -2rem;
+    margin-left: 10rem;
+    font-size: 1.9rem;
+    font-family: $font-iskry;
+    font-weight: 300; 
+
+    .c-scroll-text{
+        position: relative;
+        opacity: 0.5;
+    }
+}
+
+.o-about-container{
+    .c-main-job-title {
+        margin-bottom: -3% !important;
+        margin-top: -7%;
+        text-align: inherit;
+    }
+
+    .c-scroll--heading{
+        margin-top: 0rem;
         margin-bottom: -2rem;
-        margin-left: 10rem;
+        margin-left: -1rem;
+        z-index: 1;
         font-size: 1.9rem;
-        font-family: $font-iskry;
-        font-weight: 300; 
-        
-        &-text{
+        font-family: "Iskry", Courier, monospace;
+        font-weight: 300;
+
+        .c-scroll-text{
+            position: relative;
+            opacity: 0.5;
+        }
+    }
+
+}
+
+.o-contact-container{
+    
+    .c-scroll--heading{
+        margin-top: -1rem;
+        margin-bottom: -2rem;
+        margin-left:7rem;
+        z-index: 1;
+        font-size: 1.9rem;
+        font-family: "Iskry", Courier, monospace;
+        font-weight: 300;
+
+        .c-scroll-text{
             position: relative;
             opacity: 0.5;
         }
     }
 }
+
 
 .c-figure{
     position: absolute;
