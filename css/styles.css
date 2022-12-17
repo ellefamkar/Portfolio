@@ -283,6 +283,10 @@ section {
   z-index: 1;
 }
 
+.o-portfolio-container .c-main-title {
+  font-size: 13vw;
+}
+
 .c-main-job-title {
   font-family: "Iskry", Courier, monospace;
   margin-top: -6%;
@@ -796,8 +800,8 @@ section {
 .c-figure--one {
   left: 6%;
   top: 10%;
-  max-width: 375px;
   max-height: 300px;
+  max-width: 26vw;
 }
 
 .c-figure--one figcaption {
@@ -806,10 +810,11 @@ section {
 }
 
 .c-figure--two {
-  left: 41%;
+  left: 44vw;
+  right: auto;
   top: 8%;
-  max-height: 647px;
-  max-width: 55vw;
+  max-height: 447px;
+  max-width: 45vw;
 }
 
 .c-figure--two figcaption {

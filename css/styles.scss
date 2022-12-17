@@ -57,6 +57,12 @@ section {
      }
 }
 
+.o-portfolio-container{
+    .c-main-title {
+        font-size: 13vw;
+    }
+}
+
 .c-main-job-title {
     font-family: $font-iskry;
     margin-top: -6%;
@@ -570,8 +576,8 @@ section {
     &--one{
         left: 6%;
         top: 10%;
-        max-width: 375px;
         max-height:300px;
+        max-width: 26vw;
 
         figcaption {
             margin-top: -1rem;
@@ -580,10 +586,11 @@ section {
     }
 
     &--two{
-        left: 41%;
+        left: 44vw;
+        right: auto;
         top: 8%;
-        max-height: 647px;
-        max-width: 55vw;
+        max-height: 447px;
+        max-width: 45vw;
 
         figcaption{
             margin-top: 1rem;
