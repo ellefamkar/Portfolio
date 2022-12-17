@@ -36,6 +36,13 @@
         }
     }
 
+    .o-portfolio-container{
+        .c-main-title span {
+            line-height: 61px;
+            font-size: 17.3vw;
+        }
+    }
+
     .c-main-job-title {
         margin-top: -24%;
         margin-left: -2%;
@@ -70,7 +77,7 @@
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: 0;
+        z-index: 1;
         display: block;
     }
 
@@ -93,7 +100,8 @@
     }
 
     .o-about-container,
-    .o-contact-container {
+    .o-contact-container,
+    .o-portfolio-container {
 
         .c-main-job-title {
             margin-top: -22%;
@@ -229,10 +237,7 @@
             font-size: 1rem;
         }
     }
-
-    
 }
-
 
 }
 
@@ -257,7 +262,7 @@
         z-index: 1;
 
         &-box {
-            margin-top: 5vh;
+            margin-top: 0vh;
         }
     }
 
@@ -274,10 +279,147 @@
     // About page 
 
     .o-about-container,
-    .o-contact-container {
+    .o-contact-container,
+    .o-portfolio-container {
 
         .c-title-img {
             top: 98%;
         }
     }
+
+
+    .o-portfolio-container{
+        .c-main-title span {
+            line-height: 61px;
+            font-size: 17.3vw;
+        }
+    }
+
+    // portfolio 
+.c-figure{
+    figcaption{
+        font-size: 1.7rem;
+    }
+
+    &--one {
+        max-width: 46vw;
+    }
+
+    &--two{
+       left: auto;
+        top: auto;
+        right: 3%;
+        bottom: 10%;
+        max-height: 447px;
+        max-width: 40vw;
+    }
+
+    &--three{
+        right: auto;
+        left: 6%;
+        top: 6%;
+        height: auto;
+        max-height: 378px;
+        max-width: 34vw;
+
+        figcaption{
+            margin-top: 1rem;
+            margin-right: -5rem;
+        }
+    }
+
+    &--four{
+        left: 22%;
+        top: auto;
+        bottom: 7%;
+        height: auto;
+        max-height: 616px;
+        max-width: 25vw;
+        z-index: 1;
+
+        figcaption{
+            margin-top: -2rem;
+            font-size: 1.2rem;
+            margin-right: -6rem;
+        }
+    }
+
+    &--five{
+        left: auto;
+        right: -8%;
+        top: auto;
+        height: auto;
+        bottom: 19%;
+        max-height: 354px;
+        max-width: 52vw;
+
+        img{
+            border: $border-light;
+        }
+
+        figcaption{
+            margin-top: 0;
+            margin-right: -5rem;
+        }
+    }
+
+    &--six{
+        left: 5%;
+        top: 6%;
+        height: auto;
+        max-height: 354px;
+        max-width: 31vw;
+    }
+
+
+    &--seven{
+        left: auto;
+        right: 0%;
+        top: auto;
+        bottom: 32%;
+        height: auto;
+        max-height: 217px;
+        max-width: 49vw;
+
+        figcaption{
+            margin-top: 1rem;
+            margin-left: -2rem;
+        }
+    }
+
+    &--eight{
+        left: auto;
+        right: 40vw;
+        top: auto;
+        bottom: 7%;
+        height: auto;
+        max-height: 360px;
+        max-width: 29vw;
+    }
+
+    &--nine{
+        left: 12%;
+        top: 5%;
+        height: auto;
+        max-height: 320px;
+        max-width: 35vw;
+    }
+
+    &--ten{
+        left: auto;
+        right: 2%;
+        top: auto;
+        bottom: 15%;
+        height: auto;
+        max-height: 460px;
+        max-width: 45vw;
+
+        figcaption {
+            margin-top: 0.2rem;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+
 }
