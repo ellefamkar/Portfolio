@@ -816,11 +816,11 @@ section {
 }
 
 .o-contact-container .c-scroll--heading {
-  margin-top: -1rem;
+  margin-top: -1.8rem;
   margin-bottom: -2rem;
   margin-left: 7rem;
   z-index: 1;
-  font-size: 1.9rem;
+  font-size: 1.2rem;
   font-family: "Iskry", Courier, monospace;
   font-weight: 300;
 }

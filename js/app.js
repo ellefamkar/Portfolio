@@ -15,20 +15,20 @@ let contactSections = gsap.utils.toArray(".js-contact-panel");
 
 document.addEventListener("DOMContentLoaded", () => {
 
-gsap.from(".main-title", {
-    duration: 5,
-    ease: "power4.out",
-    scale: 0.9, 
-    opacity: 0, 
-    delay: 0.02, 
-    yPercent: -50,
-    skewX: 5,
-    stagger: {
-      amount: 0.3
-    },
-    // ease: "elastic", 
-    force3D: true
-});
+// gsap.from(".main-title", {
+//     duration: 5,
+//     ease: "power4.out",
+//     scale: 0.9, 
+//     opacity: 0, 
+//     delay: 0.02, 
+//     yPercent: -50,
+//     skewX: 5,
+//     stagger: {
+//       amount: 0.3
+//     },
+//     // ease: "elastic", 
+//     force3D: true
+// });
 
 tl.from("img",{
   duration: 0.85,
