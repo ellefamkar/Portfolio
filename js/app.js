@@ -34,7 +34,18 @@ tl.from("img",{
   duration: 0.85,
   scale: 0.9, 
   ease: "Power3",
-}).from("h1 span", 1.8, {
+})
+
+tl.from(".c-title-img",{
+  duration: 2,
+    ease: "power4",
+    scale: 0.9, 
+    autoAlpha: 0,
+    opacity: 0, 
+    stagger: {
+      amount: 0.3
+    }
+}).from("h1 span", 1.3, {
   duration: 0.85,
   y: 150,
   scale: 0.9, 
@@ -50,7 +61,13 @@ tl.from("img",{
     each: 0.75,
     amount: 0.5
   }
-}, "+=0.25");
+}, "+=0.25").from(".c-scroll",{
+  duration: 1,
+  ease: "power4",
+  scale: 0.9, 
+  autoAlpha: 0,
+  opacity: 0
+});
 
 let tlx = new TimelineMax({
     paused:true
@@ -127,7 +144,6 @@ if(body.classList.contains("o-scrollable-body")){
   }
   let observer = new IntersectionObserver(toggleBg, {threshold: .2});
   observer.observe(target);
-  
 }
 
 gsap.to(sections, {
@@ -296,7 +312,6 @@ function menu() {
   _logoShapeAnimation();
   _hoverAnimation();
 }
-
 menu();
 
 // image hover menu 
@@ -315,9 +330,6 @@ imageMenuItems.forEach((el) => {
     gsap.set(image, { x: e.offsetX - 200 })
   })
 })
-
-// let tl = gsap.timeline({})
-// tl.from(".textList li",{opacity:0,x : -100,stagger:0.3})
 
 $('.js-contact-input').keyup(function() {
   if( $(this).val() ) {
