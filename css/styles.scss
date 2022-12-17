@@ -421,8 +421,8 @@ section {
     }
 }
   
-
 //  About page 
+
 .o-about-container {
 
     .c-main-job-title {
@@ -436,6 +436,7 @@ section {
 }
 
 //  Contact page 
+
 .o-form-container{
     max-width: 385px;
     margin: 0 auto;
@@ -551,6 +552,28 @@ section {
 
 
 // portfolio 
+
+.o-portfolio-container{
+    .c-main-job-title {
+        margin-top: -5%;
+        margin-bottom: -3% !important;
+    }
+
+    .c-scroll{
+        margin-top: 1rem;
+        margin-bottom: -2rem;
+        margin-left: 10rem;
+        font-size: 1.9rem;
+        font-family: $font-iskry;
+        font-weight: 300; 
+        
+        &-text{
+            position: relative;
+            opacity: 0.5;
+        }
+    }
+}
+
 .c-figure{
     position: absolute;
     cursor: pointer;
@@ -653,7 +676,6 @@ section {
         }
     }
 
-
     &--seven{
         left: 33%;
         top: 15%;
@@ -699,13 +721,8 @@ section {
         figcaption{
             margin-top: 1rem;
         }
-    }
-
-    
+    }   
 }
-
-
-
 
 
 body.is-light {
