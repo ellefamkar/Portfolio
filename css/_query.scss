@@ -37,8 +37,8 @@
     }
 
     .o-portfolio-container{
-        .c-main-title span {
-            line-height: 61px;
+        .c-main-title {
+            line-height: 36px;
             font-size: 17.3vw;
         }
     }
@@ -125,6 +125,9 @@
         font-size: 1.5rem;
     }
 
+    &--one {
+        max-width: 55vw;
+    }
     &--two{
         left: 38%;
         top: auto;
@@ -139,8 +142,7 @@
         top: 7%;
         height: auto;
         max-height: 378px;
-        max-width: 215px;
-
+        max-width: 46vw;
 
         figcaption{
             margin-top: 1rem;
@@ -154,7 +156,7 @@
         bottom: 7%;
         height: auto;
         max-height: 616px;
-        max-width: 162px;
+        max-width: 39vw;
         z-index: 1;
 
         figcaption{
@@ -171,7 +173,7 @@
         height: auto;
         bottom: 19%;
         max-height: 354px;
-        max-width: 245px;
+        max-width: 55vw;
 
         img{
             border: $border-light;
@@ -188,7 +190,7 @@
         top: 6%;
         height: auto;
         max-height: 354px;
-        max-width: 192px;
+        max-width: 42vw;
     }
 
 
@@ -198,7 +200,7 @@
         top: auto;
         bottom: 22%;
         height: 560px;
-        max-height: 217px;
+        max-height: 55vw;
 
         figcaption{
             margin-top: 1rem;
@@ -213,7 +215,7 @@
         bottom: 7%;
         height: auto;
         max-height: 360px;
-        max-width: 174px;
+        max-width: 40vw;
     }
 
     &--nine{
@@ -221,16 +223,16 @@
         top: 5%;
         height: auto;
         max-height: 320px;
-        max-width: 202px;
+        max-width: 43vw;
     }
 
     &--ten{
-        left: 25%;
+        left: 28%;
         top: auto;
         bottom: 8%;
         height: auto;
         max-height: 460px;
-        max-width: 224px;
+        max-width: 45vw;
 
         figcaption{
             margin-top: 1rem;
@@ -289,8 +291,8 @@
 
 
     .o-portfolio-container{
-        .c-main-title span {
-            line-height: 61px;
+        .c-main-title {
+            line-height: 41px;
             font-size: 17.3vw;
         }
     }

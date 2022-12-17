@@ -978,8 +978,8 @@ body.is-light .c-destop-menu .nav-item.active {
   .c-main-title--two {
     z-index: 10;
   }
-  .o-portfolio-container .c-main-title span {
-    line-height: 61px;
+  .o-portfolio-container .c-main-title {
+    line-height: 36px;
     font-size: 17.3vw;
   }
   .c-main-job-title {
@@ -1039,6 +1039,9 @@ body.is-light .c-destop-menu .nav-item.active {
   .c-figure figcaption {
     font-size: 1.5rem;
   }
+  .c-figure--one {
+    max-width: 55vw;
+  }
   .c-figure--two {
     left: 38%;
     top: auto;
@@ -1052,7 +1055,7 @@ body.is-light .c-destop-menu .nav-item.active {
     top: 7%;
     height: auto;
     max-height: 378px;
-    max-width: 215px;
+    max-width: 46vw;
   }
   .c-figure--three figcaption {
     margin-top: 1rem;
@@ -1064,7 +1067,7 @@ body.is-light .c-destop-menu .nav-item.active {
     bottom: 7%;
     height: auto;
     max-height: 616px;
-    max-width: 162px;
+    max-width: 39vw;
     z-index: 1;
   }
   .c-figure--four figcaption {
@@ -1079,7 +1082,7 @@ body.is-light .c-destop-menu .nav-item.active {
     height: auto;
     bottom: 19%;
     max-height: 354px;
-    max-width: 245px;
+    max-width: 55vw;
   }
   .c-figure--five img {
     border: 1px solid #06060612;
@@ -1093,7 +1096,7 @@ body.is-light .c-destop-menu .nav-item.active {
     top: 6%;
     height: auto;
     max-height: 354px;
-    max-width: 192px;
+    max-width: 42vw;
   }
   .c-figure--seven {
     left: auto;
@@ -1101,7 +1104,7 @@ body.is-light .c-destop-menu .nav-item.active {
     top: auto;
     bottom: 22%;
     height: 560px;
-    max-height: 217px;
+    max-height: 55vw;
   }
   .c-figure--seven figcaption {
     margin-top: 1rem;
@@ -1114,22 +1117,22 @@ body.is-light .c-destop-menu .nav-item.active {
     bottom: 7%;
     height: auto;
     max-height: 360px;
-    max-width: 174px;
+    max-width: 40vw;
   }
   .c-figure--nine {
     left: 14%;
     top: 5%;
     height: auto;
     max-height: 320px;
-    max-width: 202px;
+    max-width: 43vw;
   }
   .c-figure--ten {
-    left: 25%;
+    left: 28%;
     top: auto;
     bottom: 8%;
     height: auto;
     max-height: 460px;
-    max-width: 224px;
+    max-width: 45vw;
   }
   .c-figure--ten figcaption {
     margin-top: 1rem;
@@ -1171,8 +1174,8 @@ body.is-light .c-destop-menu .nav-item.active {
   .o-portfolio-container .c-title-img {
     top: 98%;
   }
-  .o-portfolio-container .c-main-title span {
-    line-height: 61px;
+  .o-portfolio-container .c-main-title {
+    line-height: 41px;
     font-size: 17.3vw;
   }
   .c-figure figcaption {
