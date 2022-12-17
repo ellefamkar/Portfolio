@@ -553,8 +553,7 @@ section {
 
 // portfolio 
 
-.o-portfolio-container,
-.o-about-container{
+.o-portfolio-container{
     .c-main-job-title {
         margin-top: -5%;
         margin-bottom: -3% !important;
@@ -577,17 +576,17 @@ section {
 
 .o-about-container{
     .c-main-job-title {
-        margin-bottom: -3% !important;
-        margin-top: -7%;
+        margin-bottom: -4% !important;
+        margin-top: -8%;
         text-align: inherit;
     }
 
     .c-scroll--heading{
-        margin-top: 0rem;
+        margin-top: 0.3rem;
         margin-bottom: -2rem;
-        margin-left: -1rem;
+        margin-left: -3rem;
         z-index: 1;
-        font-size: 1.9rem;
+        font-size: 1.2rem;
         font-family: "Iskry", Courier, monospace;
         font-weight: 300;
 

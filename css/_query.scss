@@ -11,6 +11,15 @@
         overflow: hidden;
     }
 
+    .o-menu-container{
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1;
+        display: block;
+    }
+        
     .c-cursor{
         display: none;
     }
@@ -29,11 +38,18 @@
 
         span {
             line-height: 61px;
-         }
+        }
 
         &--two {
             z-index: 10;
         }
+    }
+
+    .c-main-job-title {
+        margin-top: -24%;
+        margin-left: -2%;
+        font-size: 29px;
+        z-index: 0;
     }
 
     .o-about-container{
@@ -49,13 +65,6 @@
         }
     }
 
-    .c-main-job-title {
-        margin-top: -24%;
-        margin-left: -2%;
-        font-size: 29px;
-        z-index: 0;
-    }
-
     .c-destop-menu {
         left: 0;
         bottom: 4%;
@@ -65,7 +74,6 @@
                 font-size: 22px;
             }
         }
-
     }
 
     .c-social-icons {
@@ -76,15 +84,6 @@
         z-index: -1;
         top: 103%;
         width: 40vw;
-    }
-
-    .o-menu-container{
-        top:0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: 1;
-        display: block;
     }
 
     .c-panel{
@@ -118,132 +117,132 @@
         }
     }
 
-// contact page 
-.o-form-container {
-    max-width: 300px;
-}
-    
-// portfolio 
-.c-figure{
-    figcaption{
-        font-size: 1.5rem;
+    // contact page 
+    .o-form-container {
+        max-width: 300px;
     }
-
-    &--one {
-        max-width: 55vw;
-    }
-    &--two{
-        left: 38%;
-        top: auto;
-        bottom: 8%;
-        max-height: 447px;
-        max-width: 60vw;
-    }
-
-    &--three{
-        right: auto;
-        left: 6%;
-        top: 7%;
-        height: auto;
-        max-height: 378px;
-        max-width: 46vw;
-
+        
+    // portfolio 
+    .c-figure{
         figcaption{
-            margin-top: 1rem;
-            margin-right: -5rem;
-        }
-    }
-
-    &--four{
-        left: 22%;
-        top: auto;
-        bottom: 7%;
-        height: auto;
-        max-height: 616px;
-        max-width: 39vw;
-        z-index: 1;
-
-        figcaption{
-            margin-top: -2rem;
-            font-size: 1.2rem;
-            margin-right: -6rem;
-        }
-    }
-
-    &--five{
-        left: auto;
-        right: -8%;
-        top: auto;
-        height: auto;
-        bottom: 19%;
-        max-height: 354px;
-        max-width: 55vw;
-
-        img{
-            border: $border-light;
+            font-size: 1.5rem;
         }
 
-        figcaption{
-            margin-top: 0;
-            margin-right: -5rem;
+        &--one {
+            max-width: 55vw;
+        }
+        &--two{
+            left: 38%;
+            top: auto;
+            bottom: 8%;
+            max-height: 447px;
+            max-width: 60vw;
+        }
+
+        &--three{
+            right: auto;
+            left: 6%;
+            top: 7%;
+            height: auto;
+            max-height: 378px;
+            max-width: 46vw;
+
+            figcaption{
+                margin-top: 1rem;
+                margin-right: -5rem;
+            }
+        }
+
+        &--four{
+            left: 22%;
+            top: auto;
+            bottom: 7%;
+            height: auto;
+            max-height: 616px;
+            max-width: 39vw;
+            z-index: 1;
+
+            figcaption{
+                margin-top: -2rem;
+                font-size: 1.2rem;
+                margin-right: -6rem;
+            }
+        }
+
+        &--five{
+            left: auto;
+            right: -8%;
+            top: auto;
+            height: auto;
+            bottom: 19%;
+            max-height: 354px;
+            max-width: 55vw;
+
+            img{
+                border: $border-light;
+            }
+
+            figcaption{
+                margin-top: 0;
+                margin-right: -5rem;
+            }
+        }
+
+        &--six{
+            left: 5%;
+            top: 6%;
+            height: auto;
+            max-height: 354px;
+            max-width: 42vw;
+        }
+
+
+        &--seven{
+            left: auto;
+            right: 1%;
+            top: auto;
+            bottom: 22%;
+            height: 560px;
+            max-height: 55vw;
+
+            figcaption{
+                margin-top: 1rem;
+                margin-left: -2rem;
+            }
+        }
+
+        &--eight{
+            left: 8%;
+            right: auto;
+            top: auto;
+            bottom: 7%;
+            height: auto;
+            max-height: 360px;
+            max-width: 40vw;
+        }
+
+        &--nine{
+            left: 14%;
+            top: 5%;
+            height: auto;
+            max-height: 320px;
+            max-width: 43vw;
+        }
+
+        &--ten{
+            left: 28%;
+            top: auto;
+            bottom: 8%;
+            height: auto;
+            max-height: 460px;
+            max-width: 45vw;
+
+            figcaption{
+                margin-top: 1rem;
+                font-size: 1rem;
+            }
         }
     }
-
-    &--six{
-        left: 5%;
-        top: 6%;
-        height: auto;
-        max-height: 354px;
-        max-width: 42vw;
-    }
-
-
-    &--seven{
-        left: auto;
-        right: 1%;
-        top: auto;
-        bottom: 22%;
-        height: 560px;
-        max-height: 55vw;
-
-        figcaption{
-            margin-top: 1rem;
-            margin-left: -2rem;
-        }
-    }
-
-    &--eight{
-        left: 8%;
-        right: auto;
-        top: auto;
-        bottom: 7%;
-        height: auto;
-        max-height: 360px;
-        max-width: 40vw;
-    }
-
-    &--nine{
-        left: 14%;
-        top: 5%;
-        height: auto;
-        max-height: 320px;
-        max-width: 43vw;
-    }
-
-    &--ten{
-        left: 28%;
-        top: auto;
-        bottom: 8%;
-        height: auto;
-        max-height: 460px;
-        max-width: 45vw;
-
-        figcaption{
-            margin-top: 1rem;
-            font-size: 1rem;
-        }
-    }
-}
 
 }
 

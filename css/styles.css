@@ -137,9 +137,9 @@ html::-webkit-scrollbar-thumb {
 }
 
 .c-scroll-wrapper {
-  width: 21px;
-  height: 41px;
-  border: 2px solid #e8ddd5;
+  width: 14px;
+  height: 29px;
+  border: 1px solid #e8ddd5;
   border-radius: 15px;
   position: relative;
   text-align: center;
@@ -161,7 +161,8 @@ html::-webkit-scrollbar-thumb {
 }
 
 .c-scroll .c-scroller {
-  width: 11px;
+  width: 9px;
+  height: 8px;
   border-radius: 8px;
   background-color: #e8ddd5;
   position: absolute;
@@ -774,8 +775,7 @@ section {
   cursor: pointer;
 }
 
-.o-portfolio-container .c-main-job-title,
-.o-about-container .c-main-job-title {
+.o-portfolio-container .c-main-job-title {
   margin-top: -5%;
   margin-bottom: -3% !important;
 }
@@ -795,17 +795,17 @@ section {
 }
 
 .o-about-container .c-main-job-title {
-  margin-bottom: -3% !important;
-  margin-top: -7%;
+  margin-bottom: -4% !important;
+  margin-top: -8%;
   text-align: inherit;
 }
 
 .o-about-container .c-scroll--heading {
-  margin-top: 0rem;
+  margin-top: 0.3rem;
   margin-bottom: -2rem;
-  margin-left: -1rem;
+  margin-left: -3rem;
   z-index: 1;
-  font-size: 1.9rem;
+  font-size: 1.2rem;
   font-family: "Iskry", Courier, monospace;
   font-weight: 300;
 }
@@ -1014,6 +1014,14 @@ body.is-light .c-destop-menu .nav-item.active {
             justify-content: start;
     overflow: hidden;
   }
+  .o-menu-container {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: block;
+  }
   .c-cursor {
     display: none;
   }
@@ -1034,18 +1042,18 @@ body.is-light .c-destop-menu .nav-item.active {
   .c-main-title--two {
     z-index: 10;
   }
+  .c-main-job-title {
+    margin-top: -24%;
+    margin-left: -2%;
+    font-size: 29px;
+    z-index: 0;
+  }
   .o-about-container .c-main-job-title {
     text-align: center;
   }
   .o-portfolio-container .c-main-title {
     line-height: 36px;
     font-size: 17.3vw;
-  }
-  .c-main-job-title {
-    margin-top: -24%;
-    margin-left: -2%;
-    font-size: 29px;
-    z-index: 0;
   }
   .c-destop-menu {
     left: 0;
@@ -1061,14 +1069,6 @@ body.is-light .c-destop-menu .nav-item.active {
     z-index: -1;
     top: 103%;
     width: 40vw;
-  }
-  .o-menu-container {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    display: block;
   }
   .c-panel h2 {
     font-size: 1.3rem;
