@@ -273,7 +273,7 @@ section {
 .c-main-title {
   white-space: nowrap;
   overflow: hidden;
-  font-size: 14.4vw;
+  font-size: 14.3vw;
   margin-left: -34px;
   line-height: 1;
   text-transform: uppercase;
@@ -307,11 +307,11 @@ section {
 }
 
 .c-destop-menu .nav-item.active .nav-link {
-  font-size: 36px;
+  font-size: 32px;
 }
 
 .c-destop-menu .nav-item .nav-link {
-  font-size: 30px;
+  font-size: 27px;
   line-height: 1.2;
   font-family: "Iskry", Courier, monospace;
 }
@@ -1026,7 +1026,7 @@ body.is-light .c-destop-menu .nav-item.active {
     line-height: 33px;
   }
   .c-main-title-box {
-    margin-top: 20vh;
+    margin-top: 14vh;
   }
   .c-main-title span {
     line-height: 61px;
@@ -1209,6 +1209,12 @@ body.is-light .c-destop-menu .nav-item.active {
             justify-content: start;
     overflow: hidden;
   }
+  .c-destop-menu .nav-item .nav-link {
+    font-size: 30px;
+  }
+  .c-destop-menu .nav-item.active .nav-link {
+    font-size: 40px;
+  }
   .c-main-title {
     white-space: pre-wrap;
     font-size: 23vw;
@@ -1216,12 +1222,14 @@ body.is-light .c-destop-menu .nav-item.active {
     margin-bottom: -75px;
     line-height: 86px;
     z-index: 1;
+    margin-top: 8vh;
   }
   .c-main-title-box {
     margin-top: 0vh;
   }
   .c-main-job-title {
     margin-left: 0%;
+    font-size: 54px;
   }
   .c-title-img {
     width: 29vw;
