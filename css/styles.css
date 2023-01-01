@@ -1063,13 +1063,13 @@ body.is-light .c-destop-menu .nav-item.active {
   }
   .c-destop-menu {
     left: 0;
-    bottom: 4%;
+    bottom: 6%;
   }
   .c-destop-menu .nav-item .nav-link {
     font-size: 22px;
   }
   .c-social-icons {
-    bottom: 3%;
+    bottom: 5%;
   }
   .c-title-img {
     z-index: -1;
