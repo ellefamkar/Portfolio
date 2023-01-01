@@ -11,22 +11,14 @@ let tl = gsap.timeline();
 gsap.registerPlugin(ScrollTrigger);
 let sections = gsap.utils.toArray(".js-panel");
 let contactSections = gsap.utils.toArray(".js-contact-panel");
-
 let documentTitle = document.title;
-// when the user loses focus
-window.addEventListener("blur", () => {
-  document.title = "Come back :(";
-  console.log("I am not here");
-});
 
-// when the user's focus is back to your tab (website) again
+window.addEventListener("blur", () => {
+  document.title = " 😓Leaving?";
+});
 window.addEventListener("focus", () => {
   document.title = documentTitle;
-  console.log("I am here");
 });
-
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
 
