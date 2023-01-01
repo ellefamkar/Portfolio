@@ -383,4 +383,16 @@ form.addEventListener("submit", function (e) {
 
 console.clear();
 
+let documentTitle = document.title;
+// when the user loses focus
+window.addEventListener("blur", () => {
+  document.title = "Come back :(";
+  console.log("I am not here");
+});
+
+// when the user's focus is back to your tab (website) again
+window.addEventListener("focus", () => {
+  document.title = documentTitle;
+  console.log("I am here");
+});
 
