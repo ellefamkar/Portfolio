@@ -1,49 +1,3 @@
-// cursor 
-// import { gsap, Power0, Power1, Power2, Power3, Power4, Linear, Quad, Cubic, Quart, Quint, Strong, Elastic, Back, SteppedEase, Bounce, Sine, Expo, Circ, TweenLite, TimelineLite, TimelineMax } from "./gsap-core.js";
-
-// require.config({
-//   paths: {
-//       jquery: 'libs/jquery/jquery',
-//       underscore: 'libs/underscore/underscore',
-//       backbone: 'libs/backbone/backbone',
-//       bootstrap: 'libs/bootstrap',
-//       jquerytablesorter: 'libs/tablesorter/jquery.tablesorter',
-//       tablesorter: 'libs/tablesorter/tables',
-//       ajaxupload: 'libs/ajax-upload',
-//       templates: '../templates'
-//   },
-//   shim: {
-//       'backbone': {
-//           deps: ['underscore', 'jquery'],
-//           exports: 'Backbone'
-//       },
-//       'jquery': {
-//           exports: '$'
-//       },
-//       'bootstrap': {
-//           deps: ['jquery'],
-//           exports: '$'
-//       },
-//       'jquerytablesorter': {
-//           deps: ['jquery'],
-//           exports: '$'
-//       },
-//       'tablesorter': {
-//           deps: ['jquery'],
-//           exports: '$'
-//       },
-//       'ajaxupload': {
-//           deps: ['jquery'],
-//           exports: '$'
-//       },
-//       'underscore': {
-//           exports: '_'
-//       },
-//   }
-// });
-// require(['app', ], function(App) {
-//   App.initialize();
-// });
 
 let body = document.querySelector('body');
 let cursor = document.querySelector('.js-cursor-outline');
@@ -57,6 +11,22 @@ let tl = gsap.timeline();
 gsap.registerPlugin(ScrollTrigger);
 let sections = gsap.utils.toArray(".js-panel");
 let contactSections = gsap.utils.toArray(".js-contact-panel");
+
+let documentTitle = document.title;
+// when the user loses focus
+window.addEventListener("blur", () => {
+  document.title = "Come back :(";
+  console.log("I am not here");
+});
+
+// when the user's focus is back to your tab (website) again
+window.addEventListener("focus", () => {
+  document.title = documentTitle;
+  console.log("I am here");
+});
+
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -81,9 +51,11 @@ tl.from("img",{
   ease: "Power3",
 })
 
+// import { gsap, Power0, Power1, Power2, Power3, Power4, Linear, Quad, Cubic, Quart, Quint, Strong, Elastic, Back, SteppedEase, Bounce, Sine, Expo, Circ, TweenLite, TimelineLite, TimelineMax } from "./gsap-core.js";
+
 tl.from(".c-title-img",{
-  duration: 2,
-    ease: "power4",
+    duration: 1.5,
+    ease: "Power3.out",
     scale: 0.9, 
     autoAlpha: 0,
     opacity: 0, 
@@ -427,17 +399,4 @@ form.addEventListener("submit", function (e) {
 });
 
 console.clear();
-
-let documentTitle = document.title;
-// when the user loses focus
-window.addEventListener("blur", () => {
-  document.title = "Come back :(";
-  console.log("I am not here");
-});
-
-// when the user's focus is back to your tab (website) again
-window.addEventListener("focus", () => {
-  document.title = documentTitle;
-  console.log("I am here");
-});
 
