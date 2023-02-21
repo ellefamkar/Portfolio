@@ -140,7 +140,7 @@ links.forEach((link) => {
 
 
 // horizontal panel on scroll
-if(body.classList.contains("o-scrollable-body")){
+if(body.classList.contains("o-scrollable-body") &&  window.innerWidth > 768){
 
   function toggleBg(entries, observer) {
     entries.forEach(entry => {
