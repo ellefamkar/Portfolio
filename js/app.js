@@ -14,7 +14,7 @@ let contactSections = gsap.utils.toArray(".js-contact-panel");
 let documentTitle = document.title;
 
 window.addEventListener("blur", () => {
-  document.title = " 😓Leaving?";
+  document.title = "😍 Waiting for you!";
 });
 window.addEventListener("focus", () => {
   document.title = documentTitle;
