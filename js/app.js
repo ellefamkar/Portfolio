@@ -14,7 +14,7 @@ let contactSections = gsap.utils.toArray(".js-contact-panel");
 let documentTitle = document.title;
 
 window.addEventListener("blur", () => {
-  document.title = "😍 Waiting for you!";
+  document.title = " 😍 See you soon!";
 });
 window.addEventListener("focus", () => {
   document.title = documentTitle;
@@ -347,6 +347,11 @@ $('.js-contact-input').keyup(function() {
      $(this).removeClass('not-empty');
   }
 });
+
+if (window.innerWidth <= 768) {
+  ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+}
+
 
 const form = document.getElementById("form");
 const result = document.getElementById("result");

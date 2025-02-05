@@ -249,6 +249,16 @@
         font-size: 24px;
       }
 
+
+      .container-slider {
+        overscroll-behavior: none;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
 }
 
 
