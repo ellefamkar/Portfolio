@@ -862,11 +862,11 @@ body.is-light .c-destop-menu .nav-item.active {
   }
   .c-main-title {
     white-space: pre-wrap;
-    font-size: 20vw;
+    font-size: 22vw;
     text-align: center;
     margin-left: 0px;
     margin-bottom: 10px;
-    line-height: 33px;
+    line-height: 43px;
   }
   .c-main-title-box {
     margin-top: 12vh;
@@ -876,6 +876,12 @@ body.is-light .c-destop-menu .nav-item.active {
   }
   .c-main-title--two {
     z-index: 10;
+  }
+  .o-home-container .c-main-title {
+    white-space: pre-wrap;
+    font-size: 20vw;
+    margin-bottom: 10px;
+    line-height: 38px;
   }
   .c-main-job-title {
     margin-top: -24%;
@@ -907,7 +913,8 @@ body.is-light .c-destop-menu .nav-item.active {
   }
   .c-panel h2 {
     font-size: 1.3rem;
-    max-width: 300px;
+    max-width: 330px;
+    margin-bottom: 2rem;
   }
   .c-panel h3 {
     font-size: 1rem;
@@ -936,45 +943,49 @@ body.is-light .c-destop-menu .nav-item.active {
   .c-figure--one {
     max-width: 55vw;
   }
+  .c-figure--one figcaption {
+    margin-top: 0rem;
+    margin-right: -5rem;
+  }
   .c-figure--two {
-    left: 38%;
+    left: 50%;
     top: auto;
-    bottom: 8%;
+    bottom: -285%;
     max-height: 447px;
-    max-width: 60vw;
+    max-width: 42vw;
   }
   .c-figure--three {
     right: auto;
-    left: 6%;
-    top: 7%;
+    left: 11%;
+    top: 21%;
     height: auto;
     max-height: 378px;
-    max-width: 46vw;
+    max-width: 33vw;
   }
   .c-figure--three figcaption {
-    margin-top: 1rem;
+    margin-top: 0rem;
     margin-right: -2rem;
   }
   .c-figure--four {
-    left: 22%;
+    left: 11%;
     top: auto;
-    bottom: 7%;
+    bottom: -7%;
     height: auto;
     max-height: 616px;
-    max-width: 37vw;
+    max-width: 35vw;
     z-index: 1;
   }
   .c-figure--four figcaption {
-    margin-top: -2rem;
+    margin-top: 1rem;
     font-size: 1.2rem;
-    margin-right: -6rem;
+    margin-right: -3rem;
   }
   .c-figure--five {
     left: auto;
-    right: -8%;
+    right: 4%;
     top: auto;
     height: auto;
-    bottom: 19%;
+    bottom: 11%;
     max-height: 354px;
     max-width: 54vw;
   }
@@ -987,10 +998,13 @@ body.is-light .c-destop-menu .nav-item.active {
   }
   .c-figure--six {
     left: 5%;
-    top: 6%;
+    top: -8%;
     height: auto;
     max-height: 354px;
     max-width: 42vw;
+  }
+  .c-figure--six figcaption {
+    margin-top: 1rem;
   }
   .c-figure--seven {
     left: auto;
@@ -1006,31 +1020,32 @@ body.is-light .c-destop-menu .nav-item.active {
     margin-left: -2rem;
   }
   .c-figure--eight {
-    left: 15%;
+    left: 14%;
     right: auto;
     top: auto;
-    bottom: 7%;
+    bottom: 0%;
     height: auto;
     max-height: 360px;
-    max-width: 40vw;
+    max-width: 37vw;
   }
   .c-figure--nine {
-    left: 14%;
-    top: 5%;
+    left: 29%;
+    top: 4%;
     height: auto;
     max-height: 320px;
-    max-width: 35vw;
+    max-width: 40vw;
   }
   .c-figure--ten {
-    left: 28%;
+    left: 38%;
     top: auto;
-    bottom: 8%;
+    bottom: 0%;
     height: auto;
     max-height: 460px;
     max-width: 42vw;
   }
   .c-figure--ten figcaption {
     margin-top: 1rem;
+    margin-left: 0rem;
     font-size: 1rem;
   }
   .c-destop-menu .nav-item.active .nav-link {
