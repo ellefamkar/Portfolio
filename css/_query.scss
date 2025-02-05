@@ -26,7 +26,7 @@
 
     .c-main-title {
         white-space: pre-wrap;
-        font-size: 23vw;
+        font-size: 20vw;
         text-align: center;
         margin-left: 0px;
         margin-bottom: 10px;
@@ -244,6 +244,10 @@
             }
         }
     }
+
+    .c-destop-menu .nav-item.active .nav-link {
+        font-size: 24px;
+      }
 
 }
 

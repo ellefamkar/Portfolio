@@ -30,6 +30,12 @@ section {
     align-items: center;
     justify-content: center;
 }
+
+section.o-main-sections.c-contact-section,
+body.o-contact-container section{
+    height: auto;
+    min-height: inherit;
+}
     
 .o-main-container{
     height: 100vh;
@@ -47,8 +53,8 @@ section {
 .c-main-title {
     white-space: nowrap;
     overflow: hidden;
-    font-size: 14.3vw;
-    margin-left: -34px;
+    font-size: 13vw;
+    margin-left: 0px;
     line-height:1;
     text-transform: uppercase;
 
@@ -59,7 +65,7 @@ section {
 
 .o-portfolio-container{
     .c-main-title {
-        font-size: 13vw;
+        font-size: 12vw;
     }
 }
 
@@ -647,7 +653,7 @@ section {
         max-width: 26vw;
 
         figcaption {
-            margin-top: -1rem;
+            margin-top: 1rem;
             margin-right: -10rem;
         }
     }
@@ -687,7 +693,7 @@ section {
         max-width: 28vw;
 
         figcaption{
-            margin-top: -3rem;
+            margin-top: 1rem;
         }
     }
 
@@ -723,7 +729,7 @@ section {
 
     &--seven{
         left: 33%;
-        top: 15%;
+        top: 25%;
         height: auto;
         max-height: 560px;
         max-width: 34vw;
@@ -760,7 +766,7 @@ section {
 
     &--ten{
         left: 45%;
-        top: 5%;
+        top: 15%;
         height: auto;
         max-height: 560px;
         max-width: 29vw;
