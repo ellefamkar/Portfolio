@@ -255,7 +255,7 @@ body.o-contact-container section {
   font-family: "Iskry", Courier, monospace;
 }
 
-.o-contact-container .c-destop-menu {
+.c-destop-menu {
   width: -moz-fit-content !important;
   width: fit-content !important;
 }
