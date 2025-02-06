@@ -1077,6 +1077,14 @@ body.is-light .c-destop-menu .nav-item.active {
   .o-portfolio-container .c-panel h2 {
     width: 100% !important;
   }
+  .o-contact-container .c-main-title {
+    font-size: 17vw;
+    line-height: 35px;
+  }
+  .o-contact-container .c-main-title span:last-child {
+    margin-right: 20%;
+    line-height: 39px;
+  }
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .c-cursor {
