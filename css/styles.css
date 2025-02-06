@@ -857,6 +857,9 @@ body.is-light .c-destop-menu .nav-item.active {
     z-index: 0;
     display: block;
   }
+  .c-menu__trigger {
+    z-index: 1;
+  }
   .c-cursor {
     display: none;
   }
