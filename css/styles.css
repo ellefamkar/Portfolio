@@ -256,7 +256,8 @@ body.o-contact-container section {
 }
 
 .o-contact-container .c-destop-menu {
-  z-index: -1;
+  width: -moz-fit-content !important;
+  width: fit-content !important;
 }
 
 .c-title-img {
