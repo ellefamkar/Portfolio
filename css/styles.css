@@ -671,7 +671,7 @@ body.o-contact-container section {
   margin-top: 0.3rem;
   margin-bottom: -2rem;
   margin-left: -3rem;
-  z-index: 1;
+  z-index: 0;
   font-size: 1.2rem;
   font-family: "Iskry", Courier, monospace;
   font-weight: 300;
@@ -859,8 +859,11 @@ body.is-light .c-destop-menu .nav-item.active {
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 0;
+    z-index: 1;
     display: block;
+  }
+  .o-contact-container .o-menu-container {
+    z-index: 0;
   }
   .c-menu__trigger {
     z-index: 1;
@@ -877,7 +880,7 @@ body.is-light .c-destop-menu .nav-item.active {
     line-height: 43px;
   }
   .c-main-title-box {
-    margin-top: 12vh;
+    margin-top: 48%;
   }
   .c-main-title span {
     line-height: 41px;
@@ -936,14 +939,23 @@ body.is-light .c-destop-menu .nav-item.active {
     max-width: 310px;
   }
   .o-about-container .c-main-job-title,
-  .o-contact-container .c-main-job-title,
   .o-portfolio-container .c-main-job-title {
     margin-top: -22%;
   }
   .o-about-container .c-title-img,
-  .o-contact-container .c-title-img,
   .o-portfolio-container .c-title-img {
-    top: 98%;
+    top: 105%;
+  }
+  .o-contact-container .c-main-job-title {
+    margin-top: -22%;
+  }
+  .o-contact-container .c-title-img {
+    top: 108%;
+  }
+  .o-contact-container .c-scroll--heading {
+    margin-top: -0.8rem;
+    margin-bottom: -2rem;
+    margin-left: 0rem;
   }
   .o-form-container {
     max-width: 300px;
@@ -1090,11 +1102,18 @@ body.is-light .c-destop-menu .nav-item.active {
     line-height: 35px;
   }
   .o-contact-container .c-main-title span:last-child {
-    margin-right: 20%;
-    line-height: 39px;
+    margin-right: 19%;
+    line-height: 33px;
   }
   .o-portfolio-container .c-main-title-box {
     margin-top: 18vh;
+  }
+  .c-contact-form__input,
+  .c-contact-form__textarea {
+    background-color: transparent;
+  }
+  .o-about-container .c-panel {
+    z-index: 0;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 991px) {

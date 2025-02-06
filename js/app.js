@@ -311,15 +311,31 @@ function menu() {
 
   menuTrigger.on("click", function() {
     timeline.play();
-    const menuContainer = document.querySelector(".o-menu-container");
-    menuContainer.style.zIndex = "1";
+
+    if(document.body.classList.contains("o-contact-container") ||
+    document.body.classList.contains("o-portfolio-container")){
+      const menuContainer = document.querySelector(".o-menu-container");
+      menuContainer.style.zIndex = "1";
+    }
+
+    if (!document.body.classList.contains("o-about-container")) {
+      const cpanels = document.querySelectorAll(".c-panel");
+      cpanels.forEach((item) => item.style.zIndex = "0");
+    }
+    
   });
 
   menuClose.on("click", function() {
     timeline.timeScale(1.25);
     timeline.reverse();
+
+    if(document.body.classList.contains("o-contact-container") ||
+  document.body.classList.contains("o-portfolio-container")){
     const menuContainer = document.querySelector(".o-menu-container");
+    // const cpanels = document.querySelectorAll(".c-panel");
+    // cpanels.forEach((item) => item.style.zIndex = "1");
     menuContainer.style.zIndex = "0";
+    }
   });
 
   _logoShapeAnimation();

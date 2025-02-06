@@ -16,8 +16,12 @@
         bottom: 0;
         left: 0;
         right: 0;
-        z-index: 0;
+        z-index: 1;
         display: block;
+    }
+
+    .o-contact-container .o-menu-container{
+        z-index: 0;
     }
 
     .c-menu__trigger{
@@ -37,7 +41,8 @@
         line-height: 43px;
 
         &-box{
-            margin-top: 12vh;
+            // margin-top: 12vh;
+            margin-top: 48%;
         }
 
         span {
@@ -121,7 +126,6 @@
     }
 
     .o-about-container,
-    .o-contact-container,
     .o-portfolio-container {
 
         .c-main-job-title {
@@ -129,9 +133,28 @@
         }
 
         .c-title-img {
-            top: 98%;
+            top: 105%;
         }
     }
+
+    
+    .o-contact-container{
+
+        .c-main-job-title {
+            margin-top: -22%;
+        }
+
+        .c-title-img {
+            top: 108%;
+        }
+
+        .c-scroll--heading {
+            margin-top: -0.8rem;
+            margin-bottom: -2rem;
+            margin-left: 0rem;
+        }
+    }
+
 
     // contact page 
     .o-form-container {
@@ -310,12 +333,21 @@
         }
 
         .o-contact-container .c-main-title span:last-child{
-            margin-right: 20%;
-            line-height: 39px;
+            margin-right: 19%;
+            line-height: 33px;
         }
 
         .o-portfolio-container .c-main-title-box {
             margin-top: 18vh;
+        }
+
+        .c-contact-form__input,
+        .c-contact-form__textarea {
+            background-color: transparent;
+        }
+
+        .o-about-container .c-panel {
+            z-index: 0;
         }
 
         
