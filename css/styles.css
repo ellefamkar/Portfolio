@@ -894,6 +894,9 @@ body.is-light .c-destop-menu .nav-item.active {
     margin-bottom: 10px;
     line-height: 38px;
   }
+  .o-home-container .c-main-title-box {
+    margin-top: 13vh;
+  }
   .c-main-job-title {
     margin-top: -24%;
     margin-left: -2%;
