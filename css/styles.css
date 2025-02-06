@@ -255,6 +255,10 @@ body.o-contact-container section {
   font-family: "Iskry", Courier, monospace;
 }
 
+.o-contact-container .c-destop-menu {
+  z-index: -1;
+}
+
 .c-title-img {
   width: 150px;
   transform: rotateZ(344deg);
