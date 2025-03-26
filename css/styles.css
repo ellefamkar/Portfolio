@@ -705,6 +705,9 @@ body.o-contact-container section {
   color: #000000;
   text-decoration: none;
 }
+.c-figure a:hover {
+  cursor: pointer;
+}
 .c-figure figcaption {
   font-size: 2rem;
   font-weight: 700;

@@ -638,6 +638,10 @@ body.o-contact-container section{
         color: #000000;
         text-decoration: none;
     }
+    
+    a:hover{
+        cursor: pointer;
+    }
 
     figcaption {
         font-size: 2rem;

@@ -2,16 +2,24 @@
 let body = document.querySelector('body');
 let cursor = document.querySelector('.js-cursor-outline');
 let cursorCircle = document.querySelector(".js-cursor-inline");
-let circleStyle = cursorCircle.style;
+let containerSlider = document.querySelector(".container-slider");
+const form = document.getElementById("form");
+const result = document.getElementById("result");
+let circleStyle = cursorCircle?.style || {};
 let links = document.querySelectorAll("a");
 let image = document.querySelectorAll("img");
 let target = document.querySelector('.js-bg');
 let imageMenuItems = document.querySelectorAll('.img-nav-item');
-let tl = gsap.timeline();
-gsap.registerPlugin(ScrollTrigger);
+
+// gsap.registerPlugin(ScrollTrigger);
 let sections = gsap.utils.toArray(".js-panel");
 let contactSections = gsap.utils.toArray(".js-contact-panel");
 let documentTitle = document.title;
+
+// Register GSAP ScrollTrigger if available
+if (typeof gsap !== 'undefined' && gsap.registerPlugin) {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 window.addEventListener("blur", () => {
   document.title = " 😍 See you soon!";
@@ -23,6 +31,13 @@ window.addEventListener("focus", () => {
 document.addEventListener("DOMContentLoaded", () => {
 
 body.style.visibility = "visible";
+
+let cTitleImage = document.querySelector(".c-title-img");
+let cScroll = document.querySelector(".c-scroll");
+let jsTypeWriter = document.querySelector(".js-typewriter");
+
+let tl = gsap.timeline();
+
 // gsap.from(".main-title", {
 //     duration: 5,
 //     ease: "power4.out",
@@ -38,15 +53,17 @@ body.style.visibility = "visible";
 //     force3D: true
 // });
 
-tl.from("img",{
-  duration: 0.85,
-  scale: 0.9, 
-  ease: "Power3",
-})
+if(image){
+  tl.from("img",{
+    duration: 0.85,
+    scale: 0.9, 
+    ease: "Power3",
+  });
+}
 
 // import { gsap, Power0, Power1, Power2, Power3, Power4, Linear, Quad, Cubic, Quart, Quint, Strong, Elastic, Back, SteppedEase, Bounce, Sine, Expo, Circ, TweenLite, TimelineLite, TimelineMax } from "./gsap-core.js";
-
-tl.from(".c-title-img",{
+if(cTitleImage){
+  tl.from(cTitleImage,{
     duration: 1.5,
     ease: "Power3.out",
     scale: 0.9, 
@@ -55,14 +72,21 @@ tl.from(".c-title-img",{
     stagger: {
       amount: 0.3
     }
-}).from("h1 span", 1.3, {
-  duration: 0.85,
-  y: 150,
-  scale: 0.9, 
-  autoAlpha: 0,
-  ease: "Power3.out",
-  stagger: 1.5
-}).from("li", {
+  });
+}
+
+if (document.querySelector("h1 span")) {
+  tl.from("h1 span", 1.3, {
+    duration: 0.85,
+    y: 150,
+    scale: 0.9, 
+    autoAlpha: 0,
+    ease: "Power3.out",
+    stagger: 1.5
+  });
+}
+
+tl.from("li", {
   duration: 1,
   x: 200,
   autoAlpha: 0,
@@ -71,48 +95,55 @@ tl.from(".c-title-img",{
     each: 0.75,
     amount: 0.5
   }
-}, "+=0.25").from(".c-scroll",{
-  duration: 1,
-  ease: "power4",
-  scale: 0.9, 
-  autoAlpha: 0,
-  opacity: 0
-});
+}, "+=0.25");
+
+if(cScroll){
+  tl.from(".c-scroll",{
+    duration: 1,
+    ease: "power4",
+    scale: 0.9, 
+    autoAlpha: 0,
+    opacity: 0
+  });
+}
 
 let tlx = new TimelineMax({
     paused:true
   });
   // letter animation
-  tlx.fromTo(".js-typewriter", 5, {
-    width: "0",
-  }, {
-    width: "10em", /* same as CSS .line-1 width */
-    ease:  SteppedEase.config(77)
-  }, 0);
-  // text cursor animation
-  tlx.fromTo(".js-typewriter", 0.5, {
-    "border-right-color": "rgba(255,255,255,0.75)",
-    repeat: 0,
-  }, {
-    "border-right-color": "rgba(255,255,255,0)",
-    // repeat: -1,
-    ease:  SteppedEase.config(77)
-  }, 0);
+  if(jsTypeWriter){
+    tlx.fromTo(jsTypeWriter, 5, {
+      width: "0",
+    }, {
+      width: "10em", /* same as CSS .line-1 width */
+      ease:  SteppedEase.config(77)
+    }, 0);
+    // text cursor animation
+    tlx.fromTo(jsTypeWriter, 0.5, {
+      "border-right-color": "rgba(255,255,255,0.75)",
+      repeat: 0,
+    }, {
+      "border-right-color": "rgba(255,255,255,0)",
+      // repeat: -1,
+      ease:  SteppedEase.config(77)
+    }, 0);
+  }
   
   tlx.play();
 
 });
 
 // mouse and cursor events 
-document.addEventListener('mousemove', function(e){
-  window.requestAnimationFrame(() => {
-    circleStyle.top = `${e.clientY - cursorCircle.offsetHeight / 2}px`;
-    circleStyle.left = `${e.clientX - cursorCircle.offsetWidth / 2}px`;
+if (cursor && cursorCircle) {
+  document.addEventListener('mousemove', function(e){
+    window.requestAnimationFrame(() => {
+      circleStyle.top = `${e.clientY - cursorCircle.offsetHeight / 2}px`;
+      circleStyle.left = `${e.clientX - cursorCircle.offsetWidth / 2}px`;
+    });
+    let x = e.clientX;
+    let y = e.clientY;
+    cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
   });
-  let x = e.clientX;
-  let y = e.clientY;
-  cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
-});
 
 document.addEventListener('mousedown', function(){
   cursor.classList.add('click');
@@ -123,6 +154,8 @@ document.addEventListener('mouseup', function(){
   cursor.classList.remove('click')
   cursorCircle.classList.remove('cursorinnerhover')
 });
+
+};
 
 links.forEach((link) => {
   link.addEventListener("mouseenter", (e) => {
@@ -138,7 +171,6 @@ links.forEach((link) => {
     cursor.classList.remove('hover');
   });
 });
-
 
 // horizontal panel on scroll
 if(body.classList.contains("o-scrollable-body") &&  window.innerWidth > 768){
@@ -156,18 +188,20 @@ if(body.classList.contains("o-scrollable-body") &&  window.innerWidth > 768){
   observer.observe(target);
 }
 
-gsap.to(sections, {
-  xPercent: -100 * (sections.length - 1),
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".container-slider",
-    pin: true,
-    scrub: 1,
-    snap: 1 / (sections.length - 1),
-    // base vertical scrolling on how wide the container is so it feels more natural.
-    end: "+=3500",
-  }
-});
+if(containerSlider && sections.length > 0){
+  gsap.to(sections, {
+    xPercent: -100 * (sections.length - 1),
+    ease: "none",
+    scrollTrigger: {
+      trigger: containerSlider,
+      pin: true,
+      scrub: 1,
+      snap: 1 / (sections.length - 1),
+      // base vertical scrolling on how wide the container is so it feels more natural.
+      end: "+=3500",
+    }
+  });
+}
 
 // mobile menu with GSAP
 function menu() {
@@ -373,48 +407,46 @@ if (window.innerWidth <= 768) {
   ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 }
 
-
-const form = document.getElementById("form");
-const result = document.getElementById("result");
-
-form.addEventListener("submit", function (e) {
-  const formData = new FormData(form);
-  e.preventDefault();
-  let object = {};
-  formData.forEach((value, key) => {
-    object[key] = value;
-  });
-  let json = JSON.stringify(object);
-  result.innerHTML = "Please wait...";
-
-  fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json"
-    },
-    body: json
-  })
-    .then(async (response) => {
-      let json = await response.json();
-      if (response.status == 200) {
-        result.innerHTML = json.message;
-      } else {
-        console.log(response);
-        result.innerHTML = json.message;
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-      result.innerHTML = "Something went wrong!";
-    })
-    .then(function () {
-      form.reset();
-      setTimeout(() => {
-        result.style.display = "none";
-      }, 5000);
+if(form){
+  form.addEventListener("submit", function (e) {
+    const formData = new FormData(form);
+    e.preventDefault();
+    let object = {};
+    formData.forEach((value, key) => {
+      object[key] = value;
     });
-});
+    let json = JSON.stringify(object);
+    result.innerHTML = "Please wait...";
+  
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: json
+    })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.innerHTML = json.message;
+        } else {
+          console.log(response);
+          result.innerHTML = json.message;
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        result.innerHTML = "Something went wrong!";
+      })
+      .then(function () {
+        form.reset();
+        setTimeout(() => {
+          result.style.display = "none";
+        }, 5000);
+      });
+  });
+}
 
 console.clear();
 
