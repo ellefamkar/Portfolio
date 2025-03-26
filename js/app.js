@@ -22,6 +22,7 @@ window.addEventListener("focus", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
+body.style.visibility = "visible";
 // gsap.from(".main-title", {
 //     duration: 5,
 //     ease: "power4.out",
