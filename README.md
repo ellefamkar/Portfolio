@@ -28,7 +28,7 @@ Remember that "Every day is a learning day" and try to learn from everyone!
 
 ### Links
 
-- Live Site URL: [Portfolio](https://bespoke-marigold-f2f8e3.netlify.app/)
+- Live Site URL: [Portfolio](https://ellefamkar.com/)
 
 ## My process
 
