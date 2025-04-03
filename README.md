@@ -28,7 +28,7 @@ Remember that "Every day is a learning day" and try to learn from everyone!
 
 ### Links
 
-- Live Site URL: [Portfolio](https://bespoke-marigold-f2f8e3.netlify.app/)
+- Live Site URL: [Portfolio](https://ellefamkar.com/)
 
 ## My process
 
@@ -38,16 +38,19 @@ The first think to do is to look for your perfect design! So let's checkout [dri
 
 ### Built with
 
-- Vanilla js
-- Sass
+- Vanilla JavaScript(ES6+)
+- SASS
 - GSAP
-- bootstrap
+- Bootstrap
 - Semantic HTML5 markup
 - CSS
-- Flexbox
-- CSS Grid
+- Flexbox / CSS Grid
 - desktop-first workflow
 - WEB3 form
+
+### Clean Code using
+
+- BEM / Conventional commits
 
 You can use any tools you like to help you complete the project. So if you got something you'd like to practice, feel free to give it a try. However, i wrote this design with simple html5 and css and js and made it responsive for all the devices, since my users should be able to: View the optimal layout and hover or active states depending on their device's screen size
 
