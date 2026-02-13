@@ -697,7 +697,7 @@ body.o-contact-container section {
   margin-top: -1.8rem;
   margin-bottom: -2rem;
   margin-left: 7rem;
-  z-index: 1;
+  z-index: 0;
   font-size: 1.2rem;
   font-family: "Iskry", Courier, monospace;
   font-weight: 300;
@@ -992,9 +992,10 @@ body.is-light .c-destop-menu .nav-item.active {
     padding-bottom: 2rem !important;
   }
   .c-panel h2 {
-    font-size: 1.3rem;
     max-width: 330px;
     margin-bottom: 2rem;
+    font-size: 1.4rem;
+    line-height: 1.4;
   }
   .c-panel h3 {
     font-size: 1rem;
@@ -1229,6 +1230,9 @@ body.is-light .c-destop-menu .nav-item.active {
   }
   .o-about-container .c-panel__description {
     padding-bottom: 0;
+  }
+  .o-portfolio-container .c-panel {
+    overflow-x: hidden;
   }
   .o-portfolio-container .c-panel h2 {
     width: 100% !important;

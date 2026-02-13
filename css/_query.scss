@@ -114,9 +114,10 @@
     padding-bottom: 2rem !important;
 
     h2 {
-      font-size: 1.3rem;
       max-width: 330px;
       margin-bottom: 2rem;
+      font-size: 1.4rem;
+      line-height: 1.4;
     }
 
     h3 {
@@ -408,8 +409,12 @@
     padding-bottom: 0;
   }
 
-  .o-portfolio-container .c-panel h2 {
-    width: 100% !important;
+  .o-portfolio-container .c-panel {
+    overflow-x: hidden;
+
+    h2 {
+      width: 100% !important;
+    }
   }
 
   .o-contact-container .c-main-title {
