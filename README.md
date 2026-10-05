@@ -16,15 +16,16 @@
 
 ## Overview
 
-Thanks for checking out my portfolio project. This is a temporary portfolio and i am going to build a new one with react in a couple of month, So let's enjoy it for now! 🙋‍♀️ 
+Thanks for checking out my portfolio project. This is a temporary portfolio and i am going to build a new one with react in a couple of month, So let's enjoy it for now! 🙋‍♀️
 
-Remember that "Every day is a learning day" and try to learn from everyone! 
+Remember that "Every day is a learning day" and try to learn from everyone!
 
- ### Screenshot 
+### Screenshot
 
-![](./assets/images/home-screenshot.png)
-![](./assets/images/portfolio-screenshot.png)
-![](./assets/images/contact-screenshot.png)
+![](./assets/images/ellefamkar_readme.png)
+
+<!-- ![](./assets/images/portfolio-screenshot.png)
+![](./assets/images/contact-screenshot.png) -->
 
 ### Links
 
@@ -47,6 +48,7 @@ The first think to do is to look for your perfect design! So let's checkout [dri
 - Flexbox / CSS Grid
 - desktop-first workflow
 - WEB3 form
+- animations
 
 ### Clean Code using
 
@@ -59,29 +61,36 @@ You can use any tools you like to help you complete the project. So if you got s
 This projects helped me being more familiar with the details of js and how to work with GSAP, and use my scss knowledge as well to create a responsive project with small details on colors,sizes and so on. I used amazing plugins from GSAP and used horiztontal scrolling.
 To see parts of my codes and see how you can add code snippets, see below:
 
-
-
 ```html
-
-     <main class="o-main-container container-fluid m-0 p-0">
-          <div class="c-main-title-box position-relative d-flex flex-column align-items-center">
-              <h1 class="c-main-title" id="c-main-title">
-                  <span class="c-main-title--one">MY</span>
-                  <span class="c-main-title--two">PORTFOLIO</span>
-              </h1>
-              <p class="c-main-job-title mb-0 text-white c-typewriter js-typewriter">My art as a developer!</p>
-              <div class="c-scroll c-scroll--heading w-100 d-none d-md-flex align-items-center justify-content-center position-relative">
-                <strong class="mr-2 d-inline-block c-scroll-text text-white">Keep scrolling</strong>
-                <div class="c-scroll-wrapper">
-                  <div class="c-scroller"></div>
-                </div>
-              </div>
-              <img class="img-fluid c-title-img" src="/assets/images/ellefamkar.jpg" alt="Elle Famkar">
-          </div>
-    </main>
-
+<main class="o-main-container container-fluid m-0 p-0">
+  <div
+    class="c-main-title-box position-relative d-flex flex-column align-items-center"
+  >
+    <h1 class="c-main-title" id="c-main-title">
+      <span class="c-main-title--one">MY</span>
+      <span class="c-main-title--two">PORTFOLIO</span>
+    </h1>
+    <p class="c-main-job-title mb-0 text-white c-typewriter js-typewriter">
+      My art as a developer!
+    </p>
+    <div
+      class="c-scroll c-scroll--heading w-100 d-none d-md-flex align-items-center justify-content-center position-relative"
+    >
+      <strong class="mr-2 d-inline-block c-scroll-text text-white"
+        >Keep scrolling</strong
+      >
+      <div class="c-scroll-wrapper">
+        <div class="c-scroller"></div>
+      </div>
+    </div>
+    <img
+      class="img-fluid c-title-img"
+      src="/assets/images/ellefamkar.jpg"
+      alt="Elle Famkar"
+    />
+  </div>
+</main>
 ```
-
 
 ```scss
 
@@ -94,7 +103,7 @@ To see parts of my codes and see how you can add code snippets, see below:
     line-height: 48px;
     padding-bottom: 12px;
  }
- 
+
 .c-contact-form {
     // z-index: 100;
 
@@ -112,11 +121,11 @@ To see parts of my codes and see how you can add code snippets, see below:
        font-size: 16px;
        line-height: 26px;
        font-weight: 400;
-       
+
        &:focus {
           outline: none;
        }
-       
+
        &:focus,
        &.not-empty {
           + .c-contact-form__label {
@@ -138,7 +147,7 @@ To see parts of my codes and see how you can add code snippets, see below:
         &:focus {
             outline: none;
          }
-         
+
          &:focus,
          &.not-empty {
             + .c-contact-form__label {
@@ -149,20 +158,18 @@ To see parts of my codes and see how you can add code snippets, see below:
     }
 ```
 
-``` js
-  
-if(body.classList.contains("o-scrollable-body")){
-
+```js
+if (body.classList.contains("o-scrollable-body")) {
   function toggleBg(entries, observer) {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.intersectionRatio > 0) {
-        body.classList.toggle('is-light');
+        body.classList.toggle("is-light");
       } else {
-        entry.target.classList.remove('in-viewport');
+        entry.target.classList.remove("in-viewport");
       }
     });
   }
-  let observer = new IntersectionObserver(toggleBg, {threshold: .2});
+  let observer = new IntersectionObserver(toggleBg, { threshold: 0.2 });
   observer.observe(target);
 }
 
@@ -175,11 +182,9 @@ gsap.to(sections, {
     scrub: 1,
     snap: 1 / (sections.length - 1),
     end: "+=3500",
-  }
+  },
 });
-
 ```
-
 
 ### Useful resources
 
@@ -196,7 +201,7 @@ In order to do this project in a correct way you need to have a good knowledge o
 - Website - [Elle Famkar](https://bespoke-marigold-f2f8e3.netlify.app/)
 - Twitter - [@Ellefamkar](https://www.twitter.com/ellefamkar)
 
-Feel free to ask any questions come to your mind  and send me message via my current temporary website in the link above!
+Feel free to ask any questions come to your mind and send me message via my current temporary website in the link above!
 
 ## Acknowledgments
 
