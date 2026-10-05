@@ -4,6 +4,10 @@
     min-height: 100vh;
   }
 
+  .c-typewriter {
+    white-space: wrap;
+  }
+
   .o-main-container {
     justify-content: start;
     overflow: hidden;
@@ -67,8 +71,12 @@
   .c-main-job-title {
     margin-top: -24%;
     margin-left: -2%;
-    font-size: 29px;
+    font-size: 8vw;
     z-index: 0;
+
+    span {
+      display: block;
+    }
   }
 
   .o-about-container {
@@ -644,3 +652,5 @@
     }
   }
 }
+
+

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,11 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Elle Famkar | Frontend developer - Expert in bringing your fantasy website to the reality"
+      content="Elly Famkar is a front-end developer and designer building clean, responsive, and interactive websites. Explore my portfolio and get in touch."
     />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://Ellyfamkar.com/" />
+
+    <!-- Open Graph / social sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Elly Famkar" />
+    <meta
+      property="og:title"
+      content="Elly Famkar | Front-End Developer & Designer"
+    />
+    <meta
+      property="og:description"
+      content="Elly Famkar is a front-end developer and designer building clean, responsive, and interactive websites. Explore my portfolio and get in touch."
+    />
+    <meta property="og:url" content="https://Ellyfamkar.com/" />
+    <meta
+      property="og:image"
+      content="https://Ellyfamkar.com/assets/images/elnazfamkar.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Elly Famkar | Front-End Developer & Designer"
+    />
+    <meta
+      name="twitter:description"
+      content="Elly Famkar is a front-end developer and designer building clean, responsive, and interactive websites. Explore my portfolio and get in touch."
+    />
+    <meta
+      name="twitter:image"
+      content="https://Ellyfamkar.com/assets/images/elnazfamkar.png"
+    />
+
+    <!-- resource hints -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin />
+    <link rel="preconnect" href="https://ka-f.fontawesome.com" crossorigin />
 
     <!-- fontawesome  -->
     <script
+      defer
       src="https://kit.fontawesome.com/3c15966463.js"
       crossorigin="anonymous"
     ></script>
@@ -27,11 +66,68 @@
     <link rel="stylesheet" href="/css/styles.css" />
 
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <title>Elle Famkar | FrontEnd Developer</title>
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <title>Elly Famkar | Front-End Developer & Designer Portfolio</title>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Elly Famkar",
+        "alternateName": "Elnaz Famkar",
+        "jobTitle": "Front-End Developer & Designer",
+        "url": "https://Ellefamkar.com/",
+        "image": "https://Ellefamkar.com/assets/images/elnazfamkar.png",
+        "sameAs": [
+          "https://github.com/ellefamkar",
+          "https://www.instagram.com/ellefamkar",
+          "https://www.linkedin.com/in/Elly-famkar-2086b0230/",
+          "https://www.shecodes.io/graduates/58531-elnaz-Elly-famkar"
+        ]
+      }
+    </script>
   </head>
-  <body class="position-relative overflow-hidden o-home-container">
-    <header class="d-none">
-      <div class="o-menu-container position-fixed">
+  <body class="position-relative o-home-container">
+    <a class="visually-hidden-focusable" href="#c-main-title"
+      >Skip to main content</a
+    >
+    <header class="c-site-header">
+      <a class="c-site-header__logo" href="#top" aria-label="Elly Famkar, home"
+        ><span aria-hidden="true">E</span
+        ><span class="c-site-header__logo-outline" aria-hidden="true"
+          >F</span
+        ></a
+      >
+      <div class="c-site-header__actions">
+        <a
+          class="c-site-header__cv"
+          href="./assets/files/Elnaz-Famkar-Resume.pdf"
+          download="Elnaz-Famkar-Resume.pdf"
+          aria-label="Download my resume (PDF)"
+        >
+          <span class="c-site-header__cv-doc" aria-hidden="true">
+            <span
+              class="c-site-header__cv-sheet c-site-header__cv-sheet--back"
+            ></span>
+            <span class="c-site-header__cv-sheet c-site-header__cv-sheet--front"
+              ><i></i><i></i><i></i><i></i
+            ></span>
+          </span>
+        </a>
+        <button
+          type="button"
+          class="c-site-header__menu js-wheel-open"
+          aria-haspopup="dialog"
+          aria-controls="site-menu"
+          aria-expanded="false"
+        >
+          <span class="c-site-header__menu-label">Menu</span>
+          <span class="c-site-header__menu-icon" aria-hidden="true"
+            ><i></i><i></i
+          ></span>
+        </button>
+      </div>
+      <div class="d-none o-menu-container position-fixed">
         <div class="c-menu">
           <div class="c-menu__trigger js-menu-trigger"><span>MENU</span></div>
           <div class="c-menu__inner js-menu-inner">
@@ -45,22 +141,16 @@
             <div class="c-menu__items-wrapper js-menu-items-wrapper">
               <ul class="c-menu__items-list js-menu-items-list">
                 <li class="js-menu-item is-active">
-                  <a href="/" title="Homepage">HOME</a>
+                  <a href="#top" title="Homepage">HOME</a>
                 </li>
                 <li class="js-menu-item">
-                  <a href="/about.html" target="_blank" title="about me"
-                    >ABOUT ME</a
-                  >
+                  <a href="#about" title="about me">ABOUT ME</a>
                 </li>
                 <li class="js-menu-item">
-                  <a href="/portfolio.html" target="_blank" title="portfolio"
-                    >PORTFOLIO</a
-                  >
+                  <a href="#work" title="portfolio">PORTFOLIO</a>
                 </li>
                 <li class="js-menu-item">
-                  <a href="/contact.html" target="_blank" title="contact"
-                    >CONTACT</a
-                  >
+                  <a href="#contact" title="contact">CONTACT</a>
                 </li>
               </ul>
             </div>
@@ -71,121 +161,1458 @@
         </div>
       </div>
     </header>
-    <main class="o-main-container container-fluid m-0 p-0">
-      <div
-        class="c-main-title-box position-relative d-flex flex-column align-items-center"
-      >
-        <h1 class="c-main-title" id="c-main-title">
-          <span class="c-main-title--one">Elle</span>
-          <span class="c-main-title--two">Famkar</span>
-        </h1>
-        <p class="c-main-job-title text-white c-typewriter js-typewriter">
-          Front-end developer
-        </p>
-        <img
-          class="img-fluid c-title-img"
-          src="/assets/images/elnazfamkar.jpg"
-          alt="Elle Famkar"
-        />
+
+    <!-- While scrolling: the logo and the menu float in the top corners -->
+    <div class="c-float-nav js-capsule">
+      <span class="c-float-nav__corner c-float-nav__corner--left">
+        <a
+          class="c-float-nav__logo"
+          href="#top"
+          aria-label="Elly Famkar, back to top"
+          ><span aria-hidden="true">E</span
+          ><span class="c-float-nav__logo-outline" aria-hidden="true"
+            >F</span
+          ></a
+        >
+        <span class="c-float-nav__thread" aria-hidden="true"></span>
+      </span>
+      <span class="c-float-nav__corner c-float-nav__corner--right">
+        <span class="c-float-nav__item">
+          <span class="c-float-nav__label" aria-hidden="true">Menu</span>
+          <button
+            type="button"
+            class="c-float-nav__menu js-wheel-open"
+            aria-label="Open menu"
+            aria-haspopup="dialog"
+            aria-controls="site-menu"
+            aria-expanded="false"
+          >
+            <span class="c-float-nav__lines" aria-hidden="true"
+              ><i></i><i></i
+            ></span>
+          </button>
+        </span>
+        <span class="c-float-nav__item">
+          <span class="c-float-nav__label" aria-hidden="true">Resume</span>
+          <a
+            class="c-site-header__cv c-float-nav__cv"
+            href="./assets/files/Elnaz-Famkar-Resume.pdf"
+            download="Elnaz-Famkar-Resume.pdf"
+            aria-label="Download my resume (PDF)"
+          >
+            <span class="c-site-header__cv-doc" aria-hidden="true">
+              <span
+                class="c-site-header__cv-sheet c-site-header__cv-sheet--back"
+              ></span>
+              <span
+                class="c-site-header__cv-sheet c-site-header__cv-sheet--front"
+                ><i></i><i></i><i></i><i></i
+              ></span>
+            </span>
+          </a>
+        </span>
+        <span class="c-float-nav__thread" aria-hidden="true"></span>
+      </span>
+    </div>
+
+    <!-- Site menu: a vertical picker wheel; the resume waits in a pocket at the bottom -->
+    <div
+      class="c-menu-wheel js-wheel-menu"
+      id="site-menu"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Site menu"
+      hidden
+    >
+      <div class="c-menu-wheel__top">
+        <a class="c-menu-wheel__logo" href="#top" aria-label="Elly Famkar, home"
+          ><span aria-hidden="true">E</span
+          ><span class="c-menu-wheel__logo-outline" aria-hidden="true"
+            >F</span
+          ></a
+        >
+        <button type="button" class="c-menu-wheel__close js-wheel-close">
+          Close <span aria-hidden="true">×</span>
+        </button>
       </div>
-    </main>
-    <footer>
-      <nav
-        class="position-fixed w-100 c-destop-menu js-desktop-menu px-2 px-md-4"
+
+      <nav class="c-menu-wheel__wheel js-wheel" aria-label="Primary">
+        <span class="c-menu-wheel__frame" aria-hidden="true"></span>
+        <a
+          class="c-menu-wheel__item js-wheel-item"
+          href="#top"
+          data-kicker="Start here"
+          data-text="Intro, skills and my portfolio."
+          data-cta="Back to the top"
+          >Home</a
+        >
+        <a
+          class="c-menu-wheel__item js-wheel-item"
+          href="#about"
+          data-kicker="The person"
+          data-text="Five years of building things that work beautifully and feel effortless."
+          data-cta="Meet me"
+          >About me</a
+        >
+        <a
+          class="c-menu-wheel__item js-wheel-item"
+          href="#work"
+          data-kicker="The work"
+          data-text="Live sites I’ve built, on desktop and on mobile."
+          data-cta="Browse projects"
+          >Portfolio</a
+        >
+        <a
+          class="c-menu-wheel__item js-wheel-item"
+          href="#contact"
+          data-kicker="Say hello"
+          data-text="Got an idea? Let's Create."
+          data-cta="Open the form"
+          >Contact</a
+        >
+      </nav>
+
+      <div class="c-menu-wheel__pane js-wheel-pane" aria-live="polite">
+        <span class="c-menu-wheel__kicker js-wheel-kicker"></span>
+        <p class="c-menu-wheel__text js-wheel-text"></p>
+        <a class="c-menu-wheel__cta js-wheel-cta" href="#top"
+          ><span class="js-wheel-cta-label"></span>
+          <span aria-hidden="true">→</span></a
+        >
+      </div>
+
+      <div class="c-menu-wheel__scroll" aria-hidden="true">
+        <span class="c-menu-wheel__mouse"><i></i></span>
+        <span class="c-menu-wheel__count"
+          ><span class="js-wheel-count">01</span> / 04</span
+        >
+      </div>
+
+      <a
+        class="c-menu-wheel__resume"
+        href="./assets/files/Elnaz-Famkar-Resume.pdf"
+        download="Elnaz-Famkar-Resume.pdf"
       >
-        <ul class="navbar-nav mx-3 mx-md-4">
-          <li class="nav-item d-flex align-items-center active">
-            <i class="fas fa-long-arrow-right mx-3"></i>
+        <span class="c-menu-wheel__paper" aria-hidden="true">
+          <span class="c-menu-wheel__paper-name">Elly Famkar</span>
+          <span class="c-menu-wheel__paper-role"
+            >Front-end developer &amp; designer</span
+          >
+          <span class="c-menu-wheel__paper-lines"
+            ><i></i><i></i><i></i><i></i><i></i><i></i
+          ></span>
+          <span class="c-menu-wheel__seal">PDF<br />↓</span>
+        </span>
+        <span class="c-menu-wheel__pocket">
+          <span class="c-menu-wheel__pocket-label">Take my resume</span>
+          <span class="c-menu-wheel__pocket-sub">Pull it out</span>
+        </span>
+      </a>
+    </div>
+    <main class="o-main-container container-fluid m-0 p-0">
+      <p class="c-site-caption js-site-caption" aria-hidden="true">
+        Elly Famkar · Front-End Developer &amp; Designer
+      </p>
+      <section class="c-hero js-hero" id="top" aria-labelledby="c-main-title">
+        <p class="c-hero__eyebrow">Front-end developer · Designer</p>
+        <h1 class="c-hero__title" id="c-main-title">
+          <span class="c-hero__word">Elly</span>
+          <span class="c-hero__window" aria-hidden="true">
+            <img
+              src="/assets/images/elly-hero.jpg"
+              alt=""
+              width="1100"
+              height="1100"
+            />
+          </span>
+          <span class="c-hero__word c-hero__word--outline">Famkar</span>
+        </h1>
+        <p class="c-hero__text">
+          Five years, countless pixels, one obsession: building things that work
+          beautifully and feel effortless to use. I’m Elly. Take a look at my
+          work, and let’s talk about yours.
+        </p>
+        <a class="c-hero__cta" href="#work" aria-label="The Story Continues ">
+          <span class="c-hero__cta-word" aria-hidden="true"
+            ><span class="c-hero__cta-outline">The Story Continues</span
+            ><span class="c-hero__cta-seal">
+              <svg class="c-hero__cta-ring" viewBox="0 0 96 96">
+                <defs>
+                  <path
+                    id="hero-seal-path"
+                    d="M48,48 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"
+                  ></path>
+                </defs>
+                <text textLength="236" lengthAdjust="spacing">
+                  <textPath href="#hero-seal-path">
+                    KEEP SCROLLING · KEEP SCROLLING ·
+                  </textPath>
+                </text>
+              </svg>
+              <!-- <span class="c-hero__cta-count"
+                ><svg width="22" height="24" viewBox="0 0 12 14" fill="none" stroke="currentColor" stroke-width="1.4">
+                  <path d="M6 1v11M1 7.5l5 5 5-5"></path></svg
+              ></span> -->
+            </span></span
+          >
+          <span class="c-hero__cta-meta" aria-hidden="true"
+            ><span class="c-hero__cta-line"></span>And It Gets Better</span
+          >
+        </a>
+      </section>
+      <section
+        class="c-intro-chat js-intro-chat"
+        id="about"
+        aria-labelledby="intro-title"
+      >
+        <div class="c-intro-chat__stage">
+          <p class="c-intro-chat__eyebrow">Welcome to my space on the web</p>
+          <div class="c-intro-chat__inner">
+            <h2 id="intro-title" class="c-intro-chat__title">
+              Nice to<br />meet you.
+            </h2>
+            <div class="c-intro-chat__chat">
+              <div class="c-intro-chat__header">
+                <span class="c-intro-chat__name"
+                  ><span>E</span
+                  ><span class="c-intro-chat__name-outline">F</span>
+                  <span class="c-intro-chat__online" aria-hidden="true"></span>
+                </span>
+                <span class="c-intro-chat__who">
+                  <span class="c-intro-chat__fullname">Elly Famkar</span>
+                  <span class="c-intro-chat__status js-chat-status"
+                    >Front-End Developer &amp; Designer</span
+                  >
+                </span>
+              </div>
+              <div class="c-intro-chat__thread">
+                <div class="c-intro-chat__msg js-chat-msg">
+                  <div class="c-intro-chat__clip">
+                    <p class="c-intro-chat__bubble">
+                      Hi there! Welcome to my little corner of the web.
+                    </p>
+                  </div>
+                </div>
+                <div class="c-intro-chat__msg js-chat-msg">
+                  <div class="c-intro-chat__clip">
+                    <p class="c-intro-chat__bubble">
+                      I’m Elnaz, but you can call me Elly
+                      <span class="c-intro-chat__phonetic">/ˈɛlly/</span>.
+                    </p>
+                  </div>
+                </div>
+                <div class="c-intro-chat__msg js-chat-msg">
+                  <div class="c-intro-chat__clip">
+                    <p class="c-intro-chat__bubble">
+                      I design and build websites that look beautiful and feel
+                      effortless to use.
+                    </p>
+                  </div>
+                </div>
+                <div class="c-intro-chat__msg js-chat-msg">
+                  <div class="c-intro-chat__clip">
+                    <p class="c-intro-chat__bubble">
+                      Being a Front-End Developer &amp; Designer means I get to
+                      do both: shape the idea, then bring it to life in code.
+                    </p>
+                  </div>
+                </div>
+                <div class="c-intro-chat__msg js-chat-msg">
+                  <div class="c-intro-chat__clip">
+                    <p class="c-intro-chat__bubble">
+                      Responsive, high-performing and user-focused. That’s the
+                      bar for everything I build.
+                    </p>
+                  </div>
+                </div>
+                <div class="c-intro-chat__msg js-chat-msg">
+                  <div class="c-intro-chat__clip">
+                    <p class="c-intro-chat__bubble">
+                      And I love teaming up on projects that make a real impact.
+                    </p>
+                  </div>
+                </div>
+                <div class="c-intro-chat__msg js-chat-msg">
+                  <div class="c-intro-chat__clip">
+                    <p class="c-intro-chat__bubble">
+                      Scroll down and take a look around. My skills and work are
+                      just below.
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="c-intro-chat__msg c-intro-chat__msg--typing js-chat-typing"
+                  aria-hidden="true"
+                >
+                  <div class="c-intro-chat__clip">
+                    <p
+                      class="c-intro-chat__bubble c-intro-chat__bubble--typing"
+                    >
+                      <span></span><span></span><span></span>
+                    </p>
+                  </div>
+                </div>
+                <div class="c-intro-chat__after js-chat-after">
+                  <div class="c-intro-chat__clip">
+                    <p class="c-intro-chat__delivered">Delivered</p>
+                  </div>
+                </div>
+                <!-- <div class="c-intro-chat__after c-intro-chat__after--replies js-chat-after">
+                  <div class="c-intro-chat__clip">
+                    <div class="c-intro-chat__replies">
+                      <span class="c-intro-chat__replies-label" id="intro-replies-label">Reply</span>
+                      <nav class="c-intro-chat__chips" aria-labelledby="intro-replies-label">
+                        <!-- <a class="c-intro-chat__chip" href="#work">
+                          See your work
+                          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 7h12M8 2l5 5-5 5"></path></svg>
+                        </a> -->
+                <!-- <a class="c-intro-chat__chip" href="#contact">
+                          Say hello
+                          <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 7h12M8 2l5 5-5 5"></path></svg>
+                        </a>
+                      </nav>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+          <a
+            class="c-intro-chat__badge"
+            href="#skills-title"
+            aria-label="Keep scrolling to my skills"
+          >
+            <svg
+              class="c-intro-chat__badge-ring"
+              viewBox="0 0 128 128"
+              aria-hidden="true"
+            >
+              <defs>
+                <path
+                  id="intro-badge-circle"
+                  d="M64,64 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"
+                ></path>
+              </defs>
+              <text>
+                <textPath href="#intro-badge-circle">
+                  KEEP SCROLLING · EXPLORE MY WORK ·
+                </textPath>
+              </text>
+            </svg>
+            <svg
+              class="c-intro-chat__badge-arrow"
+              width="18"
+              height="26"
+              viewBox="0 0 18 26"
+              aria-hidden="true"
+            >
+              <path d="M9 1v23M2 17l7 7 7-7"></path>
+            </svg>
+          </a>
+        </div>
+      </section>
+      <section
+        class="c-skills js-skills-section"
+        aria-labelledby="skills-title"
+      >
+        <div class="c-skills__inner">
+          <aside class="c-skills__aside">
+            <h2 id="skills-title" class="c-skills__title">
+              The Skills Behind the Experience
+            </h2>
+            <p class="c-skills__counter" aria-hidden="true">
+              <span class="c-skills__counter-current js-skills-current"
+                >01</span
+              >
+              <span class="c-skills__counter-total">/ 08</span>
+            </p>
+            <div class="c-skills__progress" aria-hidden="true">
+              <span class="c-skills__progress-bar js-skills-progress"></span>
+            </div>
+            <nav class="c-skills__nav" aria-label="Skill categories">
+              <ul class="c-skills__nav-list">
+                <li>
+                  <a
+                    class="c-skills__nav-link js-skills-link is-active"
+                    href="#skills-ui"
+                    aria-current="true"
+                  >
+                    <span class="c-skills__nav-dot" aria-hidden="true"></span>
+                    <span class="c-skills__nav-name"
+                      >Markup, Styling &amp; UI/UX Design Tools</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="c-skills__nav-link js-skills-link"
+                    href="#skills-js"
+                  >
+                    <span class="c-skills__nav-dot" aria-hidden="true"></span>
+                    <span class="c-skills__nav-name"
+                      >JavaScript &amp; Frameworks</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="c-skills__nav-link js-skills-link"
+                    href="#skills-web"
+                  >
+                    <span class="c-skills__nav-dot" aria-hidden="true"></span>
+                    <span class="c-skills__nav-name"
+                      >APIs &amp; Web Standards</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="c-skills__nav-link js-skills-link"
+                    href="#skills-cms"
+                  >
+                    <span class="c-skills__nav-dot" aria-hidden="true"></span>
+                    <span class="c-skills__nav-name">CMS &amp; Back-End</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="c-skills__nav-link js-skills-link"
+                    href="#skills-build"
+                  >
+                    <span class="c-skills__nav-dot" aria-hidden="true"></span>
+                    <span class="c-skills__nav-name"
+                      >Build Tools, Testing &amp; Debugging</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="c-skills__nav-link js-skills-link"
+                    href="#skills-workflow"
+                  >
+                    <span class="c-skills__nav-dot" aria-hidden="true"></span>
+                    <span class="c-skills__nav-name"
+                      >Version Control &amp; Workflow</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="c-skills__nav-link js-skills-link"
+                    href="#skills-performance"
+                  >
+                    <span class="c-skills__nav-dot" aria-hidden="true"></span>
+                    <span class="c-skills__nav-name"
+                      >Performance, SEO &amp; Analytics</span
+                    >
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="c-skills__nav-link js-skills-link"
+                    href="#skills-soft"
+                  >
+                    <span class="c-skills__nav-dot" aria-hidden="true"></span>
+                    <span class="c-skills__nav-name">Soft Skills</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+          <div class="c-skills__deck">
+            <article
+              class="c-skills__card js-skills-card"
+              id="skills-ui"
+              tabindex="-1"
+              style="--i: 0"
+            >
+              <span
+                class="c-skills__card-shade js-skills-shade"
+                aria-hidden="true"
+              ></span>
+              <div class="c-skills__card-head">
+                <div>
+                  <p class="c-skills__card-eyebrow">22 skills</p>
+                  <h3 class="c-skills__card-title">
+                    Markup, Styling &amp; UI/UX Design Tools
+                  </h3>
+                </div>
+                <span class="c-skills__card-number" aria-hidden="true">01</span>
+              </div>
+              <ul class="c-skills__list c-skills__list--3col">
+                <li>HTML5</li>
+                <li>CSS3 (SCSS/Sass)</li>
+                <li>Flexbox &amp; CSS Grid</li>
+                <li>LESS</li>
+                <li>Bootstrap</li>
+                <li>Tailwind CSS</li>
+                <li>Styled Components</li>
+                <li>Component-Based UI Development</li>
+                <li>Material UI (MUI)</li>
+                <li>Mobile-First &amp; Responsive Web Design</li>
+                <li>Accessibility Standards (WCAG, ARIA)</li>
+                <li>CSS Variables (Design Tokens)</li>
+                <li>Design Systems &amp; UI Consistency</li>
+                <li>Cross-Browser Compatibility</li>
+                <li>BEM Naming Convention</li>
+                <li>Figma</li>
+                <li>InVision (Wireframing &amp; Prototyping)</li>
+                <li>Zeplin (Developer Handoff)</li>
+                <li>Adobe XD</li>
+                <li>Adobe Illustrator</li>
+                <li>Adobe Photoshop</li>
+                <li>Sketch</li>
+              </ul>
+            </article>
+            <article
+              class="c-skills__card js-skills-card"
+              id="skills-js"
+              tabindex="-1"
+              style="--i: 1"
+            >
+              <span
+                class="c-skills__card-shade js-skills-shade"
+                aria-hidden="true"
+              ></span>
+              <div class="c-skills__card-head">
+                <div>
+                  <p class="c-skills__card-eyebrow">10 skills</p>
+                  <h3 class="c-skills__card-title">
+                    JavaScript &amp; Frameworks
+                  </h3>
+                </div>
+                <span class="c-skills__card-number" aria-hidden="true">02</span>
+              </div>
+              <ul class="c-skills__list c-skills__list--2col">
+                <li>JavaScript (ES6+)</li>
+                <li>TypeScript</li>
+                <li>React.js</li>
+                <li>React Hooks</li>
+                <!-- <li>Next.js</li> -->
+                <!-- <li>Vue.js</li> -->
+                <li>jQuery &amp; Plugins</li>
+                <li>Redux, Redux Toolkit (RTK) &amp; Context API</li>
+                <li>Formik &amp; React Hook Form</li>
+                <li>GSAP Animations</li>
+              </ul>
+            </article>
+            <article
+              class="c-skills__card js-skills-card"
+              id="skills-web"
+              tabindex="-1"
+              style="--i: 2"
+            >
+              <span
+                class="c-skills__card-shade js-skills-shade"
+                aria-hidden="true"
+              ></span>
+              <div class="c-skills__card-head">
+                <div>
+                  <p class="c-skills__card-eyebrow">6 skills</p>
+                  <h3 class="c-skills__card-title">APIs &amp; Web Standards</h3>
+                </div>
+                <span class="c-skills__card-number" aria-hidden="true">03</span>
+              </div>
+              <ul class="c-skills__list c-skills__list--2col">
+                <li>RESTful APIs, AJAX &amp; Fetch/Axios</li>
+                <li>GraphQL (Apollo Client)</li>
+                <li>HTTP/HTTPS &amp; HTTP/2</li>
+                <li>OAuth Authentication</li>
+                <li>JSON/XML Data Formats</li>
+                <li>DOM &amp; Browser APIs</li>
+              </ul>
+            </article>
+            <article
+              class="c-skills__card js-skills-card"
+              id="skills-cms"
+              tabindex="-1"
+              style="--i: 3"
+            >
+              <span
+                class="c-skills__card-shade js-skills-shade"
+                aria-hidden="true"
+              ></span>
+              <div class="c-skills__card-head">
+                <div>
+                  <p class="c-skills__card-eyebrow">6 skills</p>
+                  <h3 class="c-skills__card-title">CMS &amp; Back-End</h3>
+                </div>
+                <span class="c-skills__card-number" aria-hidden="true">04</span>
+              </div>
+              <ul class="c-skills__list c-skills__list--2col">
+                <li>WordPress (Custom Themes &amp; Development)</li>
+                <li>WooCommerce</li>
+                <li>WPML</li>
+                <li>PHP</li>
+                <li>Laravel</li>
+                <li>Django</li>
+              </ul>
+            </article>
+            <article
+              class="c-skills__card js-skills-card"
+              id="skills-build"
+              tabindex="-1"
+              style="--i: 4"
+            >
+              <span
+                class="c-skills__card-shade js-skills-shade"
+                aria-hidden="true"
+              ></span>
+              <div class="c-skills__card-head">
+                <div>
+                  <p class="c-skills__card-eyebrow">11 skills</p>
+                  <h3 class="c-skills__card-title">
+                    Build Tools, Testing &amp; Debugging
+                  </h3>
+                </div>
+                <span class="c-skills__card-number" aria-hidden="true">05</span>
+              </div>
+              <ul class="c-skills__list c-skills__list--2col">
+                <li>npm &amp; Yarn</li>
+                <li>Webpack</li>
+                <li>Vite</li>
+                <li>Babel</li>
+                <li>ESLint &amp; Prettier</li>
+                <li>Jest</li>
+                <li>Vitest</li>
+                <li>React Testing Library</li>
+                <li>Unit &amp; Component Testing</li>
+                <li>Chrome DevTools Debugging</li>
+                <li>React Developer Tools</li>
+              </ul>
+            </article>
+            <article
+              class="c-skills__card js-skills-card"
+              id="skills-workflow"
+              tabindex="-1"
+              style="--i: 5"
+            >
+              <span
+                class="c-skills__card-shade js-skills-shade"
+                aria-hidden="true"
+              ></span>
+              <div class="c-skills__card-head">
+                <div>
+                  <p class="c-skills__card-eyebrow">9 skills</p>
+                  <h3 class="c-skills__card-title">
+                    Version Control &amp; Workflow
+                  </h3>
+                </div>
+                <span class="c-skills__card-number" aria-hidden="true">06</span>
+              </div>
+              <ul class="c-skills__list c-skills__list--2col">
+                <li>Git &amp; GitHub</li>
+                <li>GitLab</li>
+                <li>Conventional Commits</li>
+                <li>TFS Server</li>
+                <li>Agile Methodologies (Scrum, Lean)</li>
+                <li>Agile &amp; Waterfall Delivery Models</li>
+                <li>Jira &amp; Trello</li>
+                <li>Slack</li>
+                <li>Microsoft Teams</li>
+              </ul>
+            </article>
+            <article
+              class="c-skills__card js-skills-card"
+              id="skills-performance"
+              tabindex="-1"
+              style="--i: 6"
+            >
+              <span
+                class="c-skills__card-shade js-skills-shade"
+                aria-hidden="true"
+              ></span>
+              <div class="c-skills__card-head">
+                <div>
+                  <p class="c-skills__card-eyebrow">7 skills</p>
+                  <h3 class="c-skills__card-title">
+                    Performance, SEO &amp; Analytics
+                  </h3>
+                </div>
+                <span class="c-skills__card-number" aria-hidden="true">07</span>
+              </div>
+              <ul class="c-skills__list c-skills__list--2col">
+                <li>Core Web Vitals</li>
+                <li>Lazy Loading &amp; Code Splitting</li>
+                <li>Image Optimization</li>
+                <li>Semantic HTML &amp; SEO Best Practices</li>
+                <li>Structured Data (JSON-LD)</li>
+                <li>Google Analytics &amp; GTM</li>
+                <li>Email Marketing Tools (Campaign Monitor)</li>
+              </ul>
+            </article>
+            <article
+              class="c-skills__card c-skills__card--dark js-skills-card"
+              id="skills-soft"
+              tabindex="-1"
+              style="--i: 7"
+            >
+              <span
+                class="c-skills__card-shade js-skills-shade"
+                aria-hidden="true"
+              ></span>
+              <div class="c-skills__card-head">
+                <div>
+                  <p class="c-skills__card-eyebrow">10 skills</p>
+                  <h3 class="c-skills__card-title">Soft Skills</h3>
+                </div>
+                <span class="c-skills__card-number" aria-hidden="true">08</span>
+              </div>
+              <ul class="c-skills__list c-skills__list--2col">
+                <li>Cross-Functional Team Collaboration</li>
+                <li>Clear Written &amp; Verbal Communication</li>
+                <li>Attention to Detail &amp; Active Listening</li>
+                <li>Problem Solving &amp; Troubleshooting</li>
+                <li>Emotional Intelligence &amp; Empathy</li>
+                <li>Time Management &amp; Prioritization</li>
+                <li>Stakeholder Engagement &amp; Relationship Building</li>
+                <li>Adaptable Across Diverse Projects</li>
+                <li>Self-Motivated, Growth Mindset</li>
+                <li>User-Centered Mindset</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="c-work js-work" id="work" aria-labelledby="work-title">
+        <div class="c-work__header">
+          <div>
+            <p class="c-work__eyebrow">Portfolio · 11 live sites</p>
+            <h2 id="work-title" class="c-work__title">
+              Built to be <span class="c-work__title-outline">used</span>
+            </h2>
+          </div>
+          <p class="c-work__counter" aria-hidden="true">
+            <span class="js-work-current">01</span>
+            <span class="c-work__counter-total">/ 11</span>
+          </p>
+        </div>
+        <div class="c-work__body">
+          <div class="c-work__info" aria-live="polite">
+            <p class="c-work__num">
+              Project <span class="js-work-num">01</span>
+            </p>
+            <h3 class="c-work__name js-work-name">Healthy Food Guide</h3>
+            <p class="c-work__meta">
+              <span class="js-work-type">Food &amp; nutrition magazine</span>
+              <a
+                class="c-work__domain js-work-domain"
+                href="https://www.healthyfood.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >healthyfood.com</a
+              >
+            </p>
+            <!-- "Built with" hidden for now; uncomment to show the stack chips again
+            <div class="c-work__stack js-work-stack" hidden>
+              <p class="c-work__stack-label">Built with</p>
+              <ul class="c-work__chips js-work-chips"></ul>
+            </div>
+            -->
+            <div class="c-work__actions">
+              <a
+                class="c-work__visit js-work-visit"
+                href="https://www.healthyfood.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Visit live site <span aria-hidden="true">↗</span></a
+              >
+            </div>
+            <div class="c-work__nav js-work-nav">
+              <button
+                type="button"
+                class="c-work__arrow js-work-prev"
+                aria-label="Previous project"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 14 14"
+                  aria-hidden="true"
+                >
+                  <path d="M13 7H1M6 2L1 7l5 5"></path>
+                </svg>
+              </button>
+              <button
+                type="button"
+                class="c-work__arrow js-work-next"
+                aria-label="Next project"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 14 14"
+                  aria-hidden="true"
+                >
+                  <path d="M1 7h12M8 2l5 5-5 5"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="c-work__devices">
+            <div class="c-work__desktop">
+              <div class="c-work__desktop-frame">
+                <span class="c-work__dots" aria-hidden="true"
+                  ><i></i><i></i><i></i
+                ></span>
+                <div
+                  class="c-work__screen js-work-screen"
+                  tabindex="0"
+                  aria-label="Desktop preview, scroll to explore the page"
+                >
+                  <img
+                    class="js-work-shot"
+                    src="/assets/images/portfolio/full/healthy-food-guide.jpg"
+                    alt="Healthy Food Guide website on desktop"
+                  />
+                </div>
+              </div>
+              <span class="c-work__stand" aria-hidden="true"></span>
+              <span class="c-work__base" aria-hidden="true"></span>
+            </div>
+            <div class="c-work__phone">
+              <span class="c-work__notch" aria-hidden="true"></span>
+              <div
+                class="c-work__screen c-work__screen--phone js-work-screen"
+                tabindex="0"
+                aria-label="Mobile preview, scroll to explore the page"
+              >
+                <img
+                  class="js-work-shot js-work-mobile"
+                  src="/assets/images/portfolio/mobile/healthy-food-guide.jpg"
+                  alt="Healthy Food Guide website on mobile"
+                />
+              </div>
+            </div>
+            <div class="c-work__tip js-work-tip" role="status" hidden>
+              <span class="c-work__tip-icon" aria-hidden="true">
+                <svg width="20" height="26" viewBox="0 0 20 26">
+                  <rect x="1" y="1" width="18" height="24" rx="9"></rect>
+                  <path class="c-work__tip-wheel" d="M10 6v5"></path>
+                </svg>
+              </span>
+              <div>
+                <p class="c-work__tip-title">Take a look inside</p>
+                <p class="c-work__tip-text">
+                  Scroll inside the desktop or mobile screen to explore each
+                  site.
+                </p>
+                <button
+                  type="button"
+                  class="c-work__tip-close js-work-tip-close"
+                >
+                  Got it
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav
+          class="c-work__picker js-work-picker"
+          aria-label="Choose a project"
+        >
+          <p class="c-work__picker-hint" aria-hidden="true">
+            Drag or scroll
+            <svg width="26" height="10" viewBox="0 0 26 10">
+              <path d="M1 5h24M5 1L1 5l4 4M21 1l4 4-4 4"></path>
+            </svg>
+          </p>
+          <ul class="c-work__picks">
+            <li>
+              <button
+                type="button"
+                class="c-work__pick js-work-pick is-active"
+                aria-pressed="true"
+                data-num="01"
+                data-name="Healthy Food Guide"
+                data-type="Food &amp; nutrition magazine"
+                data-domain="healthyfood.com"
+                data-url="https://www.healthyfood.com"
+                data-full="/assets/images/portfolio/full/healthy-food-guide.jpg"
+                data-mobile="/assets/images/portfolio/mobile/healthy-food-guide.jpg"
+                data-stack="HTML, CSS, JavaScript, PHP, WordPress, jQuery"
+              >
+                <span class="c-work__pick-image"
+                  ><img
+                    src="/assets/images/portfolio/thumbs/healthy-food-guide.jpg"
+                    alt=""
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                /></span>
+                <span class="c-work__pick-label"
+                  ><span class="c-work__pick-num">01</span> Healthy Food
+                  Guide</span
+                >
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="c-work__pick js-work-pick"
+                aria-pressed="false"
+                data-num="02"
+                data-name="Studio Frankie"
+                data-type="Content studio"
+                data-domain="studio.frankie.com.au"
+                data-url="https://studio.frankie.com.au/"
+                data-full="/assets/images/portfolio/full/studio-frankie.jpg"
+                data-mobile="/assets/images/portfolio/mobile/studio-frankie.jpg"
+                data-stack="HTML, CSS, JavaScript, PHP, WordPress, Bootstrap"
+              >
+                <span class="c-work__pick-image"
+                  ><img
+                    src="/assets/images/portfolio/thumbs/studio-frankie.jpg"
+                    alt=""
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                /></span>
+                <span class="c-work__pick-label"
+                  ><span class="c-work__pick-num">02</span> Studio Frankie</span
+                >
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="c-work__pick js-work-pick"
+                aria-pressed="false"
+                data-num="03"
+                data-name="Ron Reaman"
+                data-type="Real estate agent"
+                data-domain="ronreaman.com"
+                data-url="https://www.ronreaman.com/"
+                data-full="/assets/images/portfolio/full/ron-reaman.jpg"
+                data-mobile="/assets/images/portfolio/mobile/ron-reaman.jpg"
+                data-stack="HTML, CSS, JavaScript, PHP, WordPress, Elementor"
+              >
+                <span class="c-work__pick-image"
+                  ><img
+                    src="/assets/images/portfolio/thumbs/ron-reaman.jpg"
+                    alt=""
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                /></span>
+                <span class="c-work__pick-label"
+                  ><span class="c-work__pick-num">03</span> Ron Reaman</span
+                >
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="c-work__pick js-work-pick"
+                aria-pressed="false"
+                data-num="04"
+                data-name="My Everyday Wellbeing"
+                data-type="Wellbeing content site"
+                data-domain="myeverydaywellbeing.com"
+                data-url="https://www.myeverydaywellbeing.com/"
+                data-full="/assets/images/portfolio/full/my-everyday-wellbeing.jpg"
+                data-mobile="/assets/images/portfolio/mobile/my-everyday-wellbeing.jpg"
+                data-stack="HTML, CSS, JavaScript, PHP, WordPress, Elementor"
+              >
+                <span class="c-work__pick-image"
+                  ><img
+                    src="/assets/images/portfolio/thumbs/my-everyday-wellbeing.jpg"
+                    alt=""
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                /></span>
+                <span class="c-work__pick-label"
+                  ><span class="c-work__pick-num">04</span> My Everyday
+                  Wellbeing</span
+                >
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="c-work__pick js-work-pick"
+                aria-pressed="false"
+                data-num="05"
+                data-name="ABC Gardening Australia"
+                data-type="Gardening magazine"
+                data-domain="gardeningaustraliamag.com.au"
+                data-url="https://www.gardeningaustraliamag.com.au/"
+                data-full="/assets/images/portfolio/full/gardening-australia.jpg"
+                data-mobile="/assets/images/portfolio/mobile/gardening-australia.jpg"
+                data-stack="HTML, CSS, JavaScript, PHP, WordPress, Bootstrap"
+              >
+                <span class="c-work__pick-image"
+                  ><img
+                    src="/assets/images/portfolio/thumbs/gardening-australia.jpg"
+                    alt=""
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                /></span>
+                <span class="c-work__pick-label"
+                  ><span class="c-work__pick-num">05</span> ABC Gardening
+                  Australia</span
+                >
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="c-work__pick js-work-pick"
+                aria-pressed="false"
+                data-num="06"
+                data-name="Ramin Afshari"
+                data-type="Therapy practice"
+                data-domain="raminafshari.ca"
+                data-url="https://www.raminafshari.ca/"
+                data-full="/assets/images/portfolio/full/ramin-afshari.jpg"
+                data-mobile="/assets/images/portfolio/mobile/ramin-afshari.jpg"
+                data-stack="HTML, CSS, JavaScript, PHP, WordPress, Divi"
+              >
+                <span class="c-work__pick-image"
+                  ><img
+                    src="/assets/images/portfolio/thumbs/ramin-afshari.jpg"
+                    alt=""
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                /></span>
+                <span class="c-work__pick-label"
+                  ><span class="c-work__pick-num">06</span> Ramin Afshari</span
+                >
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="c-work__pick js-work-pick"
+                aria-pressed="false"
+                data-num="07"
+                data-name="Paradise Hub"
+                data-type="Coworking space"
+                data-domain="paradisehub.ir"
+                data-url="https://paradisehub.ir/"
+                data-full="/assets/images/portfolio/full/paradise-hub.jpg"
+                data-mobile="/assets/images/portfolio/mobile/paradise-hub.jpg"
+                data-stack="HTML, CSS, JavaScript, React, Next.js"
+              >
+                <span class="c-work__pick-image"
+                  ><img
+                    src="/assets/images/portfolio/thumbs/paradise-hub.jpg"
+                    alt=""
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                /></span>
+                <span class="c-work__pick-label"
+                  ><span class="c-work__pick-num">07</span> Paradise Hub</span
+                >
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="c-work__pick js-work-pick"
+                aria-pressed="false"
+                data-num="08"
+                data-name="Homa Cloud"
+                data-type="AI cloud infrastructure"
+                data-domain="homacloud.ai"
+                data-url="https://homacloud.ai/"
+                data-full="/assets/images/portfolio/full/homa-cloud.jpg"
+                data-mobile="/assets/images/portfolio/mobile/homa-cloud.jpg"
+                data-stack="HTML, CSS, JavaScript, PHP, WordPress, Elementor"
+              >
+                <span class="c-work__pick-image"
+                  ><img
+                    src="/assets/images/portfolio/thumbs/homa-cloud.jpg"
+                    alt=""
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                /></span>
+                <span class="c-work__pick-label"
+                  ><span class="c-work__pick-num">08</span> Homa Cloud</span
+                >
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="c-work__pick js-work-pick"
+                aria-pressed="false"
+                data-num="09"
+                data-name="Petabad"
+                data-type="Pet supplies shop"
+                data-domain="petabad.com"
+                data-url="https://petabad.com/"
+                data-full="/assets/images/portfolio/full/petabad.jpg"
+                data-mobile="/assets/images/portfolio/mobile/petabad.jpg"
+                data-stack=""
+              >
+                <span class="c-work__pick-image"
+                  ><img
+                    src="/assets/images/portfolio/thumbs/petabad.jpg"
+                    alt=""
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                /></span>
+                <span class="c-work__pick-label"
+                  ><span class="c-work__pick-num">09</span> Petabad</span
+                >
+              </button>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="c-work__pick js-work-pick"
+                aria-pressed="false"
+                data-num="10"
+                data-name="Tarjoman"
+                data-type="Online magazine"
+                data-domain="tarjomaan.com"
+                data-url="https://tarjomaan.com/"
+                data-full="/assets/images/portfolio/full/tarjoman.jpg"
+                data-mobile="/assets/images/portfolio/mobile/tarjoman.jpg"
+                data-stack="HTML, CSS, JavaScript, PHP, WordPress, Bootstrap"
+              >
+                <span class="c-work__pick-image"
+                  ><img
+                    src="/assets/images/portfolio/thumbs/tarjoman.jpg"
+                    alt=""
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                /></span>
+                <span class="c-work__pick-label"
+                  ><span class="c-work__pick-num">10</span> Tarjoman</span
+                >
+              </button>
+            </li>
+            <!-- Hidden for now: Vaschi and Kimberley Ezeard sites are offline. Uncomment to bring them back (and set Ava Plastic back to 13, totals back to 13).
+              <li>
+                <button
+                  type="button"
+                  class="c-work__pick js-work-pick"
+                  aria-pressed="false"
+                  data-num="11"
+                  data-name="Vaschi Shop Builder"
+                  data-type="Online store builder"
+                  data-domain="vaschi.ir"
+                  data-url="https://vaschi.ir/"
+                  data-full="/assets/images/portfolio/full/vaschi.jpg"
+                  data-mobile=""
+                  data-stack=""
+                >
+                  <span class="c-work__pick-image"><img src="/assets/images/portfolio/thumbs/vaschi.jpg" alt="" loading="lazy" width="300" height="375" /></span>
+                  <span class="c-work__pick-label"><span class="c-work__pick-num">11</span> Vaschi Shop Builder</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  class="c-work__pick js-work-pick"
+                  aria-pressed="false"
+                  data-num="12"
+                  data-name="Kimberley Ezeard"
+                  data-type="Personal brand site"
+                  data-domain="kimberleyezeard.ca"
+                  data-url="https://www.kimberleyezeard.ca/"
+                  data-full="/assets/images/portfolio/full/kimberley-ezeard.jpg"
+                  data-mobile=""
+                  data-stack=""
+                >
+                  <span class="c-work__pick-image"><img src="/assets/images/portfolio/thumbs/kimberley-ezeard.jpg" alt="" loading="lazy" width="300" height="375" /></span>
+                  <span class="c-work__pick-label"><span class="c-work__pick-num">12</span> Kimberley Ezeard</span>
+                </button>
+              </li>
+              END hidden projects -->
+            <li>
+              <button
+                type="button"
+                class="c-work__pick js-work-pick"
+                aria-pressed="false"
+                data-num="11"
+                data-name="Ava Plastic"
+                data-type="Industrial manufacturer"
+                data-domain="ava-plastic.com"
+                data-url="https://www.ava-plastic.com/?lang=en"
+                data-full="/assets/images/portfolio/full/ava-plastic.jpg"
+                data-mobile="/assets/images/portfolio/mobile/ava-plastic.jpg"
+                data-stack="HTML, CSS, JavaScript, PHP, WordPress, Elementor"
+              >
+                <span class="c-work__pick-image"
+                  ><img
+                    src="/assets/images/portfolio/thumbs/ava-plastic.jpg"
+                    alt=""
+                    loading="lazy"
+                    width="300"
+                    height="375"
+                /></span>
+                <span class="c-work__pick-label"
+                  ><span class="c-work__pick-num">11</span> Ava Plastic</span
+                >
+              </button>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section
+        class="c-contact js-contact"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <p class="c-contact__eyebrow">Contact · Let’s have a chat</p>
+        <h2 id="contact-title" class="c-contact__title">
+          Got an idea?<br />
+          <span class="c-contact__title-outline">Let’s make it.</span>
+        </h2>
+        <button
+          type="button"
+          class="c-contact__hello js-contact-open"
+          aria-haspopup="dialog"
+          aria-controls="contact-dialog"
+          aria-label="Let’s create: open a short contact form"
+        >
+          <span class="c-contact__hello-pulse" aria-hidden="true"></span>
+          <span class="c-contact__hello-pulse" aria-hidden="true"></span>
+          <span class="c-contact__hello-pulse" aria-hidden="true"></span>
+          <span class="c-contact__hello-words js-hello-words" aria-hidden="true"
+            >Let’s<span class="c-contact__hello-verb js-hello-verb"
+              >create</span
+            ></span
+          >
+          <span class="c-contact__hello-arrow" aria-hidden="true"
+            ><svg width="22" height="22" viewBox="0 0 14 14">
+              <path d="M2 12L12 2M5 2h7v7"></path></svg
+          ></span>
+        </button>
+        <a
+          class="c-contact__resume"
+          href="./assets/files/Elnaz-Famkar-Resume.pdf"
+          download="Elnaz-Famkar-Resume.pdf"
+        >
+          <span class="c-contact__resume-icon" aria-hidden="true">
+            <span class="c-site-header__cv-doc">
+              <span
+                class="c-site-header__cv-sheet c-site-header__cv-sheet--back"
+              ></span>
+              <span
+                class="c-site-header__cv-sheet c-site-header__cv-sheet--front"
+                ><i></i><i></i><i></i><i></i
+              ></span>
+            </span>
+          </span>
+          <span class="c-contact__resume-text"
+            >Prefer the details?
+            <span class="c-contact__resume-link">Download my resume</span>
+            <span aria-hidden="true">↓</span></span
+          >
+        </a>
+        <ul class="c-contact__socials" aria-label="Find me online">
+          <li>
             <a
-              class="nav-link d-inline-block img-nav-item"
-              href="/"
-              title="homepage"
+              href="https://www.linkedin.com/in/Elly-famkar-2086b0230/"
               target="_blank"
+              rel="noopener noreferrer"
             >
-              Home</a
-            >
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+              LinkedIn
+            </a>
           </li>
-          <li class="nav-item ms-1">
-            <i class="fas fa-long-arrow-right mx-2 d-none"></i>
+          <li>
             <a
-              class="nav-link d-inline-block img-nav-item"
-              href="/about.html"
-              title="about me"
+              href="https://github.com/Ellyfamkar"
               target="_blank"
+              rel="noopener noreferrer"
             >
-              <img src="/assets/images/about-elle-famkar.JPG" />
-              About me</a
-            >
+              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+            </a>
           </li>
-          <li class="nav-item ms-4">
-            <i class="fas fa-long-arrow-right d-none"></i>
+          <li>
             <a
-              class="nav-link d-inline-block img-nav-item"
-              href="/portfolio.html"
-              title="portfolio"
+              href="https://www.instagram.com/Ellyfamkar"
               target="_blank"
+              rel="noopener noreferrer"
             >
-              <img src="/assets/images/portfolio-work.jpg" />
-              portfolio</a
-            >
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+              Instagram
+            </a>
           </li>
-          <li class="nav-item ms-2">
-            <i class="fas fa-long-arrow-right d-none"></i>
+          <li>
             <a
-              class="nav-link d-inline-block img-nav-item"
-              href="/contact.html"
-              title="contact"
+              href="https://www.shecodes.io/graduates/58531-elnaz-Elly-famkar"
               target="_blank"
+              rel="noopener noreferrer"
             >
-              <img src="/assets/images/contact-elle.jpg" />
-              contact</a
-            >
+              <img
+                src="/assets/images/shecodes-logo.png"
+                alt=""
+                width="18"
+                height="18"
+              />
+              SheCodes
+            </a>
           </li>
         </ul>
-      </nav>
-      <div class="c-social-icons position-fixed d-flex flex-column flex-md-row">
+        <dialog
+          class="c-contact__dialog js-contact-dialog"
+          id="contact-dialog"
+          aria-labelledby="contact-dialog-title"
+        >
+          <form
+            class="c-contact__form js-contact-form"
+            method="POST"
+            novalidate
+          >
+            <input
+              type="hidden"
+              name="access_key"
+              value="b0da23fd-e4ed-4582-a45c-0149f6f5746d"
+            />
+            <input
+              type="hidden"
+              name="subject"
+              value="Message from ElleFamkar"
+            />
+            <input type="hidden" name="from_name" value="Elle Famkar website" />
+            <div class="c-contact__dialog-head">
+              <span class="c-contact__avatar" aria-hidden="true"
+                ><span>E</span><span class="c-contact__avatar-outline">F</span
+                ><span class="c-contact__online"></span
+              ></span>
+              <div>
+                <p id="contact-dialog-title" class="c-contact__form-title">
+                  Say hello
+                </p>
+                <p class="c-contact__form-sub">
+                  Tell me a little about your project.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="c-contact__close js-contact-close"
+                aria-label="Close"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path d="M2 2l12 12M14 2L2 14"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="c-contact__field">
+              <input
+                id="contact-name"
+                type="text"
+                name="name"
+                autocomplete="name"
+                placeholder=" "
+                required
+              />
+              <label for="contact-name">Your name</label>
+            </div>
+            <div class="c-contact__field">
+              <input
+                id="contact-email"
+                type="email"
+                name="email"
+                autocomplete="email"
+                placeholder=" "
+                required
+              />
+              <label for="contact-email">Email</label>
+            </div>
+            <div class="c-contact__field">
+              <textarea
+                id="contact-message"
+                name="message"
+                rows="4"
+                placeholder=" "
+                required
+              ></textarea>
+              <label for="contact-message">Your message</label>
+            </div>
+            <div class="c-contact__submit-row">
+              <p
+                class="c-contact__result js-contact-result"
+                role="status"
+                aria-live="polite"
+              ></p>
+              <button type="submit" class="c-contact__send js-contact-send">
+                <span class="js-contact-send-label">Send</span>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 14 14"
+                  aria-hidden="true"
+                >
+                  <path d="M1 7h12M8 2l5 5-5 5"></path>
+                </svg>
+              </button>
+            </div>
+          </form>
+        </dialog>
+      </section>
+    </main>
+    <footer>
+      <div
+        class="c-social-icons position-fixed d-flex flex-column"
+        aria-label="Social media links"
+      >
         <a
-          href="https://github.com/ellefamkar"
+          href="https://github.com/Ellyfamkar"
           target="_blank"
-          title="github"
+          rel="noopener noreferrer"
+          title="GitHub"
+          aria-label="Elly Famkar on GitHub (opens in a new tab)"
           class="text-decoration-none d-inline-block mx-2"
         >
-          <i class="fa-brands fa-github"></i>
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
         </a>
         <a
-          href="https://www.instagram.com/ellefamkar"
+          href="https://www.instagram.com/Ellyfamkar"
           target="_blank"
-          title="instagram"
+          rel="noopener noreferrer"
+          title="Instagram"
+          aria-label="Elly Famkar on Instagram (opens in a new tab)"
           class="text-decoration-none d-inline-block mx-2"
         >
-          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-instagram" aria-hidden="true"></i>
         </a>
         <a
-          href="https://www.linkedin.com/in/elle-famkar-2086b0230/"
+          href="https://www.linkedin.com/in/Elly-famkar-2086b0230/"
           target="_blank"
-          title="linkedin"
+          rel="noopener noreferrer"
+          title="LinkedIn"
+          aria-label="Elly Famkar on LinkedIn (opens in a new tab)"
           class="text-decoration-none d-inline-block mx-2"
         >
-          <i class="fa-brands fa-linkedin"></i>
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
         </a>
         <a
-          href="https://www.shecodes.io/graduates/58531-elnaz-elle-famkar"
+          href="https://www.shecodes.io/graduates/58531-elnaz-Elly-famkar"
           target="_blank"
+          rel="noopener noreferrer"
           title="SheCodes"
+          aria-label="Elly Famkar's SheCodes graduate certificate (opens in a new tab)"
           class="text-decoration-none d-inline-block mx-2"
         >
           <img
             class="c-social-logo"
             src="/assets/images/shecodes-logo.png"
-            alt="shecodes logo"
+            alt=""
+            width="100%"
+            height="100%"
           />
         </a>
       </div>
     </footer>
-    <div class="c-cursor">
-      <div class="c-cursor--outline js-cursor-outline"></div>
-      <div class="c-cursor--inline js-cursor-inline"></div>
-    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script
@@ -196,6 +1623,6 @@
     ></script>
     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
 
-    <script src="/js/app.js"></script>
+    <script defer src="/js/app.js"></script>
   </body>
 </html>
