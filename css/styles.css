@@ -3619,7 +3619,7 @@ html.is-menu-open body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 6rem 1.5rem 5rem;
+  padding: 4.5rem 1.5rem 4rem;
   box-sizing: border-box;
   text-align: center;
   color: var(--contact-ink);
@@ -3660,7 +3660,6 @@ html.is-menu-open body {
   cursor: pointer;
   box-shadow: 0 0 0 18px rgba(217, 180, 138, 0.22), 0 30px 60px rgba(40, 25, 25, 0.3);
   transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), background-color 0.3s ease;
-  margin: 2rem auto 1rem auto;
 }
 .c-contact__hello:hover {
   transform: scale(1.05);
@@ -3806,7 +3805,6 @@ html.is-menu-open body {
   margin: 0;
   padding: 0;
   list-style: none;
-  margin-top: 5rem;
 }
 .c-contact__socials li {
   margin: 0;
@@ -4157,9 +4155,21 @@ html.is-menu-open body {
     padding: 3rem 1rem 5rem;
   }
   .c-contact__resume {
-    flex-direction: column;
-    gap: 0.6rem;
-    text-align: center;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: left;
+  }
+  .c-contact__resume-icon {
+    width: 44px;
+    height: 44px;
+  }
+  .c-contact__resume-text {
+    font-size: 0.85rem;
+    line-height: 1.35;
+  }
+  .c-contact__resume-link {
+    font-size: 1.1rem;
   }
   .c-contact__hello {
     width: 190px;

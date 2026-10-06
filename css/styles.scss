@@ -4268,7 +4268,7 @@ html.is-menu-open body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 6rem 1.5rem 5rem;
+  padding: 4.5rem 1.5rem 4rem;
   box-sizing: border-box;
   text-align: center;
   color: var(--contact-ink);
@@ -4317,7 +4317,7 @@ html.is-menu-open body {
     transition:
       transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
       background-color 0.3s ease;
-    margin: 2rem auto 01rem auto;
+    // margin: 2rem auto 01rem auto;
 
     &:hover {
       transform: scale(1.05);
@@ -4502,7 +4502,7 @@ html.is-menu-open body {
     margin: 0;
     padding: 0;
     list-style: none;
-    margin-top: 5rem;
+    // margin-top: 5rem;
 
     li {
       margin: 0;
@@ -4925,10 +4925,26 @@ html.is-menu-open body {
   .c-contact {
     padding: 3rem 1rem 5rem;
 
+    // phones: icon and text side by side, text a little smaller
     &__resume {
-      flex-direction: column;
-      gap: 0.6rem;
-      text-align: center;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.75rem;
+      text-align: left;
+    }
+
+    &__resume-icon {
+      width: 44px;
+      height: 44px;
+    }
+
+    &__resume-text {
+      font-size: 0.85rem;
+      line-height: 1.35;
+    }
+
+    &__resume-link {
+      font-size: 1.1rem;
     }
 
     &__hello {
