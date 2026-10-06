@@ -1670,8 +1670,9 @@ html.is-menu-open .c-to-top {
   // résumé pocket side by side along the bottom
   @media (max-width: 767.9px) {
     --wheel-gap: 72px;
-    --wheel-line: 30%;
-    --wheel-h: 36vh;
+    // chosen word in the middle of the wheel, with neighbours above and below
+    --wheel-line: 50%;
+    --wheel-h: 46vh;
 
     &__top {
       top: 1rem;
@@ -1700,7 +1701,7 @@ html.is-menu-open .c-to-top {
     &__pane {
       left: 1.5rem;
       right: 1.5rem;
-      top: calc(6.75rem + var(--wheel-h) + 1.75rem);
+      top: calc(4.75rem + var(--wheel-h) + 1.5rem);
       transform: none;
       width: auto;
       align-items: center;
@@ -1717,7 +1718,40 @@ html.is-menu-open .c-to-top {
       min-height: 48px;
     }
 
+    // the rails stop short of the scroll cue on the right
+    &__frame {
+      left: 1rem;
+      right: 4.5rem;
+    }
+
+    // scroll cue: the desktop column (line, mouse, counter, line), shorter, on the right edge
+    // level with the chosen word
     &__scroll {
+      display: flex;
+      left: auto;
+      right: 1rem;
+      top: calc(4.75rem + var(--wheel-h) / 2);
+      gap: 0.6rem;
+      transform: translateY(-50%);
+
+      &::before,
+      &::after {
+        height: 34px;
+      }
+    }
+
+    &__mouse {
+      width: 18px;
+      height: 28px;
+    }
+
+    &__count {
+      font-size: 1rem;
+    }
+
+    // descriptions take too much room on phones; the button is enough
+    &__kicker,
+    &__text {
       display: none;
     }
 
@@ -1751,7 +1785,7 @@ html.is-menu-open .c-to-top {
   // shorter phones: tighter wheel, no description line, smaller pocket, so nothing overlaps
   @media (max-width: 767.9px) and (max-height: 760px) {
     --wheel-gap: 58px;
-    --wheel-h: 30vh;
+    --wheel-h: 38vh;
 
     &__item {
       font-size: 9.5vw;
@@ -1759,6 +1793,11 @@ html.is-menu-open .c-to-top {
 
     &__pane {
       top: calc(4.75rem + var(--wheel-h) + 1rem);
+    }
+
+    &__scroll::before,
+    &__scroll::after {
+      height: 20px;
     }
 
     &__kicker,
@@ -3843,7 +3882,7 @@ html.is-menu-open body {
   // Project picker strip: fades at the edges, a hint and a progress bar show it scrolls; drag to scroll
   &__picker {
     position: relative;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
   }
 
   &__picker-hint {
@@ -4229,7 +4268,7 @@ html.is-menu-open body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 7rem 1.5rem 5rem;
+  padding: 6rem 1.5rem 5rem;
   box-sizing: border-box;
   text-align: center;
   color: var(--contact-ink);

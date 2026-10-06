@@ -1523,8 +1523,8 @@ html.is-menu-open .c-to-top {
 @media (max-width: 767.9px) {
   .c-menu-wheel {
     --wheel-gap: 72px;
-    --wheel-line: 30%;
-    --wheel-h: 36vh;
+    --wheel-line: 50%;
+    --wheel-h: 46vh;
   }
   .c-menu-wheel__top {
     top: 1rem;
@@ -1549,7 +1549,7 @@ html.is-menu-open .c-to-top {
   .c-menu-wheel__pane {
     left: 1.5rem;
     right: 1.5rem;
-    top: calc(6.75rem + var(--wheel-h) + 1.75rem);
+    top: calc(4.75rem + var(--wheel-h) + 1.5rem);
     transform: none;
     width: auto;
     align-items: center;
@@ -1563,7 +1563,29 @@ html.is-menu-open .c-to-top {
     align-self: center;
     min-height: 48px;
   }
+  .c-menu-wheel__frame {
+    left: 1rem;
+    right: 4.5rem;
+  }
   .c-menu-wheel__scroll {
+    display: flex;
+    left: auto;
+    right: 1rem;
+    top: calc(4.75rem + var(--wheel-h) / 2);
+    gap: 0.6rem;
+    transform: translateY(-50%);
+  }
+  .c-menu-wheel__scroll::before, .c-menu-wheel__scroll::after {
+    height: 34px;
+  }
+  .c-menu-wheel__mouse {
+    width: 18px;
+    height: 28px;
+  }
+  .c-menu-wheel__count {
+    font-size: 1rem;
+  }
+  .c-menu-wheel__kicker, .c-menu-wheel__text {
     display: none;
   }
   .c-menu-wheel__socials {
@@ -1592,13 +1614,16 @@ html.is-menu-open .c-to-top {
 @media (max-width: 767.9px) and (max-height: 760px) {
   .c-menu-wheel {
     --wheel-gap: 58px;
-    --wheel-h: 30vh;
+    --wheel-h: 38vh;
   }
   .c-menu-wheel__item {
     font-size: 9.5vw;
   }
   .c-menu-wheel__pane {
     top: calc(4.75rem + var(--wheel-h) + 1rem);
+  }
+  .c-menu-wheel__scroll::before, .c-menu-wheel__scroll::after {
+    height: 20px;
   }
   .c-menu-wheel__kicker, .c-menu-wheel__text {
     display: none;
@@ -3290,7 +3315,7 @@ html.is-menu-open body {
 }
 .c-work__picker {
   position: relative;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 .c-work__picker-hint {
   display: flex;
@@ -3594,7 +3619,7 @@ html.is-menu-open body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 7rem 1.5rem 5rem;
+  padding: 6rem 1.5rem 5rem;
   box-sizing: border-box;
   text-align: center;
   color: var(--contact-ink);
