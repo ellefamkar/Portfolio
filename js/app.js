@@ -561,8 +561,8 @@ if (homeSocials) {
   const updateHomeSocials = () => {
     socialsTicking = false;
     // distance between the start and docked positions (CSS: 1.5rem below the bottom edge → centred)
-    // settles a little below the middle (centre at 62% of the screen height)
-    const travel = window.innerHeight * 0.38 + 24 - homeSocials.offsetHeight / 2;
+    // settles in the middle of the right edge
+    const travel = window.innerHeight * 0.5 + 24 - homeSocials.offsetHeight / 2;
     const dock = travel > 0 ? Math.min(Math.max(window.scrollY / travel, 0), 1) : 1;
     homeSocials.style.setProperty("--dock", dock.toFixed(4));
     if (contactSection) {
@@ -679,7 +679,17 @@ if (work) {
       pick.classList.toggle("is-active", i === current);
       pick.setAttribute("aria-pressed", i === current ? "true" : "false");
     });
-    field(".js-work-current").textContent = data.num;
+    // any of these can be commented out in the HTML, so set only the ones present
+    const setText = (selector, text) => {
+      const el = field(selector);
+      if (el) el.textContent = text;
+    };
+    setText(".js-work-current", data.num);
+    setText(".js-work-navnum", data.num);
+    setText(".js-work-bignum", data.num);
+    setText(".js-work-desc", data.desc || "");
+    const progress = field(".js-work-progress");
+    if (progress) progress.style.width = `${((current + 1) / picks.length) * 100}%`;
     field(".js-work-num").textContent = data.num;
     field(".js-work-name").textContent = data.name;
     field(".js-work-type").textContent = data.type;
@@ -737,19 +747,38 @@ if (work) {
     { passive: false }
   );
 
-  // Prev / next sit under "Visit live site", lined up with the bottom of the monitor
+  // Phones: Desktop / Mobile switch above the preview (only one screen is shown there)
+  const devices = field(".js-work-devices");
+  const viewButtons = work.querySelectorAll(".js-work-view");
+  viewButtons.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      const mobile = btn.dataset.view === "mobile";
+      devices.classList.toggle("is-mobile-view", mobile);
+      viewButtons.forEach((b) => {
+        const on = b === btn;
+        b.classList.toggle("is-active", on);
+        b.setAttribute("aria-pressed", on ? "true" : "false");
+      });
+      screens.forEach((screen) => (screen.scrollTop = 0));
+    })
+  );
+
+  // Prev / next + counter: centred under the screens on desktop, under the details card on phones
+  // (one set of buttons, moved, not duplicated)
   const workNav = field(".js-work-nav");
-  const monitor = work.querySelector(".c-work__desktop-frame");
-  const alignNav = () => {
-    if (!workNav || !monitor) return;
-    workNav.style.marginTop = "";
-    if (window.innerWidth < 992) return;
-    const gap = monitor.getBoundingClientRect().bottom - workNav.getBoundingClientRect().bottom;
-    if (gap > 0) workNav.style.marginTop = `${gap}px`;
+  const workInfo = field(".c-work__info");
+  const navDesktop = window.matchMedia("(min-width: 768px)");
+  const placeNav = () => {
+    if (!workNav || !devices || !workInfo) return;
+    if (navDesktop.matches) {
+      if (workNav.parentElement !== devices) devices.appendChild(workNav);
+    } else if (workNav.previousElementSibling !== workInfo) {
+      // phones: right under the details card
+      workInfo.after(workNav);
+    }
   };
-  window.addEventListener("resize", alignNav);
-  window.addEventListener("load", alignNav);
-  alignNav();
+  navDesktop.addEventListener("change", placeNav);
+  placeNav();
 
   // Strip: edge fades follow the scroll position; mouse drag scrolls it
   const updateStrip = () => {
@@ -908,6 +937,27 @@ const skillsCurrent = document.querySelector(".js-skills-current");
 const skillsProgress = document.querySelector(".js-skills-progress");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+// Stacked cards share one height. Make it at least as tall as the fullest card, so none of them
+// ever needs its own scrollbar (tablets and desktop; phones show the cards at their natural height)
+const fitSkillCards = () => {
+  const section = document.querySelector(".c-skills");
+  if (!section || !skillCards.length) return;
+  section.style.removeProperty("--card-h-fit");
+  if (window.innerWidth < 992) return;
+  let tallest = 0;
+  skillCards.forEach((card) => {
+    const before = card.style.height;
+    card.style.height = "auto";
+    tallest = Math.max(tallest, card.scrollHeight);
+    card.style.height = before;
+  });
+  section.style.setProperty("--card-h-fit", `${Math.ceil(tallest)}px`);
+};
+fitSkillCards();
+window.addEventListener("resize", fitSkillCards);
+window.addEventListener("load", fitSkillCards);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitSkillCards);
+
 if (skillsDeck && skillCards.length) {
   let arrivals = []; // scroll position at which each card reaches its sticky spot
   let activeSkill = -1;
@@ -1028,7 +1078,7 @@ if (wheelMenu && wheelOpen) {
       const off = i - wheelIndex;
       const far = Math.abs(off);
       item.style.transform = `translateY(${off * step}px) scale(${far === 0 ? 1 : 0.6})`;
-      item.style.opacity = far === 0 ? 1 : far === 1 ? 0.75 : far === 2 ? 0.55 : 0.4;
+      item.style.opacity = far === 0 ? 1 : far === 1 ? 0.85 : far === 2 ? 0.7 : 0.55;
       item.classList.toggle("is-current", far === 0);
       item.setAttribute("aria-current", far === 0 ? "true" : "false");
       item.tabIndex = far === 0 ? 0 : -1;
@@ -1233,4 +1283,33 @@ if (helloWords && helloVerb) {
       helloWords.classList.remove("is-swapping");
     }, 300);
   }, 2400);
+}
+
+// Back to top: shows once the visitor is well past the hero (about 1.5 screens down)
+const toTop = document.querySelector(".js-to-top");
+
+if (toTop) {
+  const toTopProgress = toTop.querySelector(".js-to-top-progress");
+  let toTopTicking = false;
+  const updateToTop = () => {
+    toTopTicking = false;
+    const show = window.scrollY > window.innerHeight * 1.5;
+    toTop.classList.toggle("is-visible", show);
+    toTop.tabIndex = show ? 0 : -1;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const done = max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0;
+    toTopProgress.style.strokeDashoffset = String(100 - done);
+  };
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!toTopTicking) {
+        toTopTicking = true;
+        window.requestAnimationFrame(updateToTop);
+      }
+    },
+    { passive: true }
+  );
+  window.addEventListener("resize", updateToTop);
+  updateToTop();
 }

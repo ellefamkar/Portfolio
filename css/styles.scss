@@ -465,6 +465,14 @@ body.o-contact-container section {
     -webkit-text-stroke: 1px #e8cfa6;
   }
 
+  // header resume: a pill like the Menu button (icon + "Resume")
+  &__cv--labelled {
+    width: auto !important;
+    min-height: 48px;
+    padding: 0 1.2rem 0 0.95rem !important;
+    border-radius: 999px !important;
+  }
+
   // Resume: a small paper stack + label; the front sheet lifts on hover
   &__cv {
     display: inline-flex;
@@ -1016,6 +1024,11 @@ body.o-contact-container section {
       right: calc(1rem + 20px);
     }
 
+    // the threads would run into the content on small screens
+    &__thread {
+      display: none;
+    }
+
     &__logo {
       width: 46px;
       height: 46px;
@@ -1031,6 +1044,109 @@ body.o-contact-container section {
       display: none;
     }
   }
+}
+
+// Back to top: dark disc with a gold arrow; a thin gold ring around it fills as you read.
+// Desktop: under the social column (same centre line); phones: bottom-right corner.
+.c-to-top {
+  position: fixed;
+  right: calc(5rem + 28px);
+  bottom: 2rem;
+  z-index: 80;
+  width: 52px;
+  height: 52px;
+  margin-right: -26px;
+  border-radius: 50%;
+  background: #2a2223;
+  color: #d9b48a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 14px 28px -14px rgba(35, 28, 29, 0.6);
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px) scale(0.85);
+  transition:
+    opacity 0.35s ease,
+    transform 0.5s cubic-bezier(0.3, 1.3, 0.5, 1),
+    visibility 0s linear 0.5s;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition:
+      opacity 0.35s ease,
+      transform 0.5s cubic-bezier(0.3, 1.3, 0.5, 1),
+      visibility 0s;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: #f3ebe8;
+
+    .c-to-top__arrow {
+      transform: translateY(-3px);
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px solid #231c1d;
+    outline-offset: 4px;
+  }
+
+  &__ring {
+    position: absolute;
+    inset: -5px;
+    width: calc(100% + 10px);
+    height: calc(100% + 10px);
+    transform: rotate(-90deg);
+
+    circle {
+      fill: none;
+      stroke: rgba(138, 90, 43, 0.2);
+      stroke-width: 1.5;
+    }
+
+    .c-to-top__progress {
+      stroke: #d9b48a;
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      transition: stroke-dashoffset 0.15s linear;
+    }
+  }
+
+  &__arrow {
+    transition: transform 0.3s ease;
+  }
+
+  // the social column sits on this line between 768 and 1279px too, but lower down
+  @media (max-width: 1279.9px) {
+    right: calc(1rem + 20px);
+    bottom: 1rem;
+  }
+
+  @media (min-width: 768px) and (max-width: 1279.9px) {
+    bottom: calc(1rem + 230px);
+  }
+
+  @media (max-width: 767.9px) {
+    right: 1rem;
+    bottom: 1rem;
+    margin-right: 0;
+    width: 46px;
+    height: 46px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: opacity 0.2s ease;
+  }
+}
+
+html.is-menu-open .c-to-top {
+  opacity: 0;
+  visibility: hidden;
 }
 
 // Site menu: full-screen picker wheel. Scroll, swipe, arrow keys or a click turn the wheel;
@@ -1261,6 +1377,36 @@ body.o-contact-container section {
       span:last-child {
         transform: translateX(4px);
       }
+    }
+  }
+
+  // Social links row: only on phones, where the fixed social column is hidden
+  &__socials {
+    display: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 0.5rem;
+
+    a {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(138, 90, 43, 0.35);
+      background: rgba(246, 241, 238, 0.55);
+      color: #8a5a2b;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      text-decoration: none;
+    }
+
+    img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      filter: grayscale(1) sepia(0.6) brightness(0.7);
     }
   }
 
@@ -1520,9 +1666,12 @@ body.o-contact-container section {
     }
   }
 
-  // Phones: wheel on top, details under it, résumé pocket at the bottom
+  // Phones: wheel on top, details under it with room to breathe, then the social links and the
+  // résumé pocket side by side along the bottom
   @media (max-width: 767.9px) {
-    --wheel-gap: 84px;
+    --wheel-gap: 72px;
+    --wheel-line: 30%;
+    --wheel-h: 36vh;
 
     &__top {
       top: 1rem;
@@ -1539,44 +1688,86 @@ body.o-contact-container section {
     &__wheel {
       left: 0;
       width: 100%;
-      top: 4.5rem;
+      top: 4.75rem;
       bottom: auto;
-      height: 40vh;
+      height: var(--wheel-h);
     }
 
     &__item {
-      font-size: 13vw;
+      font-size: 11vw;
     }
 
     &__pane {
       left: 1.5rem;
       right: 1.5rem;
-      top: calc(4.5rem + 40vh + 0.5rem);
+      top: calc(6.75rem + var(--wheel-h) + 1.75rem);
+      transform: none;
       width: auto;
       align-items: center;
       text-align: center;
-      gap: 0.9rem;
+      gap: 0.75rem;
     }
 
     &__text {
-      font-size: 1.35rem;
+      font-size: 1.25rem;
     }
 
     &__cta {
       align-self: center;
+      min-height: 48px;
     }
 
     &__scroll {
       display: none;
     }
 
+    &__socials {
+      display: flex;
+      position: absolute;
+      left: 50%;
+      bottom: 1.25rem;
+      transform: translateX(-50%);
+      z-index: 2;
+      gap: 0.5rem;
+
+      a {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+    }
+
+    // pocket centred above the social row
     &__resume {
       left: 50%;
       right: auto;
-      bottom: 1rem;
+      bottom: calc(2.25rem + 40px + 0.75rem);
       margin-left: -125px;
-      transform: scale(0.72);
+      transform: scale(0.6);
       transform-origin: 50% 100%;
+    }
+  }
+
+  // shorter phones: tighter wheel, no description line, smaller pocket, so nothing overlaps
+  @media (max-width: 767.9px) and (max-height: 760px) {
+    --wheel-gap: 58px;
+    --wheel-h: 30vh;
+
+    &__item {
+      font-size: 9.5vw;
+    }
+
+    &__pane {
+      top: calc(4.75rem + var(--wheel-h) + 1rem);
+    }
+
+    &__kicker,
+    &__text {
+      display: none;
+    }
+
+    &__resume {
+      transform: scale(0.5);
     }
   }
 
@@ -1711,7 +1902,7 @@ html.is-menu-open body {
   }
 
   &__text {
-    max-width: 680px;
+    max-width: 720px;
     margin: 3.5rem 0 3rem;
     font-family: $font-union;
     font-size: 1.3rem;
@@ -1735,11 +1926,7 @@ html.is-menu-open body {
       color: #231c1d;
 
       .c-hero__cta-seal {
-        transform: rotate(-20deg) scale(1.1);
-      }
-
-      .c-hero__cta-ring {
-        animation-duration: 5s;
+        transform: scale(1.08);
       }
 
       .c-hero__cta-outline {
@@ -1776,15 +1963,14 @@ html.is-menu-open body {
 
   &__cta-seal {
     position: absolute;
-    right: -0.45em;
-    top: -1.05em;
-    // opacity: 0.5;
-    opacity: 0.15;
-    // mix-blend-mode: soft-light;
-    // mix-blend-mode: screen;
-    width: max(2.6em, 131px);
-    height: max(3.6em, 134px);
-    transition: transform 0.7s cubic-bezier(0.3, 1.4, 0.5, 1);
+    // centred on the end of "Continues", so the left half of the ring crosses the word
+    right: -1.3em;
+    top: -0.8em;
+    opacity: 0.28;
+    width: 2.6em;
+    height: 2.6em;
+    pointer-events: none;
+    transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
   &__cta-ring {
@@ -1804,21 +1990,17 @@ html.is-menu-open body {
     }
   }
 
-  // The ring spins inside this fixed frame; its lower-left part, where the letters pass over
-  // "Continues", is faded so they turn see-through there and come back as they move on
+  // The ring spins inside this fixed frame. Its left half sits over "Continues", so the
+  // letters turn more see-through as they cross the word and return to full once past it
   &__cta-fade {
     position: absolute;
     inset: 0;
     -webkit-mask-image: linear-gradient(
-      to bottom left,
-      #000 42%,
-      rgba(0, 0, 0, 0.15) 72%
+      to right,
+      rgba(0, 0, 0, 0.3) 46%,
+      #000 60%
     );
-    mask-image: linear-gradient(
-      to bottom left,
-      #000 42%,
-      rgba(0, 0, 0, 0.15) 72%
-    );
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.3) 46%, #000 60%);
   }
 
   &__cta-count {
@@ -1894,8 +2076,18 @@ html.is-menu-open body {
       height: 44px;
     }
 
-    span.c-site-header__cv-label,
     span.c-site-header__cv-arrow {
+      display: none;
+    }
+
+    &__cv--labelled {
+      width: 44px !important;
+      min-height: 44px;
+      padding: 0 !important;
+      border-radius: 50% !important;
+    }
+
+    span.c-site-header__cv-label {
       display: none;
     }
 
@@ -1913,7 +2105,8 @@ html.is-menu-open body {
   .c-hero {
     --window-start: 20vw;
 
-    padding: 6.5rem 1rem 3rem;
+    min-height: 0;
+    padding: 6.5rem 1rem 2.5rem;
 
     &__title {
       flex-wrap: wrap;
@@ -1941,18 +2134,12 @@ html.is-menu-open body {
       font-size: 9vw;
     }
 
-    // phones: the seal sits centred under the words
-    &__cta {
-      padding-bottom: 7.5rem;
-    }
-
+    // phones: the ring still crosses the end of "Continues", tucked in from the screen edge
     &__cta-seal {
-      right: auto;
-      left: 50%;
-      top: calc(100% + 3rem);
-      margin-left: -48px;
-      width: 96px;
-      height: 96px;
+      right: -0.9em;
+      top: -1.3em;
+      width: 3.6em;
+      height: 3.6em;
     }
   }
 }
@@ -1979,6 +2166,9 @@ html.is-menu-open body {
     animation: none;
   }
 
+  .c-contact__hello-tap,
+  .c-contact__hello-tap::after,
+  .c-contact__hello-arrow,
   .c-contact__hello-pulse {
     animation: none;
     opacity: 0;
@@ -2000,7 +2190,7 @@ html.is-menu-open body {
 .o-home-container .c-social-icons {
   --dock: 0;
 
-  top: calc((100% + 1.5rem) * (1 - var(--dock)) + 62% * var(--dock));
+  top: calc((100% + 1.5rem) * (1 - var(--dock)) + 50% * var(--dock));
   bottom: auto;
   // centre line 5rem + 28px from the edge, mirroring the EF logo on the left
   right: calc(5rem + 8px);
@@ -2084,6 +2274,11 @@ html.is-menu-open body {
     object-fit: contain;
     // muted to the bronze tone until hover
     filter: grayscale(1) sepia(0.6) brightness(0.7);
+  }
+
+  // phones: hidden; the same links sit in the menu and in the contact section
+  @media (max-width: 767.9px) {
+    display: none !important;
   }
 
   // smaller screens: stays bottom-right, without the lines
@@ -2253,7 +2448,7 @@ html.is-menu-open body {
   &__msg {
     display: grid;
     grid-template-rows: 1fr;
-    max-width: 85%;
+    max-width: 87%;
     transition: grid-template-rows 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
   }
 
@@ -2558,7 +2753,7 @@ html.is-menu-open body {
   .c-intro-chat {
     &__stage {
       min-height: 0;
-      padding: 4rem 1rem 3rem;
+      padding: 2rem 1rem 2.5rem;
     }
 
     // The title is small here, so the chat starts just below it instead of over it
@@ -2631,7 +2826,7 @@ html.is-menu-open body {
 
   display: block;
   width: 100%;
-  padding: 6rem 0 8rem;
+  padding: 6rem 0 4rem;
   color: var(--skills-ink);
 
   &__inner {
@@ -2652,14 +2847,20 @@ html.is-menu-open body {
     gap: 1.75rem;
   }
 
+  // same voice as the hero: solid words, then the last word outlined (like "Elly Famkar")
   &__title {
     margin: 0;
-    font-family: $font-iskry;
+    font-family: $font-bulter;
     font-weight: 400;
-    font-size: clamp(2.25rem, 3.6vw, 3.25rem);
-    line-height: 1.05;
+    font-size: clamp(2.5rem, 4vw, 3.75rem);
+    line-height: 1.02;
     text-align: left;
     text-wrap: balance;
+  }
+
+  &__title-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(35, 28, 29, 0.6);
   }
 
   &__counter {
@@ -2757,13 +2958,13 @@ html.is-menu-open body {
     display: flex;
     flex-direction: column;
     gap: 14vh;
-    padding-bottom: 12vh;
+    padding-bottom: 4vh;
   }
 
   &__card {
     position: sticky;
     top: calc(var(--stack-top) + var(--i) * var(--stack-step));
-    height: var(--card-h);
+    height: max(var(--card-h), var(--card-h-fit, 0px));
     box-sizing: border-box;
     overflow-y: auto;
     padding: 2.75rem 3rem;
@@ -2927,7 +3128,7 @@ html.is-menu-open body {
 // Tablet and phone: plain card list, menu becomes wrapped chips (no stacking)
 @media (max-width: 991.9px) {
   .c-skills {
-    padding: 4rem 0 6rem;
+    padding: 2.5rem 0 3rem;
 
     &__inner {
       grid-template-columns: minmax(0, 1fr);
@@ -3079,6 +3280,24 @@ html.is-menu-open body {
     align-items: start;
   }
 
+  // desktop: less empty space above the title (after the skills), more between the title and
+  // the projects, so the heading sits evenly between the two
+  @media (min-width: 992px) {
+    padding-top: 3rem;
+
+    &__header {
+      margin-bottom: 6rem;
+    }
+  }
+
+  // desktop: project details sit level with the middle of the monitor
+  @media (min-width: 768px) {
+    &__info {
+      align-self: center;
+      margin-top: -3rem;
+    }
+  }
+
   // keep the devices clear of the fixed social column on the right
   @media (min-width: 1280px) {
     &__body,
@@ -3092,10 +3311,29 @@ html.is-menu-open body {
   }
 
   &__info {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 0.9rem;
     padding-top: 1rem;
+
+    > :not(.c-work__bignum) {
+      position: relative;
+    }
+  }
+
+  // giant outlined project number behind the text
+  &__bignum {
+    position: absolute;
+    left: -0.06em;
+    top: -0.42em;
+    font-family: $font-bulter;
+    font-size: 17rem;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(138, 90, 43, 0.25);
+    pointer-events: none;
+    user-select: none;
   }
 
   &__num {
@@ -3120,6 +3358,16 @@ html.is-menu-open body {
     font-family: $font-union;
     font-size: 0.95rem;
     color: var(--work-muted);
+  }
+
+  // two-line summary of the site
+  &__desc {
+    margin: 0.2rem 0 0.4rem;
+    max-width: 34ch;
+    font-family: $font-union;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--work-ink);
   }
 
   // the site's address opens the live site; it sits on its own line under the description
@@ -3230,9 +3478,63 @@ html.is-menu-open body {
   }
 
   // prev / next: light outlined discs under "Visit live site", level with the monitor's bottom
+  // desktop: "← 01 / 11 ——— →" centred under the screens
   &__nav {
     display: flex;
-    gap: 0.75rem;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+    margin-top: 2rem;
+  }
+
+  &__nav-count {
+    font-family: $font-bulter;
+    font-size: 1.4rem;
+    color: var(--work-ink);
+  }
+
+  &__nav-total {
+    font-size: 0.95rem;
+    color: var(--work-muted);
+  }
+
+  &__nav-track {
+    width: 160px;
+    height: 2px;
+    background: rgba(35, 28, 29, 0.15);
+
+    i {
+      display: block;
+      width: 9%;
+      height: 100%;
+      background: var(--work-accent);
+      transition: width 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+  }
+
+  // next is the dark one, so the main way forward stands out
+  .js-work-next {
+    background: var(--work-ink);
+    border-color: var(--work-ink);
+
+    svg {
+      stroke: #d9b48a;
+    }
+
+    &:hover {
+      background: var(--work-accent);
+
+      svg {
+        stroke: #f3ebe8;
+      }
+    }
+  }
+
+  // desktop: the "Visit live site" button already opens the site, so the address line steps aside
+  @media (min-width: 768px) {
+    &__domain {
+      display: none;
+    }
   }
 
   &__arrow {
@@ -3444,11 +3746,11 @@ html.is-menu-open body {
     left: -24px;
     bottom: 70px;
     z-index: 3;
-    width: 290px;
+    width: 340px;
     display: flex;
     gap: 0.9rem;
     align-items: flex-start;
-    padding: 1rem 1.1rem;
+    padding: 1.25rem 1.35rem;
     border-radius: 18px;
     background: rgba(42, 34, 35, 0.92);
     color: #f3ebe8;
@@ -3467,7 +3769,9 @@ html.is-menu-open body {
       transform: none;
       pointer-events: auto;
       // a gold ring pulses out a few times so the tip gets noticed
-      animation: work-tip-pulse 1.4s ease-out 0.5s 4;
+      animation:
+        work-tip-pulse 1.4s ease-out 0.5s infinite,
+        work-tip-float 3.6s ease-in-out 0.5s infinite;
     }
 
     &[hidden] {
@@ -3477,10 +3781,11 @@ html.is-menu-open body {
 
   &__tip-icon {
     flex-shrink: 0;
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     background: rgba(217, 180, 138, 0.18);
+    animation: work-tip-ping 1.8s ease-out infinite;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -3497,9 +3802,9 @@ html.is-menu-open body {
   }
 
   &__tip-title {
-    margin: 0 0 0.2rem;
+    margin: 0 0 0.25rem;
     font-family: $font-iskry;
-    font-size: 1.15rem;
+    font-size: 1.4rem;
     line-height: 1.2;
   }
 
@@ -3712,7 +4017,7 @@ html.is-menu-open body {
       width: auto;
     }
 
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
 
     &__body {
       grid-template-columns: minmax(0, 1fr);
@@ -3733,6 +4038,151 @@ html.is-menu-open body {
   }
 }
 
+// Phones: switch on top, one screen (desktop or mobile), a floating info card overlapping its
+// bottom edge with the arrows, then the thumbnails close underneath
+.c-work__view {
+  display: none;
+}
+
+@media (max-width: 767.9px) {
+  .c-work {
+    &__body {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    &__devices {
+      order: -1;
+    }
+
+    &__view {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+
+      // same pill switch as design 01
+      & {
+        align-self: center;
+        width: max-content;
+        margin-inline: auto;
+        padding: 4px;
+        border-radius: 999px;
+        background: rgba(246, 241, 238, 0.75);
+        box-shadow: inset 0 0 0 1px rgba(138, 90, 43, 0.22);
+      }
+    }
+
+    &__view-btn {
+      min-height: 40px;
+      padding: 0 1.2rem;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      font-family: $font-union;
+      font-size: 0.85rem;
+      color: var(--work-muted);
+      cursor: pointer;
+
+      &.is-active {
+        background: var(--work-ink);
+        color: #f3ebe8;
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--work-ink);
+        outline-offset: 2px;
+      }
+    }
+
+    &__screen {
+      height: 440px;
+    }
+
+    &__stand,
+    &__base {
+      display: none;
+    }
+
+    // mobile preview: the phone takes the monitor's place
+    &__devices.is-mobile-view {
+      .c-work__desktop {
+        display: none;
+      }
+
+      .c-work__phone {
+        display: block;
+        position: relative;
+        top: auto;
+        right: auto;
+        width: 64%;
+        height: 470px;
+        margin: 0 auto;
+      }
+    }
+
+    // floating card over the bottom of the screen
+    &__info {
+      position: relative;
+      z-index: 2;
+      // always nearly full width, whatever the project's content
+      align-self: stretch;
+      box-sizing: border-box;
+      width: calc(100% - 24px);
+      max-width: none;
+      margin: -64px 12px 0;
+      padding: 1.1rem 1.15rem 1.15rem;
+      border-radius: 20px;
+      background: rgba(246, 241, 238, 0.95);
+      box-shadow: 0 20px 40px -20px rgba(35, 28, 29, 0.5);
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+
+      > * {
+        margin: 0;
+      }
+    }
+
+    &__name {
+      font-size: 1.6rem;
+      line-height: 1.1;
+    }
+
+    // phones: the Visit live site button, as on desktop, instead of the address link
+    &__domain {
+      display: none;
+    }
+
+    &__actions {
+      margin-top: 0.5rem !important;
+    }
+
+    &__bignum,
+    &__desc {
+      display: none;
+    }
+
+    &__nav {
+      margin-top: 1.25rem !important;
+      gap: 1rem;
+    }
+
+    &__arrow {
+      width: 46px;
+      height: 46px;
+    }
+
+    &__picker {
+      margin-top: 1.25rem;
+    }
+
+    &__nav-track {
+      width: 90px;
+    }
+  }
+}
+
 @media (max-width: 575.9px) {
   .c-work {
     &__header {
@@ -3744,15 +4194,6 @@ html.is-menu-open body {
     &__counter {
       position: static;
     }
-
-    &__screen {
-      height: 260px;
-    }
-
-    &__stand,
-    &__base {
-      display: none;
-    }
   }
 }
 
@@ -3760,6 +4201,11 @@ html.is-menu-open body {
   .c-work__pick,
   .c-work__tip {
     transition: none;
+  }
+
+  .c-work__tip.is-visible,
+  .c-work__tip-icon {
+    animation: none;
   }
 
   .c-work__tip-icon .c-work__tip-wheel {
@@ -3783,7 +4229,7 @@ html.is-menu-open body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 7rem 1.5rem 9rem;
+  padding: 7rem 1.5rem 5rem;
   box-sizing: border-box;
   text-align: center;
   color: var(--contact-ink);
@@ -3832,6 +4278,7 @@ html.is-menu-open body {
     transition:
       transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
       background-color 0.3s ease;
+    margin: 2rem auto 01rem auto;
 
     &:hover {
       transform: scale(1.05);
@@ -3888,6 +4335,41 @@ html.is-menu-open body {
 
   &__hello-verb {
     color: var(--contact-gold);
+  }
+
+  // A gold hand on the button's edge keeps "tapping" it, with a ripple, to show what to do
+  &__hello-tap {
+    position: absolute;
+    right: 6%;
+    bottom: 6%;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--contact-gold);
+    color: #231c1d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px -8px rgba(35, 28, 29, 0.6);
+    animation: contact-tap 2.2s ease-in-out infinite;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid var(--contact-gold);
+      animation: contact-tap-ripple 2.2s ease-out infinite;
+    }
+
+    svg {
+      transform: translate(1px, 2px);
+    }
+  }
+
+  &__hello-arrow {
+    display: inline-flex;
+    animation: contact-arrow-nudge 2s ease-in-out infinite;
   }
 
   &__hello-arrow svg {
@@ -3981,6 +4463,7 @@ html.is-menu-open body {
     margin: 0;
     padding: 0;
     list-style: none;
+    margin-top: 5rem;
 
     li {
       margin: 0;
@@ -4285,16 +4768,84 @@ html.is-menu-open body {
   }
 }
 
+@keyframes work-tip-float {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -6px;
+  }
+}
+
+@keyframes work-tip-ping {
+  0% {
+    box-shadow: 0 0 0 0 rgba(217, 180, 138, 0.7);
+  }
+  70%,
+  100% {
+    box-shadow: 0 0 0 12px rgba(217, 180, 138, 0);
+  }
+}
+
 @keyframes work-tip-pulse {
   0% {
     box-shadow:
       0 24px 50px rgba(40, 25, 25, 0.3),
-      0 0 0 0 rgba(217, 180, 138, 0.6);
+      0 0 0 0 rgba(217, 180, 138, 0.85);
   }
   100% {
     box-shadow:
       0 24px 50px rgba(40, 25, 25, 0.3),
-      0 0 0 22px rgba(217, 180, 138, 0);
+      0 0 0 30px rgba(217, 180, 138, 0);
+  }
+}
+
+@keyframes contact-tap {
+  0%,
+  40%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  20% {
+    transform: translate(-4px, -4px) scale(0.88);
+  }
+}
+
+@keyframes contact-tap-ripple {
+  0%,
+  15% {
+    transform: scale(1);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.9;
+  }
+  70%,
+  100% {
+    transform: scale(1.9);
+    opacity: 0;
+  }
+}
+
+@keyframes contact-hint-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes contact-arrow-nudge {
+  0%,
+  60%,
+  100% {
+    transform: translate(0, 0);
+  }
+  30% {
+    transform: translate(4px, -4px);
   }
 }
 
@@ -4333,7 +4884,7 @@ html.is-menu-open body {
 
 @media (max-width: 575.9px) {
   .c-contact {
-    padding: 5rem 1rem 6rem;
+    padding: 3rem 1rem 5rem;
 
     &__resume {
       flex-direction: column;
