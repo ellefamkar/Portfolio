@@ -1,13 +1,12 @@
 @import "variables";
 @import "settings";
-@import "animations";
 
 body {
   background-color: #d7cecd;
-  // Soft plaster wall, pre-rendered from the SVG filters below (wall-plaster.jpg = wall + base colour + gradients)
+  // Soft plaster wall, pre-rendered from the SVG filters below (wall-plaster.webp = wall + base colour + gradients)
   background-image:
-    url("../assets/images/wall-grain.png"),
-    url("../assets/images/wall-plaster.jpg");
+    url("../assets/images/wall-grain.webp"),
+    url("../assets/images/wall-plaster.webp");
   background-size:
     240px 240px,
     cover;
@@ -69,16 +68,6 @@ header {
   }
 }
 
-.download-resume-btn {
-  border: none;
-  outline: none;
-  background: transparent;
-  cursor: pointer;
-
-  img {
-    width: 45px;
-  }
-}
 
 section {
   // min-height: 100vh;
@@ -87,11 +76,6 @@ section {
   justify-content: center;
 }
 
-section.o-main-sections.c-contact-section,
-body.o-contact-container section {
-  height: auto;
-  min-height: inherit;
-}
 
 .o-main-container {
   min-height: 100vh;
@@ -102,124 +86,16 @@ body.o-contact-container section {
   align-items: center;
 }
 
-.c-main-title-box {
-  margin-bottom: 5%;
-}
 
-.c-main-title {
-  white-space: nowrap;
-  overflow: hidden;
-  font-size: 13vw;
-  margin-left: 0px;
-  line-height: 1;
-  z-index: 2;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
 
-  span {
-    z-index: 1;
-  }
-}
 
-.o-portfolio-container {
-  .c-main-title {
-    font-size: 12vw;
-  }
-}
 
-.c-main-job-title {
-  font-family: $font-iskry;
-  margin-top: 0;
-  margin-bottom: -2%;
-  color: #4a3a37;
-  opacity: 1;
-  margin-left: 6rem;
-  z-index: 1000;
-  opacity: 0.4;
-  font-size: 3.5vw;
-}
 
-.c-main-description {
-  font-family: $font-iskry;
-  font-size: 1.6vw;
-  max-width: 40vw;
-  margin-left: 8rem;
-  margin-top: 1.5rem;
-}
 
-.c-desktop-menu {
-  top: 5%;
-  left: 50%;
 
-  .nav-item {
-    border-right: 1px solid #b2b2b2;
 
-    &.active {
-      color: #ffefd9;
 
-      .nav-link {
-        font-size: 32px;
-      }
-    }
 
-    &:last-child {
-      border-right: none;
-    }
-
-    .nav-link {
-      font-size: 27px;
-      line-height: 1;
-      font-family: $font-iskry;
-      padding: 0 1rem;
-      color: #ffefd9;
-      color: #f8f7f7;
-    }
-
-    &:nth-child(1) .nav-link {
-      padding: 0 1.5rem 0 1.5rem;
-    }
-
-    &:nth-child(2) .nav-link {
-      padding: 0 1.85rem 0 1rem;
-    }
-  }
-}
-
-// .c-desktop-menu {
-// z-index: -1;
-//   width: fit-content !important;
-// }
-
-.navbar-nav {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0;
-}
-
-.c-title-img {
-  transform: none !important;
-  position: absolute;
-  right: 0;
-  top: 0;
-  // opacity: 0.3 !important;
-  height: 100%;
-  width: fit-content;
-  z-index: -1;
-}
-
-.hover {
-  background-color: transparent;
-  opacity: 0.1;
-}
-
-.cursorinnerhover {
-  width: 50px;
-  height: 50px;
-  opacity: 0.9;
-  z-index: -1;
-  background-color: rgba(255, 199, 115, 0.883);
-}
 
 .c-social-icons {
   bottom: 3%;
@@ -240,174 +116,14 @@ body.o-contact-container section {
   filter: brightness(0) invert(1);
 }
 
-.c-typewriter {
-  // position: relative;
-  // top: 50%;
-  // width: 10.18em;
-  // margin: 0 auto;
-  border-right: 2px solid rgba(255, 255, 255, 0.75);
-  // font-size: 180%;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
 
-  background: linear-gradient(
-    90deg,
-    #666 0%,
-    #666 50%,
-    #f2eadc 60%,
-    #fff 75%,
-    #f2eadc 90%,
-    #666 100%
-  );
 
-  background-size: 200% 100%;
-  background-position: 100% 0;
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 
-  animation: textHighlight 4s ease-in-out infinite;
-}
 
-@keyframes textHighlight {
-  0% {
-    background-position: 100% 0;
-  }
-  70% {
-    background-position: 40% 0;
-  }
-  100% {
-    background-position: 5% 0;
-  }
-}
 
-.img-nav-item {
-  position: relative;
-  z-index: 1;
 
-  img {
-    position: absolute;
-    width: auto;
-    height: 100px;
-    object-fit: cover;
-    transform: translateX(-50%) translateY(-50%);
-    top: 20%;
-    right: -130%;
-    left: 100%;
-    z-index: -10;
-    opacity: 0;
-    visibility: hidden;
-    filter: blur(2px);
-    pointer-events: none;
-  }
-}
 
-.o-home-container {
-  .img-nav-item {
-    position: relative;
-
-    img {
-      opacity: 0;
-      visibility: hidden;
-      filter: blur(2px);
-    }
-  }
-}
-
-.js-bg {
-  height: 100vh !important;
-}
-
-.container-slider {
-  overscroll-behavior: none;
-  width: 600%;
-  height: 100%;
-  display: flex;
-  flex-wrap: nowrap;
-}
-
-.c-panel {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  padding: 10px;
-  padding-bottom: 8rem !important;
-
-  h3,
-  li {
-    text-align: left;
-  }
-
-  h4,
-  p,
-  li {
-    font-family: $font-union;
-  }
-
-  &__description {
-    text-align: center;
-    max-width: 450px;
-    padding-bottom: 50px;
-    padding: 0 2rem 4rem 2rem;
-
-    li::marker {
-      content: "◌";
-      margin-right: 6px;
-    }
-
-    p {
-      text-align: center;
-      font-size: 22px;
-      font-weight: 300;
-    }
-
-    h2 {
-      margin-bottom: 2rem;
-    }
-  }
-
-  li {
-    padding-left: 8px;
-    margin: 0.3em 0 0.3em 0;
-    text-align: left;
-
-    &::marker {
-      content: "◌";
-      margin-right: 6px;
-    }
-  }
-}
-
-.o-portfolio-container {
-  .c-panel {
-    justify-content: space-around;
-    align-items: baseline;
-    text-align: center;
-  }
-}
-
-.o-about-container {
-  .c-panel__description {
-    text-align: center;
-    max-width: 650px;
-  }
-}
-.c-panel__description {
-  text-align: center;
-  max-width: 1025px;
-  margin: 2rem auto;
-  padding-bottom: 60px;
-}
 
 // Site header: EF monogram and the menu button (sits over the hero)
 .c-site-header {
@@ -504,9 +220,6 @@ body.o-contact-container section {
         transform: translate(-4px, 2px) rotate(-14deg);
       }
 
-      .c-site-header__cv-arrow {
-        animation: hero-resume-drop 0.9s ease-in-out infinite;
-      }
     }
 
     &:focus-visible {
@@ -566,10 +279,6 @@ body.o-contact-container section {
     }
   }
 
-  span.c-site-header__cv-arrow {
-    display: inline-block;
-    color: #8a5a2b;
-  }
 
   &__actions {
     display: flex;
@@ -643,154 +352,10 @@ body.o-contact-container section {
     transform: none;
   }
 
-  &__nav {
-    display: flex;
-    align-items: center;
-    gap: 2.25rem;
 
-    a {
-      position: relative;
-      font-family: $font-union;
-      font-size: 0.95rem;
-      color: #3b3132;
-      text-decoration: none;
-      padding: 0.5rem 0;
 
-      &::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0.15rem;
-        height: 1px;
-        background: #8a5a2b;
-        transform: scaleX(0);
-        transform-origin: left;
-        transition: transform 0.3s ease;
-      }
 
-      &:hover,
-      &:focus-visible {
-        color: #231c1d;
 
-        &::after {
-          transform: scaleX(1);
-        }
-      }
-    }
-  }
-
-  // Résumé pill: résumé icon in a gold-ringed circle, label, and an arrow that drops on hover;
-  // a soft light sweeps across the pill on hover
-  &__resume {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.7rem;
-    min-height: 48px;
-    box-sizing: border-box;
-    padding: 0 1.15rem 0 5px;
-    overflow: hidden;
-    isolation: isolate;
-    border-radius: 999px;
-    background: linear-gradient(135deg, #3a2f30, #231c1d 60%);
-    box-shadow:
-      inset 0 0 0 1px rgba(217, 180, 138, 0.28),
-      0 10px 24px -12px rgba(35, 28, 29, 0.6);
-    color: #f3ebe8;
-    text-decoration: none;
-    transition:
-      transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
-      box-shadow 0.35s ease;
-
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      background: linear-gradient(
-        105deg,
-        transparent 30%,
-        rgba(217, 180, 138, 0.28) 50%,
-        transparent 70%
-      );
-      transform: translateX(-110%);
-      transition: transform 0.7s ease;
-    }
-
-    &:hover,
-    &:focus-visible {
-      color: #f3ebe8;
-      transform: translateY(-2px);
-      box-shadow:
-        inset 0 0 0 1px rgba(217, 180, 138, 0.6),
-        0 16px 30px -14px rgba(35, 28, 29, 0.7);
-
-      &::after {
-        transform: translateX(110%);
-      }
-
-      .c-site-header__resume-icon {
-        background: #d9b48a;
-        transform: rotate(-10deg);
-
-        img {
-          filter: brightness(0.2);
-        }
-      }
-
-      .c-site-header__resume-arrow svg {
-        animation: header-resume-drop 0.9s ease infinite;
-      }
-    }
-  }
-
-  &__resume-icon {
-    width: 38px;
-    height: 38px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    border: 1px solid rgba(217, 180, 138, 0.55);
-    background: rgba(217, 180, 138, 0.12);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition:
-      background-color 0.35s ease,
-      transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
-
-    img {
-      width: 22px;
-      height: 22px;
-      transition: filter 0.35s ease;
-    }
-  }
-
-  &__resume-arrow {
-    display: inline-flex;
-    width: 22px;
-    height: 22px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 1px solid rgba(217, 180, 138, 0.35);
-
-    svg {
-      width: 9px;
-      height: 11px;
-      fill: none;
-      stroke: #d9b48a;
-      stroke-width: 1.8;
-    }
-  }
-
-  // Undo the global "header span" styles meant for the old header
-  &__resume-label {
-    font-family: $font-union;
-    font-weight: 400;
-    font-size: 0.95rem;
-    letter-spacing: 0.02em;
-  }
 
   a:focus-visible {
     outline: 2px solid #231c1d;
@@ -804,37 +369,7 @@ body.o-contact-container section {
   }
 }
 
-@keyframes hero-resume-drop {
-  0%,
-  100% {
-    transform: translateY(-2px);
-  }
-  50% {
-    transform: translateY(3px);
-  }
-}
 
-@keyframes header-resume-drop {
-  0%,
-  100% {
-    transform: translateY(-1px);
-  }
-  50% {
-    transform: translateY(2px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .c-site-header__resume,
-  .c-site-header__resume::after,
-  .c-site-header__resume-icon {
-    transition: none;
-  }
-
-  .c-site-header__resume:hover .c-site-header__resume-arrow svg {
-    animation: none;
-  }
-}
 
 // While scrolling: EF floats top-left; a round Menu button and a small resume button float
 // top-right, each corner trailing a short gold thread like the social column
@@ -1162,8 +697,8 @@ html.is-menu-open .c-to-top {
   overflow: hidden;
   background-color: #ebe4e1;
   background-image:
-    url("../assets/images/wall-grain.png"),
-    url("../assets/images/wall-plaster.jpg");
+    url("../assets/images/wall-grain.webp"),
+    url("../assets/images/wall-plaster.webp");
   background-size:
     240px 240px,
     cover;
@@ -1672,7 +1207,11 @@ html.is-menu-open .c-to-top {
     --wheel-gap: 72px;
     // chosen word in the middle of the wheel, with neighbours above and below
     --wheel-line: 50%;
-    --wheel-h: 46vh;
+    // svh = the height actually visible with the browser bars showing (vh is taller on phones,
+    // which pushed the items down into the résumé)
+    --wheel-h: 42vh;
+    --wheel-h: 42svh;
+    --wheel-top: 4.5rem;
 
     &__top {
       top: 1rem;
@@ -1689,7 +1228,7 @@ html.is-menu-open .c-to-top {
     &__wheel {
       left: 0;
       width: 100%;
-      top: 4.75rem;
+      top: var(--wheel-top);
       bottom: auto;
       height: var(--wheel-h);
     }
@@ -1701,7 +1240,7 @@ html.is-menu-open .c-to-top {
     &__pane {
       left: 1.5rem;
       right: 1.5rem;
-      top: calc(4.75rem + var(--wheel-h) + 1.5rem);
+      top: calc(var(--wheel-top) + var(--wheel-h) + 1.5rem);
       transform: none;
       width: auto;
       align-items: center;
@@ -1730,7 +1269,7 @@ html.is-menu-open .c-to-top {
       display: flex;
       left: auto;
       right: 1rem;
-      top: calc(4.75rem + var(--wheel-h) / 2);
+      top: calc(var(--wheel-top) + var(--wheel-h) / 2);
       gap: 0.6rem;
       transform: translateY(-50%);
 
@@ -1785,14 +1324,15 @@ html.is-menu-open .c-to-top {
   // shorter phones: tighter wheel, no description line, smaller pocket, so nothing overlaps
   @media (max-width: 767.9px) and (max-height: 760px) {
     --wheel-gap: 58px;
-    --wheel-h: 38vh;
+    --wheel-h: 36vh;
+    --wheel-h: 36svh;
 
     &__item {
       font-size: 9.5vw;
     }
 
     &__pane {
-      top: calc(4.75rem + var(--wheel-h) + 1rem);
+      top: calc(var(--wheel-top) + var(--wheel-h) + 1.4rem);
     }
 
     &__scroll::before,
@@ -1807,6 +1347,21 @@ html.is-menu-open .c-to-top {
 
     &__resume {
       transform: scale(0.5);
+    }
+  }
+
+  // very short screens (small phones with the browser bars showing)
+  @media (max-width: 767.9px) and (max-height: 600px) {
+    --wheel-gap: 50px;
+    --wheel-h: 32vh;
+    --wheel-h: 32svh;
+
+    &__item {
+      font-size: 8.5vw;
+    }
+
+    &__resume {
+      transform: scale(0.42);
     }
   }
 
@@ -1875,12 +1430,14 @@ html.is-menu-open body {
 // Hero: "Elly [photo window] Famkar" — the window grows on load and pushes the words apart
 .c-hero {
   --window-start: 0.6em;
+  // title size, shared so the eyebrow can be placed relative to the name
+  --hero-fs: clamp(3.75rem, calc((100vw - 12rem) / 6.9), 16rem);
 
   position: relative;
   width: 100%;
   min-height: 100vh;
   box-sizing: border-box;
-  padding: 8rem 2rem 4rem;
+  padding: 10rem 2rem 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1888,12 +1445,20 @@ html.is-menu-open body {
   text-align: center;
   color: #231c1d;
 
+  // Desktop and tablet: sits just above "Famkar", starting where the photo ends. Both offsets
+  // scale with the title size, so it stays in the same spot on every screen width.
   &__eyebrow {
-    margin: 0 0 2rem;
+    position: relative;
+    z-index: 4;
+    margin: 0 0 calc(var(--hero-fs) * -0.37);
+    transform: translateX(calc(50% - var(--hero-fs) * 0.27));
     font-family: $font-union;
-    font-size: 0.95rem;
+    // scales with the name too, so it never runs past "Famkar" on tablets
+    font-size: clamp(0.72rem, calc(var(--hero-fs) * 0.084), 1.1rem);
+    line-height: 1.2;
     letter-spacing: 0.16em;
     text-transform: uppercase;
+    white-space: nowrap;
     color: #8a5a2b;
   }
 
@@ -1905,8 +1470,8 @@ html.is-menu-open body {
     gap: 0.14em;
     font-family: $font-iskry;
     font-weight: 400;
-    // Fills the width but leaves 6rem each side for the vertical caption (the full line is about 7.4em wide)
-    font-size: clamp(3.5rem, calc((100vw - 12rem) / 7.4), 15rem);
+    // Fills the width but leaves 6rem each side for the vertical caption
+    font-size: var(--hero-fs);
     line-height: 1;
   }
 
@@ -1942,7 +1507,7 @@ html.is-menu-open body {
 
   &__text {
     max-width: 720px;
-    margin: 3.5rem 0 3rem;
+    margin: 3rem 0 3rem;
     font-family: $font-union;
     font-size: 1.3rem;
     line-height: 1.6;
@@ -2074,6 +1639,131 @@ html.is-menu-open body {
   }
 }
 
+// Test: the photo grows from a small dot into a circle. Width and height share one easing, the
+// height starting a beat later, so it passes through a wide oval on the way with no stops or
+// speed changes; the words lock in on the same curve.
+// Remove "c-hero--circle" from the hero section in index.html to go back.
+.c-hero--circle {
+  // soft start, long gentle settle
+  --hero-ease: cubic-bezier(0.45, 0.05, 0.15, 1);
+
+  .c-hero__window {
+    width: 1.58em;
+    height: 1.58em;
+    border-radius: 999px;
+    animation:
+      hero-open-width 1.9s var(--hero-ease) 0.3s both,
+      hero-open-height 2s var(--hero-ease) 0.5s both;
+
+    img {
+      border-radius: inherit;
+    }
+  }
+
+  // the row keeps the circle's full height from the start, so the text below never moves
+  .c-hero__title {
+    min-height: 1.58em;
+  }
+}
+
+// Interlocked (desktop and tablet, where the photo sits between the words): as the circle
+// forms, the tail of "Elly" tucks behind it and the outlined "Famkar" slides over its edge
+@media (min-width: 768px) {
+  .c-hero--circle {
+    .c-hero__word {
+      position: relative;
+      z-index: 1;
+      animation:
+        hero-word-in 1s cubic-bezier(0.2, 0.7, 0.2, 1) both,
+        hero-word-lock-left 1.8s var(--hero-ease) 0.8s both;
+    }
+
+    .c-hero__window {
+      position: relative;
+      z-index: 2;
+    }
+
+    .c-hero__word--outline {
+      z-index: 3;
+      -webkit-text-stroke-color: rgba(35, 28, 29, 0.75);
+      animation:
+        hero-word-in 1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s both,
+        hero-word-lock-right 1.8s var(--hero-ease) 0.8s both;
+    }
+  }
+}
+
+@keyframes hero-word-lock-left {
+  to {
+    margin-right: -0.36em;
+  }
+}
+
+@keyframes hero-word-lock-right {
+  to {
+    margin-left: -0.4em;
+  }
+}
+
+// both grow from the small dot to the size set on the element
+@keyframes hero-open-width {
+  from {
+    width: var(--window-start);
+  }
+}
+
+@keyframes hero-open-height {
+  from {
+    height: var(--window-start);
+  }
+}
+
+// Phones: the circle sits on its own row under the name; its margin shrinks as it grows, so the
+// row keeps the full height from the start and the text below never moves
+@media (max-width: 767.9px) {
+  .c-hero--circle .c-hero__window {
+    width: 64vw;
+    height: 64vw;
+    animation:
+      hero-open-width 1.9s var(--hero-ease) 0.3s both,
+      hero-open-height-sm 2s var(--hero-ease) 0.5s both;
+  }
+
+  .c-hero--circle .c-hero__title {
+    min-height: 0;
+  }
+}
+
+@keyframes hero-open-height-sm {
+  from {
+    height: var(--window-start);
+    margin-top: calc((64vw - var(--window-start)) / 2);
+    margin-bottom: calc((64vw - var(--window-start)) / 2);
+  }
+  to {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .c-hero--circle .c-hero__window {
+    animation: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 768px) {
+  .c-hero--circle .c-hero__word {
+    margin-right: -0.36em;
+    animation: none;
+  }
+
+  .c-hero--circle .c-hero__word--outline {
+    margin-right: 0;
+    margin-left: -0.4em;
+  }
+}
+
 @keyframes hero-window-grow {
   from {
     width: var(--window-start);
@@ -2115,9 +1805,6 @@ html.is-menu-open body {
       height: 44px;
     }
 
-    span.c-site-header__cv-arrow {
-      display: none;
-    }
 
     &__cv--labelled {
       width: 44px !important;
@@ -2130,26 +1817,25 @@ html.is-menu-open body {
       display: none;
     }
 
-    &__resume {
-      min-height: 44px;
-      padding: 0 5px;
-    }
-
-    &__resume-label,
-    &__resume-arrow {
-      display: none;
-    }
   }
 
   .c-hero {
     --window-start: 20vw;
+    --hero-fs: 16vw;
 
     min-height: 0;
     padding: 6.5rem 1rem 2.5rem;
 
+    // phones: back to a centred line above the name
+    &__eyebrow {
+      margin: 0 0 1.25rem;
+      transform: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+    }
+
     &__title {
       flex-wrap: wrap;
-      font-size: 15vw;
       row-gap: 0.3em;
     }
 
@@ -2217,9 +1903,6 @@ html.is-menu-open body {
     transition: none;
   }
 
-  .c-site-header__cv:hover .c-site-header__cv-arrow {
-    animation: none;
-  }
 }
 
 // Homepage socials: a slim vertical column. On arrival it sits bottom-right; as the visitor
@@ -3329,11 +3012,11 @@ html.is-menu-open body {
     }
   }
 
-  // desktop: project details sit level with the middle of the monitor
+  // desktop: project details sit a little below the middle of the monitor
   @media (min-width: 768px) {
     &__info {
       align-self: center;
-      margin-top: -3rem;
+      margin-top: 1rem;
     }
   }
 
@@ -3872,12 +3555,6 @@ html.is-menu-open body {
     }
   }
 
-  &__hint {
-    margin: 1rem 0 0;
-    font-family: $font-union;
-    font-size: 0.82rem;
-    color: var(--work-muted);
-  }
 
   // Project picker strip: fades at the edges, a hint and a progress bar show it scrolls; drag to scroll
   &__picker {
@@ -4989,615 +4666,5 @@ html.is-menu-open body {
     transition: none;
   }
 }
-
-.o-menu-container {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-.c-menu {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  // background-color: #d7cecd;
-
-  &__trigger {
-    position: absolute;
-    top: 24px;
-    right: 26px;
-    cursor: pointer;
-
-    &:after {
-      position: absolute;
-      content: "";
-      width: 100%;
-      height: 12px;
-      left: 0;
-      transform: translateX(-7px);
-      top: 8px;
-      // background-image: linear-gradient(0deg, #ffdfb8 0%, #b9b9b933 100%);
-      transition: all 0.2s ease;
-      will-change: transform;
-    }
-
-    span {
-      position: relative;
-      font-family: $font-iskry;
-      z-index: 1;
-      font-weight: 900;
-      letter-spacing: -1px;
-      text-transform: uppercase;
-      font-size: 16px;
-      color: #ffffff;
-    }
-
-    &:hover {
-      &:after {
-        transform: translateX(0);
-      }
-    }
-
-    &--close {
-      visibility: hidden;
-      opacity: 0;
-    }
-  }
-
-  &__inner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    z-index: 1;
-    border-radius: 10px;
-    overflow: hidden;
-    visibility: hidden;
-    justify-content: center;
-    opacity: 0;
-  }
-
-  &__inner-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    font-size: 0;
-
-    li {
-      position: relative;
-      display: inline-block;
-      height: 100%;
-      overflow: hidden;
-
-      &:first-child {
-        width: 21px;
-      }
-
-      &:nth-child(2) {
-        width: calc(33.33% - 14px);
-      }
-
-      &:nth-child(3) {
-        width: calc(33.33% - 14px);
-      }
-
-      &:nth-child(4) {
-        width: calc(33.33% - 14px);
-      }
-
-      &:last-child {
-        width: 21px;
-      }
-
-      i {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: #d3bca4db;
-        opacity: 0;
-        visibility: hidden;
-
-        &:after {
-          content: "";
-          display: block;
-          height: 100%;
-          width: 1px;
-          background: #d3bca4db;
-          z-index: 2;
-        }
-      }
-    }
-  }
-
-  &__items-wrapper {
-    position: relative;
-    padding-left: 22px;
-  }
-
-  &__items-list {
-    position: relative;
-    z-index: 1;
-    list-style: none;
-    padding: 0;
-    text-align: center;
-
-    li {
-      margin-bottom: 8px;
-
-      a {
-        font-family: $font-iskry;
-        color: #282828;
-        text-decoration: none;
-        font-size: 40px;
-        line-height: 50px;
-        text-transform: uppercase;
-        display: block;
-        letter-spacing: -1.2px;
-        font-weight: 900;
-      }
-    }
-  }
-  &__items-shape {
-    position: absolute;
-    left: -32px;
-    top: -60px;
-
-    svg {
-      position: relative;
-      display: block;
-      width: 140px;
-      height: 140px;
-      min-height: 150px;
-      margin: 0 auto;
-    }
-  }
-}
-
-//  About page
-
-.o-about-container {
-  .c-main-job-title {
-    margin-top: -8%;
-  }
-
-  .c-title-img {
-    right: 28%;
-    top: 82%;
-  }
-}
-
-//  Contact page
-
-.o-form-container {
-  max-width: 385px;
-  margin: 0 auto;
-}
-
-.c-contact-form__container {
-  max-width: 385px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.c-contact-form__title {
-  text-align: center;
-  font-family: $font-iskry, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 13px;
-  font-size: 36px;
-  line-height: 48px;
-  padding-bottom: 12px;
-}
-
-.c-contact-form {
-  // z-index: 100;
-
-  &__field {
-    position: relative;
-    margin: 32px 0;
-  }
-  &__input {
-    display: block;
-    width: 100%;
-    height: 36px;
-    border-width: 0 0 2px 0;
-    border-color: #000;
-    font-family: $font-bulter, sans-serif;
-    font-size: 16px;
-    line-height: 26px;
-    font-weight: 400;
-
-    &:focus {
-      outline: none;
-    }
-
-    &:focus,
-    &.not-empty {
-      + .c-contact-form__label {
-        transform: translateY(-24px);
-        left: 0;
-      }
-    }
-  }
-  &__textarea {
-    display: block;
-    width: 100%;
-    border-width: 0 0 2px 0;
-    border-color: #000;
-    font-family: $font-bulter, sans-serif;
-    font-size: 16px;
-    line-height: 26px;
-    font-weight: 400;
-
-    &:focus {
-      outline: none;
-    }
-
-    &:focus,
-    &.not-empty {
-      + .c-contact-form__label {
-        transform: translateY(-24px);
-        left: 0;
-      }
-    }
-  }
-  &__label {
-    position: absolute;
-    left: 20px;
-    bottom: 11px;
-    font-family: $font-bulter, sans-serif;
-    font-size: 18px;
-    line-height: 26px;
-    font-weight: 400;
-    color: #888;
-    cursor: text;
-    transition: transform 0.2s ease-in-out;
-  }
-
-  .text-area__label {
-    position: absolute;
-    left: 20px;
-    top: 0px;
-    bottom: auto;
-    transition: transform 0.2s ease-in-out;
-    font-family: $font-bulter, sans-serif;
-    font-size: 18px;
-    line-height: 26px;
-    font-weight: 400;
-    color: #888;
-    cursor: text;
-  }
-
-  &__submit-btn {
-    font-family: $font-bulter, sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 16px;
-    line-height: 24px;
-    padding: 8px 16px;
-    border: none;
-    cursor: pointer;
-  }
-}
-
-// portfolio
-
-.o-portfolio-container {
-  .c-main-job-title {
-    margin-top: -5%;
-    margin-bottom: -3% !important;
-  }
-}
-
-.c-scroll--heading {
-  margin-top: 0.3rem;
-  margin-bottom: -2rem;
-  margin-left: 7rem;
-  font-size: 1.2rem;
-  font-family: $font-iskry;
-  font-weight: 300;
-
-  .c-scroll-text {
-    position: relative;
-    opacity: 0.5;
-  }
-}
-
-.o-about-container {
-  .c-main-job-title {
-    margin-bottom: -4% !important;
-    margin-top: -8%;
-    text-align: inherit;
-  }
-
-  .c-scroll--heading {
-    margin-top: 0.3rem;
-    margin-bottom: -2rem;
-    margin-left: -3rem;
-    z-index: 0;
-    font-size: 1.2rem;
-    font-family: "Iskry", Courier, monospace;
-    font-weight: 300;
-
-    .c-scroll-text {
-      position: relative;
-      opacity: 0.5;
-    }
-  }
-}
-
-.o-contact-container {
-  .c-scroll--heading {
-    margin-top: -1.8rem;
-    margin-bottom: -2rem;
-    margin-left: 7rem;
-    z-index: 0;
-    font-size: 1.2rem;
-    font-family: "Iskry", Courier, monospace;
-    font-weight: 300;
-
-    .c-scroll-text {
-      position: relative;
-      opacity: 0.5;
-    }
-  }
-}
-
-.c-figure {
-  // position: absolute;
-  cursor: pointer !important;
-  height: auto;
-
-  a {
-    color: #000000;
-    text-decoration: none;
-  }
-
-  a:hover {
-    cursor: pointer;
-  }
-
-  figcaption {
-    font-size: 2rem;
-    font-weight: 700;
-    font-family: $font-bulter;
-  }
-
-  img {
-    height: auto !important;
-    max-height: 100% !important;
-    border-radius: 3px;
-  }
-
-  &--one {
-    left: 6%;
-    top: 10%;
-    height: auto;
-    // max-height: 300px;
-    max-width: 23vw;
-
-    figcaption {
-      margin-top: 1rem;
-      margin-right: -10rem;
-    }
-  }
-
-  &--two {
-    left: 38vw;
-    right: auto;
-    top: 2%;
-    height: 650px;
-    max-height: 731px;
-    max-width: 37vw;
-
-    figcaption {
-      margin-top: 1rem;
-    }
-  }
-
-  &--three {
-    left: auto;
-    right: 3%;
-    top: 19%;
-    height: 700px;
-    max-height: 713px;
-    max-width: 30vw;
-
-    figcaption {
-      margin-top: 2rem;
-    }
-  }
-
-  &--four {
-    left: 4%;
-    right: auto;
-    top: 22%;
-    height: auto;
-    max-height: 625px;
-    width: 29vw;
-
-    figcaption {
-      margin-top: 1rem;
-    }
-  }
-
-  &--five {
-    left: auto;
-    right: 35%;
-    top: 3%;
-    height: auto;
-    max-height: 583px;
-    max-width: 18vw;
-
-    figcaption {
-      margin-top: 1rem;
-    }
-  }
-
-  &--six {
-    right: 5%;
-    top: 11%;
-    height: auto;
-    max-height: 356px;
-    max-width: 25vw;
-
-    figcaption {
-      margin-top: 2rem;
-    }
-  }
-
-  &--seven {
-    left: 33%;
-    top: 21%;
-    height: auto;
-    max-height: 560px;
-    max-width: 35vw;
-
-    figcaption {
-      margin-left: -1rem;
-    }
-  }
-
-  &--eight {
-    left: auto;
-    right: 4%;
-    top: 15%;
-    height: auto;
-    max-height: 360px;
-    max-width: 24vw;
-
-    figcaption {
-      margin-top: 1rem;
-    }
-  }
-
-  &--nine {
-    left: 1%;
-    top: 2%;
-    height: auto;
-    max-height: 420px;
-    max-width: 27vw;
-
-    figcaption {
-      margin-top: 1rem;
-    }
-  }
-
-  &--ten {
-    left: 4%;
-    top: 8%;
-    height: auto;
-    max-height: 560px;
-    max-width: 28vw;
-
-    figcaption {
-      margin-top: 1rem;
-      margin-left: -1rem;
-      font-size: 1.5rem;
-    }
-  }
-
-  &--eleven {
-    left: auto;
-    right: 0%;
-    top: 22%;
-    height: auto;
-    max-height: 558px;
-    max-width: 25vw;
-
-    figcaption {
-      margin-top: 1rem;
-      margin-left: -3rem;
-      font-size: 1.9rem;
-    }
-  }
-
-  &--twelve {
-    left: auto;
-    right: 32%;
-    top: 15%;
-    height: auto;
-    max-height: 354px;
-    max-width: 32vw;
-
-    img {
-      border: $border-light;
-    }
-
-    figcaption {
-      margin-top: 2rem;
-      margin-right: -10rem;
-    }
-  }
-
-  &--thirteen {
-    right: auto;
-    left: 17%;
-    top: 8%;
-    height: 700px;
-    max-height: 713px;
-    max-width: 30vw;
-
-    figcaption {
-      margin-top: 1rem;
-    }
-  }
-
-  &--fourteen {
-    left: auto;
-    right: 4%;
-    top: 8%;
-    height: 709px;
-    max-height: 724px;
-    max-width: 45vw;
-
-    figcaption {
-      margin-top: 1rem;
-    }
-  }
-}
-
-body.is-light {
-  background-color: #ffffff;
-  color: #333333;
-
-  .c-social-icons .fa-brands,
-  .c-menu__trigger span {
-    color: #333333;
-  }
-
-  .c-social-logo {
-    -webkit-filter: brightness(0) invert(0.2);
-    filter: brightness(0) invert(0.2);
-  }
-
-  .c-desktop-menu .nav-item {
-    color: #d7cecd;
-  }
-  .c-desktop-menu .nav-item.active {
-    color: #1a1919;
-  }
-}
-
-// @keyframes spin {
-//   from {
-//     transform: translate(-50%, -50%) rotate(0deg);
-//   }
-//   to {
-//     transform: translate(-50%, -50%) rotate(360deg);
-//   }
-// }
 
 @import "query";
