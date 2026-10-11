@@ -811,3 +811,178 @@ if (toTop) {
   window.addEventListener("resize", updateToTop);
   updateToTop();
 }
+
+// Footer sign-off: write the signature in when it scrolls into view; tap the signature to replay
+const signoff = document.querySelector(".js-signoff");
+const signoffReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (signoff && !signoffReduceMotion && "IntersectionObserver" in window) {
+  const playSignoff = () => {
+    signoff.classList.remove("is-playing");
+    void signoff.offsetWidth; // restart the CSS animations
+    signoff.classList.add("is-playing");
+  };
+
+  const signoffObserver = new IntersectionObserver(
+    (entries) => {
+      if (entries[0].isIntersecting) {
+        playSignoff();
+        signoffObserver.disconnect();
+      }
+    },
+    { threshold: 0.4 }
+  );
+  signoffObserver.observe(signoff);
+
+  const signoffSignature = signoff.querySelector(".js-signoff-signature");
+  if (signoffSignature) signoffSignature.addEventListener("click", playSignoff);
+}
+
+// Day / night: the theme button opens a full-screen divider. Everything right of the handle
+// previews night (a live inverted view of the page); letting go snaps to the side that covers
+// more of the screen and saves the choice.
+const themeSlider = document.querySelector(".js-theme-slider");
+
+if (themeSlider) {
+  const root = document.documentElement;
+  const knob = themeSlider.querySelector(".js-theme-knob");
+  const themeReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let cut = 100; // % from the left where night begins: 100 = all day, 0 = all night
+  let wasDark = false;
+  let opener = null;
+  let dragging = false;
+  let anim = 0;
+
+  const setCut = (value) => {
+    cut = Math.min(100, Math.max(0, value));
+    themeSlider.style.setProperty("--cut", `${cut}%`);
+    const night = Math.round(100 - cut);
+    knob.setAttribute("aria-valuenow", String(night));
+    knob.setAttribute("aria-valuetext", night >= 50 ? "Night" : "Day");
+  };
+
+  const animateCut = (to, done) => {
+    cancelAnimationFrame(anim);
+    if (themeReduceMotion) {
+      setCut(to);
+      if (done) done();
+      return;
+    }
+    const from = cut;
+    const start = performance.now();
+    const duration = 420;
+    const step = (now) => {
+      const k = Math.min(1, (now - start) / duration);
+      setCut(from + (to - from) * (1 - Math.pow(1 - k, 3)));
+      if (k < 1) anim = requestAnimationFrame(step);
+      else if (done) done();
+    };
+    anim = requestAnimationFrame(step);
+  };
+
+  const close = (dark) => {
+    animateCut(dark ? 0 : 100, () => {
+      root.classList.toggle("is-dark", dark);
+      try {
+        localStorage.setItem("ef-theme", dark ? "dark" : "light");
+      } catch (e) {}
+      themeSlider.hidden = true;
+      document.removeEventListener("keydown", onKey);
+      if (opener) opener.focus();
+    });
+  };
+
+  const open = (button) => {
+    opener = button;
+    wasDark = root.classList.contains("is-dark");
+    // While choosing, night is shown by the divider instead of the page filter
+    root.classList.remove("is-dark");
+    setCut(wasDark ? 0 : 100);
+    themeSlider.hidden = false;
+    document.addEventListener("keydown", onKey);
+    knob.focus();
+    // Peek a little way across so the effect is obvious straight away
+    animateCut(wasDark ? 38 : 62);
+  };
+
+  function onKey(e) {
+    if (e.key === "Escape") close(wasDark);
+    else if (e.key === "ArrowLeft") setCut(cut - 5);
+    else if (e.key === "ArrowRight") setCut(cut + 5);
+    else if (e.key === "Home") setCut(0);
+    else if (e.key === "End") setCut(100);
+    else if (e.key === "Enter" && document.activeElement === knob) close(cut < 50);
+    else return;
+    e.preventDefault();
+  }
+
+  const fromPointer = (e) => setCut((e.clientX / window.innerWidth) * 100);
+
+  themeSlider.addEventListener("pointerdown", (e) => {
+    if (e.target.closest(".js-theme-cancel")) return;
+    cancelAnimationFrame(anim);
+    dragging = true;
+    themeSlider.classList.add("is-dragging");
+    themeSlider.setPointerCapture(e.pointerId);
+    fromPointer(e);
+  });
+
+  themeSlider.addEventListener("pointermove", (e) => {
+    if (dragging) fromPointer(e);
+  });
+
+  const endDrag = () => {
+    if (!dragging) return;
+    dragging = false;
+    themeSlider.classList.remove("is-dragging");
+    close(cut < 50);
+  };
+  themeSlider.addEventListener("pointerup", endDrag);
+  themeSlider.addEventListener("pointercancel", endDrag);
+
+  themeSlider.querySelector(".js-theme-cancel").addEventListener("click", () => close(wasDark));
+
+  // Phones: dragging across the screen is awkward, so one tap simply flips the theme
+  const themeTapOnly = window.matchMedia("(max-width: 767.9px)");
+  const themeButtons = document.querySelectorAll(".js-theme-open");
+
+  const labelThemeButtons = () => {
+    const dark = root.classList.contains("is-dark");
+    themeButtons.forEach((button) => {
+      button.setAttribute(
+        "aria-label",
+        themeTapOnly.matches ? `Switch to ${dark ? "day" : "night"}` : "Switch between day and night"
+      );
+      if (themeTapOnly.matches) button.removeAttribute("aria-haspopup");
+      else button.setAttribute("aria-haspopup", "dialog");
+    });
+  };
+
+  const flipTheme = () => {
+    const dark = !root.classList.contains("is-dark");
+    if (!themeReduceMotion) {
+      root.classList.add("is-theme-fading");
+      setTimeout(() => root.classList.remove("is-theme-fading"), 500);
+    }
+    root.classList.toggle("is-dark", dark);
+    try {
+      localStorage.setItem("ef-theme", dark ? "dark" : "light");
+    } catch (e) {}
+    labelThemeButtons();
+  };
+
+  themeButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      // tug the lamp's cord
+      button.classList.remove("is-pulled");
+      void button.offsetWidth;
+      button.classList.add("is-pulled");
+
+      if (themeTapOnly.matches) flipTheme();
+      else open(button);
+    });
+  });
+
+  themeTapOnly.addEventListener("change", labelThemeButtons);
+  labelThemeButtons();
+}

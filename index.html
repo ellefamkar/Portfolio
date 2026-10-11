@@ -61,12 +61,29 @@
       crossorigin="anonymous"
     />
 
+    <!-- signature font (footer sign-off) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- custom styles  -->
     <link rel="stylesheet" href="/css/styles.css" />
 
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <title>Elly Famkar | Front-End Developer & Designer Portfolio</title>
+
+    <!-- Theme: apply a saved night mode before the first paint -->
+    <script>
+      try {
+        if (localStorage.getItem("ef-theme") === "dark") {
+          document.documentElement.classList.add("is-dark");
+        }
+      } catch (e) {}
+    </script>
 
     <script type="application/ld+json">
       {
@@ -98,6 +115,30 @@
         ></a
       >
       <div class="c-site-header__actions">
+        <button
+          type="button"
+          class="c-site-header__cv c-theme-toggle js-theme-open"
+          aria-haspopup="dialog"
+          aria-controls="theme-slider"
+          aria-label="Switch between day and night"
+        >
+          <span class="c-theme-toggle__glow" aria-hidden="true"></span>
+          <svg
+            class="c-theme-toggle__icon"
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path d="M12 2v4"></path>
+            <path d="M6 13a6 6 0 0 1 12 0z" stroke-linejoin="round"></path>
+            <circle class="c-theme-toggle__bulb" cx="12" cy="15.5" r="2.4"></circle>
+          </svg>
+          <span class="c-theme-toggle__cord" aria-hidden="true"></span>
+        </button>
         <a
           class="c-site-header__cv c-site-header__cv--labelled"
           href="./assets/files/Elnaz-Famkar-Resume.pdf"
@@ -157,6 +198,33 @@
             <span class="c-float-nav__lines" aria-hidden="true"
               ><i></i><i></i
             ></span>
+          </button>
+        </span>
+        <span class="c-float-nav__item">
+          <span class="c-float-nav__label" aria-hidden="true">Theme</span>
+          <button
+            type="button"
+            class="c-site-header__cv c-float-nav__cv c-theme-toggle js-theme-open"
+            aria-haspopup="dialog"
+            aria-controls="theme-slider"
+            aria-label="Switch between day and night"
+          >
+            <span class="c-theme-toggle__glow" aria-hidden="true"></span>
+            <svg
+              class="c-theme-toggle__icon"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              aria-hidden="true"
+            >
+              <path d="M12 2v4"></path>
+              <path d="M6 13a6 6 0 0 1 12 0z" stroke-linejoin="round"></path>
+              <circle class="c-theme-toggle__bulb" cx="12" cy="15.5" r="2.4"></circle>
+            </svg>
+            <span class="c-theme-toggle__cord" aria-hidden="true"></span>
           </button>
         </span>
         <span class="c-float-nav__item">
@@ -1494,52 +1562,6 @@
             <!-- <span aria-hidden="true">↓</span> -->
           </span>
         </a>
-        <ul class="c-contact__socials" aria-label="Find me online">
-          <li>
-            <a
-              href="https://www.linkedin.com/in/ellefamkar"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
-              LinkedIn
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/Ellefamkar"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.instagram.com/Ellyfamkar"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-              Instagram
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.shecodes.io/graduates/58531-elnaz-elle-famkar"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img
-                src="/assets/images/shecodes-logo.webp"
-                alt=""
-                width="18"
-                height="18"
-              />
-              SheCodes
-            </a>
-          </li>
-        </ul>
         <dialog
           class="c-contact__dialog js-contact-dialog"
           id="contact-dialog"
@@ -1643,6 +1665,41 @@
         </dialog>
       </section>
     </main>
+    <!-- Day / night: drag the handle across the page; the side right of it shows night -->
+    <div
+      class="c-theme-slider js-theme-slider"
+      id="theme-slider"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Choose day or night"
+      hidden
+    >
+      <div class="c-theme-slider__night" aria-hidden="true"></div>
+      <span class="c-theme-slider__line" aria-hidden="true"></span>
+      <span class="c-theme-slider__label c-theme-slider__label--day">Day</span>
+      <span class="c-theme-slider__label c-theme-slider__label--night"
+        >Night</span
+      >
+      <button
+        type="button"
+        class="c-theme-slider__knob js-theme-knob"
+        role="slider"
+        aria-label="Day to night"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        aria-valuenow="0"
+        aria-valuetext="Day"
+      >
+        <span aria-hidden="true">‹ ›</span>
+      </button>
+      <p class="c-theme-slider__hint">
+        Drag to choose day or night. Let go to keep it.
+        <button type="button" class="c-theme-slider__cancel js-theme-cancel">
+          Cancel
+        </button>
+      </p>
+    </div>
+
     <!-- Back to top: appears after a good scroll; its ring fills with reading progress -->
     <a
       class="c-to-top js-to-top"
@@ -1725,6 +1782,69 @@
             height="100%"
           />
         </a>
+      </div>
+
+      <!-- Sign-off: outlined year behind, small signature, social icons, copyright -->
+      <div class="c-signoff js-signoff">
+        <span class="c-signoff__year" aria-hidden="true">2026</span>
+        <!-- <p
+          class="c-signoff__signature js-signoff-signature"
+          title="Replay signature"
+        >
+          Elly Famkar
+        </p> -->
+        <ul class="c-signoff__icons" aria-label="Social media links">
+          <li>
+            <a
+              href="https://github.com/Ellefamkar"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="GitHub"
+              aria-label="Elly Famkar on GitHub (opens in a new tab)"
+            >
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/Ellyfamkar"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Instagram"
+              aria-label="Elly Famkar on Instagram (opens in a new tab)"
+            >
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/ellefamkar"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="LinkedIn"
+              aria-label="Elly Famkar on LinkedIn (opens in a new tab)"
+            >
+              <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.shecodes.io/graduates/58531-elnaz-elle-famkar"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="SheCodes"
+              aria-label="Elly Famkar's SheCodes graduate certificate (opens in a new tab)"
+            >
+              <img
+                src="/assets/images/shecodes-logo.webp"
+                alt=""
+                width="16"
+                height="16"
+              />
+            </a>
+          </li>
+        </ul>
+        <p class="c-signoff__copy">© 2026 Elly Famkar</p>
       </div>
     </footer>
 
