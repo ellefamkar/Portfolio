@@ -3987,7 +3987,9 @@ html.is-theme-fading {
   width: 1px;
   height: 14px;
   background: rgba(35, 28, 29, 0.45);
+  transform: scaleY(0);
   transform-origin: top;
+  opacity: 0;
   pointer-events: none;
 }
 .c-theme-toggle__cord::after {
@@ -4000,12 +4002,8 @@ html.is-theme-fading {
   border-radius: 50%;
   background: #8a5a2b;
 }
-.c-theme-toggle:hover .c-theme-toggle__cord {
-  transform: scaleY(1.15);
-  transition: transform 0.3s ease;
-}
 .c-theme-toggle.is-pulled .c-theme-toggle__cord {
-  animation: theme-cord-pull 0.7s cubic-bezier(0.3, 1.6, 0.5, 1);
+  animation: theme-cord-pull 1.2s ease both;
 }
 
 html.is-dark .c-theme-toggle__glow {
@@ -4018,8 +4016,24 @@ html.is-dark .c-theme-toggle__glow {
 }
 
 @keyframes theme-cord-pull {
-  35% {
+  0% {
+    transform: scaleY(0);
+    opacity: 1;
+  }
+  25% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  40% {
     transform: scaleY(1.7);
+  }
+  55%, 75% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0);
+    opacity: 0;
   }
 }
 .c-theme-slider {

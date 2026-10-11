@@ -4893,7 +4893,7 @@ html.is-theme-fading {
     pointer-events: none;
   }
 
-  // the cord hangs just below the button
+  // the cord stays tucked away; a click drops it, tugs it and pulls it back up
   &__cord {
     position: absolute;
     top: calc(100% - 2px);
@@ -4901,7 +4901,9 @@ html.is-theme-fading {
     width: 1px;
     height: 14px;
     background: rgba(35, 28, 29, 0.45);
+    transform: scaleY(0);
     transform-origin: top;
+    opacity: 0;
     pointer-events: none;
 
     &::after {
@@ -4916,13 +4918,8 @@ html.is-theme-fading {
     }
   }
 
-  &:hover &__cord {
-    transform: scaleY(1.15);
-    transition: transform 0.3s ease;
-  }
-
   &.is-pulled &__cord {
-    animation: theme-cord-pull 0.7s cubic-bezier(0.3, 1.6, 0.5, 1);
+    animation: theme-cord-pull 1.2s ease both;
   }
 }
 
@@ -4938,8 +4935,25 @@ html.is-dark .c-theme-toggle__glow {
 }
 
 @keyframes theme-cord-pull {
-  35% {
+  0% {
+    transform: scaleY(0);
+    opacity: 1;
+  }
+  25% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  40% {
     transform: scaleY(1.7);
+  }
+  55%,
+  75% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0);
+    opacity: 0;
   }
 }
 
