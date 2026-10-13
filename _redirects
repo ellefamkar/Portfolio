@@ -1,0 +1,5 @@
+# Old domain -> main domain (permanent)
+https://ellefamkar.com/*      https://ellyfamkar.com/:splat  301!
+http://ellefamkar.com/*       https://ellyfamkar.com/:splat  301!
+https://www.ellefamkar.com/*  https://ellyfamkar.com/:splat  301!
+http://www.ellefamkar.com/*   https://ellyfamkar.com/:splat  301!

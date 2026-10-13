@@ -29,7 +29,7 @@ Remember that "Every day is a learning day" and try to learn from everyone!
 
 ### Links
 
-- Live Site URL: [Portfolio](https://ellefamkar.com/)
+- Live Site URL: [Portfolio](https://ellyfamkar.com/)
 
 ## My process
 
