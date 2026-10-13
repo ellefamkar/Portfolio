@@ -1872,13 +1872,15 @@ html.is-menu-open body {
 }
 
 // Homepage socials: a slim vertical column. On arrival it sits bottom-right; as the visitor
-// scrolls, it travels up at exactly the page's speed (--dock, 0 → 1, set from JS) and settles in
-// the middle of the right edge, mirroring the name caption on the left, so the move reads as
+// scrolls, it travels up at exactly the page's speed (--dock, 0 → 1, set from JS) and settles a
+// little below the middle of the right edge (--dock-at, also read by JS), so the move reads as
 // ordinary scrolling. It fades out over the contact section, which has its own links.
 .o-home-container .c-social-icons {
   --dock: 0;
+  // where the column's centre settles, from the top of the screen
+  --dock-at: 60%;
 
-  top: calc((100% + 1.5rem) * (1 - var(--dock)) + 50% * var(--dock));
+  top: calc((100% + 1.5rem) * (1 - var(--dock)) + var(--dock-at) * var(--dock));
   bottom: auto;
   // centre line 5rem + 28px from the edge, mirroring the EF logo on the left
   right: calc(5rem + 8px);
@@ -2038,7 +2040,7 @@ html.is-menu-open body {
   &__stage {
     position: relative;
     box-sizing: border-box;
-    padding: 5.5rem 2rem 7.5rem;
+    padding: 7.25rem 2rem 6.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2208,11 +2210,16 @@ html.is-menu-open body {
     grid-template-rows: 1fr;
   }
 
+  // Some room from the start while the chat plays; longer conversations grow past it and push the page down
+  &.is-playing .c-intro-chat__thread {
+    min-height: 22rem;
+  }
+
   // Rotating "keep scrolling" seal: no fill or borders, gold type and arrow over a soft gold glow
   &__badge {
     position: absolute;
     left: max(2rem, calc(50% - 484px));
-    bottom: 3.5rem;
+    bottom: 6.5rem;
     width: 128px;
     height: 128px;
     border-radius: 50%;
@@ -2435,13 +2442,17 @@ html.is-menu-open body {
     bottom: auto;
     margin-top: 2rem;
   }
+
+  .c-intro-chat__stage {
+    padding-bottom: 5.75rem;
+  }
 }
 
 @media (max-width: 767.9px) {
   .c-intro-chat {
     &__stage {
       min-height: 0;
-      padding: 2rem 1rem 2.5rem;
+      padding: 4.5rem 1rem 4.375rem;
     }
 
     // The title is small here, so the chat starts just below it instead of over it
@@ -2457,6 +2468,10 @@ html.is-menu-open body {
 
     &__msg {
       max-width: 92%;
+    }
+
+    &.is-playing .c-intro-chat__thread {
+      min-height: 16rem;
     }
 
     &__bubble {
@@ -2968,10 +2983,10 @@ html.is-menu-open body {
     align-items: start;
   }
 
-  // desktop: less empty space above the title (after the skills), more between the title and
-  // the projects, so the heading sits evenly between the two
+  // desktop: the space above the title (after the skills) matches the gap between the other sections;
+  // more between the title and the projects
   @media (min-width: 992px) {
-    padding-top: 3rem;
+    padding-top: 7.25rem;
 
     &__header {
       margin-bottom: 6rem;
@@ -3719,6 +3734,17 @@ html.is-menu-open body {
   }
 }
 
+// Tablets: the same gap between sections as on desktop
+@media (min-width: 768px) and (max-width: 991.9px) {
+  .c-intro-chat__stage {
+    padding-bottom: 9.3rem;
+  }
+
+  .c-work {
+    padding: 7.25rem 1rem 6rem;
+  }
+}
+
 // Phones: switch on top, one screen (desktop or mobile), a floating info card overlapping its
 // bottom edge with the arrows, then the thumbnails close underneath
 .c-work__view {
@@ -3727,6 +3753,8 @@ html.is-menu-open body {
 
 @media (max-width: 767.9px) {
   .c-work {
+    padding-top: 2.25rem;
+
     &__body {
       display: flex;
       flex-direction: column;
@@ -3910,7 +3938,7 @@ html.is-menu-open body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 4.5rem 1.5rem 3rem;
+  padding: 4.875rem 1.5rem 3rem;
   box-sizing: border-box;
   text-align: center;
   color: var(--contact-ink);
@@ -5100,103 +5128,104 @@ html.is-dark .c-theme-toggle__glow {
   }
 }
 
-// Goodbye card: dark card with gold type, drops in at the top each time the visitor heads for the tabs
-.c-goodbye {
-  position: fixed;
-  top: 1.25rem;
-  left: 50%;
-  z-index: 2000;
-  width: min(360px, calc(100vw - 2rem));
-  padding: 1.6rem 1.5rem 1.4rem;
-  border-radius: 22px;
-  background: #2a2223;
-  box-shadow:
-    inset 0 0 0 1px rgba(217, 180, 138, 0.45),
-    0 24px 48px -20px rgba(35, 28, 29, 0.7);
-  color: #e8cfa6;
-  text-align: center;
-  opacity: 0;
-  transform: translate(-50%, -14px) scale(0.98);
-  transition:
-    opacity 0.35s ease,
-    transform 0.5s cubic-bezier(0.3, 1.4, 0.5, 1);
-
-  &.is-visible {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-
-  &__close {
-    position: absolute;
-    top: 0.6rem;
-    right: 0.7rem;
-    width: 32px;
-    height: 32px;
-    border: 0;
-    border-radius: 50%;
-    background: transparent;
-    color: inherit;
-    font-size: 1.3rem;
-    line-height: 1;
-    cursor: pointer;
-    opacity: 0.7;
-
-    &:hover,
-    &:focus-visible {
-      opacity: 1;
-      background: rgba(232, 207, 166, 0.12);
-    }
-  }
-
-  // the site's EF logo, as in the header: solid E, outlined F in a dark disc with a gold ring
-  &__logo {
-    width: 56px;
-    height: 56px;
-    margin: 0 auto 0.8rem;
-    padding-top: 2px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #2a2223;
-    box-shadow: inset 0 0 0 1px rgba(217, 180, 138, 0.45);
-    color: #e8cfa6;
-    font-family: $font-bulter;
-    font-weight: 400;
-    font-size: 1.55rem;
-    line-height: 1;
-
-    span {
-      font: inherit;
-      line-height: 1;
-    }
-  }
-
-  &__logo-outline {
-    margin-left: -0.02em;
-    color: transparent;
-    -webkit-text-stroke: 1px #e8cfa6;
-  }
-
-  &__title {
-    margin: 0 0 0.35rem;
-    font-family: $font-bulter;
-    font-size: 1.5rem;
-    line-height: 1.2;
-  }
-
-  &__text {
-    margin: 0;
-    color: rgba(232, 207, 166, 0.85);
-    font-family: $font-union;
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    transition: opacity 0.2s ease;
-    transform: translateX(-50%);
-  }
-}
+// Commented out for now, until deciding whether to keep it
+// // Goodbye card: dark card with gold type, drops in at the top each time the visitor heads for the tabs
+// .c-goodbye {
+//   position: fixed;
+//   top: 1.25rem;
+//   left: 50%;
+//   z-index: 2000;
+//   width: min(360px, calc(100vw - 2rem));
+//   padding: 1.6rem 1.5rem 1.4rem;
+//   border-radius: 22px;
+//   background: #2a2223;
+//   box-shadow:
+//     inset 0 0 0 1px rgba(217, 180, 138, 0.45),
+//     0 24px 48px -20px rgba(35, 28, 29, 0.7);
+//   color: #e8cfa6;
+//   text-align: center;
+//   opacity: 0;
+//   transform: translate(-50%, -14px) scale(0.98);
+//   transition:
+//     opacity 0.35s ease,
+//     transform 0.5s cubic-bezier(0.3, 1.4, 0.5, 1);
+//
+//   &.is-visible {
+//     opacity: 1;
+//     transform: translate(-50%, 0);
+//   }
+//
+//   &__close {
+//     position: absolute;
+//     top: 0.6rem;
+//     right: 0.7rem;
+//     width: 32px;
+//     height: 32px;
+//     border: 0;
+//     border-radius: 50%;
+//     background: transparent;
+//     color: inherit;
+//     font-size: 1.3rem;
+//     line-height: 1;
+//     cursor: pointer;
+//     opacity: 0.7;
+//
+//     &:hover,
+//     &:focus-visible {
+//       opacity: 1;
+//       background: rgba(232, 207, 166, 0.12);
+//     }
+//   }
+//
+//   // the site's EF logo, as in the header: solid E, outlined F in a dark disc with a gold ring
+//   &__logo {
+//     width: 56px;
+//     height: 56px;
+//     margin: 0 auto 0.8rem;
+//     padding-top: 2px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     border-radius: 50%;
+//     background: #2a2223;
+//     box-shadow: inset 0 0 0 1px rgba(217, 180, 138, 0.45);
+//     color: #e8cfa6;
+//     font-family: $font-bulter;
+//     font-weight: 400;
+//     font-size: 1.55rem;
+//     line-height: 1;
+//
+//     span {
+//       font: inherit;
+//       line-height: 1;
+//     }
+//   }
+//
+//   &__logo-outline {
+//     margin-left: -0.02em;
+//     color: transparent;
+//     -webkit-text-stroke: 1px #e8cfa6;
+//   }
+//
+//   &__title {
+//     margin: 0 0 0.35rem;
+//     font-family: $font-bulter;
+//     font-size: 1.5rem;
+//     line-height: 1.2;
+//   }
+//
+//   &__text {
+//     margin: 0;
+//     color: rgba(232, 207, 166, 0.85);
+//     font-family: $font-union;
+//     font-size: 0.95rem;
+//     line-height: 1.5;
+//   }
+//
+//   @media (prefers-reduced-motion: reduce) {
+//     transition: opacity 0.2s ease;
+//     transform: translateX(-50%);
+//   }
+// }
 
 @import "query";

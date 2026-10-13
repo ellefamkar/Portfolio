@@ -22,6 +22,7 @@ window.addEventListener("focus", () => {
   document.title = documentTitle;
 });
 
+/* Commented out for now, until deciding whether to keep it
 // Goodbye card: on desktop, when the pointer leaves through the top of the window (towards the tabs
 // or the close button), say thanks. Never blocks leaving. Once they close it (Close or Escape) it stays
 // gone for the rest of the session, even after a reload, so heading back up to close the tab doesn't
@@ -108,6 +109,7 @@ if (goodbye && window.matchMedia("(hover: hover) and (pointer: fine)").matches) 
     .querySelectorAll(".js-goodbye-close")
     .forEach((el) => el.addEventListener("click", hideGoodbye));
 }
+*/
 
 // Vertical page signature: fixed on the left edge, fades out at the end of the page, where the footer is
 // (the footer's only content is fixed, so it has no height to observe)
@@ -137,7 +139,7 @@ if (siteCaption) {
 }
 
 // Homepage socials: start bottom-right and travel up with the page (1:1 with the scroll) until they
-// reach the middle of the right edge,
+// settle a little below the middle of the right edge (--dock-at in the CSS),
 // and fade out while the contact section (which has its own social links) is on screen
 const homeSocials = document.querySelector(".o-home-container .c-social-icons");
 
@@ -146,9 +148,13 @@ if (homeSocials) {
   let socialsTicking = false;
   const updateHomeSocials = () => {
     socialsTicking = false;
-    // distance between the start and docked positions (CSS: 1.5rem below the bottom edge → centred)
-    // settles in the middle of the right edge
-    const travel = window.innerHeight * 0.5 + 24 - homeSocials.offsetHeight / 2;
+    // distance between the start and docked positions (CSS: 1.5rem below the bottom edge → its
+    // centre at --dock-at down the screen)
+    const dockAt =
+      parseFloat(getComputedStyle(homeSocials).getPropertyValue("--dock-at")) /
+        100 || 0.5;
+    const travel =
+      window.innerHeight * (1 - dockAt) + 24 - homeSocials.offsetHeight / 2;
     const dock =
       travel > 0 ? Math.min(Math.max(window.scrollY / travel, 0), 1) : 1;
     homeSocials.style.setProperty("--dock", dock.toFixed(4));

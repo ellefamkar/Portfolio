@@ -1566,7 +1566,8 @@ html.is-menu-open body {
 }
 .o-home-container .c-social-icons {
   --dock: 0;
-  top: calc((100% + 1.5rem) * (1 - var(--dock)) + 50% * var(--dock));
+  --dock-at: 60%;
+  top: calc((100% + 1.5rem) * (1 - var(--dock)) + var(--dock-at) * var(--dock));
   bottom: auto;
   right: calc(5rem + 8px);
   z-index: 5;
@@ -1697,7 +1698,7 @@ html.is-menu-open body {
 .c-intro-chat__stage {
   position: relative;
   box-sizing: border-box;
-  padding: 5.5rem 2rem 7.5rem;
+  padding: 7.25rem 2rem 6.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1838,10 +1839,13 @@ html.is-menu-open body {
 .c-intro-chat.is-playing .c-intro-chat__msg--typing.is-visible {
   grid-template-rows: 1fr;
 }
+.c-intro-chat.is-playing .c-intro-chat__thread {
+  min-height: 22rem;
+}
 .c-intro-chat__badge {
   position: absolute;
   left: max(2rem, 50% - 484px);
-  bottom: 3.5rem;
+  bottom: 6.5rem;
   width: 128px;
   height: 128px;
   border-radius: 50%;
@@ -2012,11 +2016,14 @@ html.is-menu-open body {
     bottom: auto;
     margin-top: 2rem;
   }
+  .c-intro-chat__stage {
+    padding-bottom: 5.75rem;
+  }
 }
 @media (max-width: 767.9px) {
   .c-intro-chat__stage {
     min-height: 0;
-    padding: 2rem 1rem 2.5rem;
+    padding: 4.5rem 1rem 4.375rem;
   }
   .c-intro-chat__chat {
     margin-top: 33vw;
@@ -2028,6 +2035,9 @@ html.is-menu-open body {
   }
   .c-intro-chat__msg {
     max-width: 92%;
+  }
+  .c-intro-chat.is-playing .c-intro-chat__thread {
+    min-height: 16rem;
   }
   .c-intro-chat__bubble {
     font-size: 1rem;
@@ -2456,7 +2466,7 @@ html.is-menu-open body {
 }
 @media (min-width: 992px) {
   .c-work {
-    padding-top: 3rem;
+    padding-top: 7.25rem;
   }
   .c-work__header {
     margin-bottom: 6rem;
@@ -3056,11 +3066,22 @@ html.is-menu-open body {
     height: 320px;
   }
 }
+@media (min-width: 768px) and (max-width: 991.9px) {
+  .c-intro-chat__stage {
+    padding-bottom: 9.3rem;
+  }
+  .c-work {
+    padding: 7.25rem 1rem 6rem;
+  }
+}
 .c-work__view {
   display: none;
 }
 
 @media (max-width: 767.9px) {
+  .c-work {
+    padding-top: 2.25rem;
+  }
   .c-work__body {
     display: flex;
     flex-direction: column;
@@ -3204,7 +3225,7 @@ html.is-menu-open body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 4.5rem 1.5rem 3rem;
+  padding: 4.875rem 1.5rem 3rem;
   box-sizing: border-box;
   text-align: center;
   color: var(--contact-ink);
@@ -4188,6 +4209,7 @@ html.is-dark .c-theme-toggle__glow {
     animation: none;
   }
 }
+/* Goodbye card: commented out for now, until deciding whether to keep it
 .c-goodbye {
   position: fixed;
   top: 1.25rem;
@@ -4272,6 +4294,7 @@ html.is-dark .c-theme-toggle__glow {
     transform: translateX(-50%);
   }
 }
+*/
 
 @media (max-width: 767.9px) {
   body {
