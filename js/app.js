@@ -16,11 +16,98 @@ document.addEventListener("DOMContentLoaded", () => {
 // Tab title waves goodbye while the visitor is on another tab
 const documentTitle = document.title;
 window.addEventListener("blur", () => {
-  document.title = " 😍 See you soon!";
+  document.title = "Come back soon ✨";
 });
 window.addEventListener("focus", () => {
   document.title = documentTitle;
 });
+
+// Goodbye card: on desktop, when the pointer leaves through the top of the window (towards the tabs
+// or the close button), say thanks. Never blocks leaving. Once they close it (Close or Escape) it stays
+// gone for the rest of the session, even after a reload, so heading back up to close the tab doesn't
+// bring it back. Only scrolling through a good part of the page again (about two screens) re-arms it.
+const goodbye = document.querySelector(".js-goodbye");
+
+if (goodbye && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  let goodbyeArmed = false;
+  const goodbyeDismissedKey = "ef-goodbye-dismissed";
+  let goodbyeDismissed = false;
+  try {
+    goodbyeDismissed = sessionStorage.getItem(goodbyeDismissedKey) === "1";
+  } catch (e) {}
+
+  const setGoodbyeDismissed = (dismissed) => {
+    goodbyeDismissed = dismissed;
+    try {
+      if (dismissed) sessionStorage.setItem(goodbyeDismissedKey, "1");
+      else sessionStorage.removeItem(goodbyeDismissedKey);
+    } catch (e) {}
+  };
+  let goodbyeHideTimer;
+  let scrolledSinceDismiss = 0;
+  // null until the first scroll, so the browser restoring the position on reload isn't counted
+  let lastScrollY = null;
+
+  // give the visitor a moment on the page first
+  setTimeout(() => (goodbyeArmed = true), 4000);
+
+  const onGoodbyeKey = (event) => {
+    if (event.key === "Escape") hideGoodbye();
+  };
+
+  const hideGoodbye = () => {
+    setGoodbyeDismissed(true);
+    scrolledSinceDismiss = 0;
+    goodbye.classList.remove("is-visible");
+    document.removeEventListener("keydown", onGoodbyeKey);
+    goodbyeHideTimer = setTimeout(() => (goodbye.hidden = true), 400);
+  };
+
+  const showGoodbye = () => {
+    clearTimeout(goodbyeHideTimer);
+    goodbye.hidden = false;
+    void goodbye.offsetWidth;
+    goodbye.classList.add("is-visible");
+    document.addEventListener("keydown", onGoodbyeKey);
+  };
+
+  // count scrolling in either direction after a dismissal; enough of it re-arms the card
+  window.addEventListener(
+    "scroll",
+    () => {
+      const y = window.scrollY;
+      if (goodbyeDismissed && lastScrollY !== null) {
+        scrolledSinceDismiss += Math.abs(y - lastScrollY);
+        if (scrolledSinceDismiss > window.innerHeight * 2) setGoodbyeDismissed(false);
+      }
+      lastScrollY = y;
+    },
+    { passive: true },
+  );
+
+  // Only a real exit counts: the pointer leaves the window through the top edge (not the sides or
+  // bottom) and stays out for a moment, so brushing the top while reaching for the header doesn't
+  let goodbyeExitTimer;
+
+  document.addEventListener("mouseout", (event) => {
+    if (
+      goodbyeArmed &&
+      !goodbyeDismissed &&
+      !goodbye.classList.contains("is-visible") &&
+      !event.relatedTarget &&
+      event.clientY <= 0
+    ) {
+      goodbyeExitTimer = setTimeout(showGoodbye, 250);
+    }
+  });
+
+  // back on the page before the moment passed: they weren't leaving
+  document.addEventListener("mouseover", () => clearTimeout(goodbyeExitTimer));
+
+  goodbye
+    .querySelectorAll(".js-goodbye-close")
+    .forEach((el) => el.addEventListener("click", hideGoodbye));
+}
 
 // Vertical page signature: fixed on the left edge, fades out at the end of the page, where the footer is
 // (the footer's only content is fixed, so it has no height to observe)
@@ -31,7 +118,8 @@ if (siteCaption) {
   const updateSiteCaption = () => {
     captionTicking = false;
     const atEnd =
-      window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 120;
+      window.scrollY + window.innerHeight >=
+      document.documentElement.scrollHeight - 120;
     siteCaption.classList.toggle("is-hidden", atEnd);
   };
   window.addEventListener(
@@ -42,7 +130,7 @@ if (siteCaption) {
         window.requestAnimationFrame(updateSiteCaption);
       }
     },
-    { passive: true }
+    { passive: true },
   );
   window.addEventListener("resize", updateSiteCaption);
   updateSiteCaption();
@@ -61,13 +149,15 @@ if (homeSocials) {
     // distance between the start and docked positions (CSS: 1.5rem below the bottom edge → centred)
     // settles in the middle of the right edge
     const travel = window.innerHeight * 0.5 + 24 - homeSocials.offsetHeight / 2;
-    const dock = travel > 0 ? Math.min(Math.max(window.scrollY / travel, 0), 1) : 1;
+    const dock =
+      travel > 0 ? Math.min(Math.max(window.scrollY / travel, 0), 1) : 1;
     homeSocials.style.setProperty("--dock", dock.toFixed(4));
     if (contactSection) {
       const box = contactSection.getBoundingClientRect();
       homeSocials.classList.toggle(
         "is-hidden",
-        box.top < window.innerHeight * 0.6 && box.bottom > window.innerHeight * 0.4
+        box.top < window.innerHeight * 0.6 &&
+          box.bottom > window.innerHeight * 0.4,
       );
     }
   };
@@ -79,7 +169,7 @@ if (homeSocials) {
         window.requestAnimationFrame(updateHomeSocials);
       }
     },
-    { passive: true }
+    { passive: true },
   );
   window.addEventListener("resize", updateHomeSocials);
   updateHomeSocials();
@@ -87,7 +177,9 @@ if (homeSocials) {
 
 // Intro chat: when the section comes into view, Elly "types" each message in turn (plays once)
 const introChat = document.querySelector(".js-intro-chat");
-const chatReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const chatReduceMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
 
 if (introChat && !chatReduceMotion && "IntersectionObserver" in window) {
   const chatThread = introChat.querySelector(".c-intro-chat__thread");
@@ -109,17 +201,8 @@ if (introChat && !chatReduceMotion && "IntersectionObserver" in window) {
 
   withoutTransitions(() => introChat.classList.add("is-playing"));
 
+  // The thread starts empty and grows as each message arrives, pushing the page below down
   const playIntroChat = async () => {
-    // Reserve the finished thread's height (measured with every message shown for an
-    // instant, before the browser paints) so the page below doesn't move while it plays
-    const fullHeight = withoutTransitions(() => {
-      introChat.classList.remove("is-playing");
-      const height = chatThread.offsetHeight;
-      introChat.classList.add("is-playing");
-      return height;
-    });
-    chatThread.style.minHeight = `${fullHeight}px`;
-
     // Header says "typing…" for the whole conversation, then goes back to Elly's title
     const setStatus = (typing) => {
       if (!chatStatus) return;
@@ -142,7 +225,6 @@ if (introChat && !chatReduceMotion && "IntersectionObserver" in window) {
       item.classList.add("is-visible");
     }
     setStatus(false);
-    chatThread.style.minHeight = "";
   };
 
   const chatObserver = new IntersectionObserver(
@@ -152,7 +234,7 @@ if (introChat && !chatReduceMotion && "IntersectionObserver" in window) {
         playIntroChat();
       }
     },
-    { rootMargin: "0px 0px -30% 0px" }
+    { rootMargin: "0px 0px -30% 0px" },
   );
   chatObserver.observe(chatThread);
 }
@@ -187,7 +269,8 @@ if (work) {
     setText(".js-work-bignum", data.num);
     setText(".js-work-desc", data.desc || "");
     const progress = field(".js-work-progress");
-    if (progress) progress.style.width = `${((current + 1) / picks.length) * 100}%`;
+    if (progress)
+      progress.style.width = `${((current + 1) / picks.length) * 100}%`;
     field(".js-work-num").textContent = data.num;
     field(".js-work-name").textContent = data.name;
     field(".js-work-type").textContent = data.type;
@@ -200,14 +283,18 @@ if (work) {
       shot.src = isPhone ? data.mobile || data.full : data.full;
       shot.alt = `${data.name} website on ${isPhone ? "mobile" : "desktop"}`;
       // Projects without a mobile capture show a crop of the desktop page in the phone
-      if (isPhone) shot.parentElement.classList.toggle("is-desktop-crop", !data.mobile);
+      if (isPhone)
+        shot.parentElement.classList.toggle("is-desktop-crop", !data.mobile);
     });
     screens.forEach((screen) => (screen.scrollTop = 0));
 
     // "Built with" shows only once a project has data-stack, e.g. data-stack="HTML, SCSS, JavaScript"
     // (the "Built with" block is commented out in the HTML for now, so this only runs if it's back)
     if (stack && chips) {
-      const items = (data.stack || "").split(",").map((item) => item.trim()).filter(Boolean);
+      const items = (data.stack || "")
+        .split(",")
+        .map((item) => item.trim())
+        .filter(Boolean);
       chips.innerHTML = "";
       items.forEach((item) => {
         const li = document.createElement("li");
@@ -220,13 +307,22 @@ if (work) {
     if (scrollPick) {
       const list = picks[current].closest(".c-work__picks");
       const card = picks[current].closest("li");
-      list.scrollTo({ left: card.offsetLeft - list.clientWidth / 2 + card.offsetWidth / 2, behavior: "smooth" });
+      list.scrollTo({
+        left: card.offsetLeft - list.clientWidth / 2 + card.offsetWidth / 2,
+        behavior: "smooth",
+      });
     }
   };
 
-  picks.forEach((pick, i) => pick.addEventListener("click", () => showProject(i)));
-  field(".js-work-prev").addEventListener("click", () => showProject(current - 1));
-  field(".js-work-next").addEventListener("click", () => showProject(current + 1));
+  picks.forEach((pick, i) =>
+    pick.addEventListener("click", () => showProject(i)),
+  );
+  field(".js-work-prev").addEventListener("click", () =>
+    showProject(current - 1),
+  );
+  field(".js-work-next").addEventListener("click", () =>
+    showProject(current + 1),
+  );
   showProject(0, false);
 
   // Mouse wheel over the thumbnail strip scrolls it sideways
@@ -242,7 +338,7 @@ if (work) {
       e.preventDefault();
       pickList.scrollLeft += e.deltaY;
     },
-    { passive: false }
+    { passive: false },
   );
 
   // Phones: Desktop / Mobile switch above the preview (only one screen is shown there)
@@ -258,7 +354,7 @@ if (work) {
         b.setAttribute("aria-pressed", on ? "true" : "false");
       });
       screens.forEach((screen) => (screen.scrollTop = 0));
-    })
+    }),
   );
 
   // Prev / next + counter: centred under the screens on desktop, under the details card on phones
@@ -281,8 +377,14 @@ if (work) {
   // Strip: edge fades follow the scroll position; mouse drag scrolls it
   const updateStrip = () => {
     const max = pickList.scrollWidth - pickList.clientWidth;
-    pickList.style.setProperty("--fade-left", pickList.scrollLeft > 4 ? "64px" : "0px");
-    pickList.style.setProperty("--fade-right", pickList.scrollLeft < max - 4 ? "64px" : "0px");
+    pickList.style.setProperty(
+      "--fade-left",
+      pickList.scrollLeft > 4 ? "64px" : "0px",
+    );
+    pickList.style.setProperty(
+      "--fade-right",
+      pickList.scrollLeft < max - 4 ? "64px" : "0px",
+    );
   };
   pickList.addEventListener("scroll", updateStrip, { passive: true });
   window.addEventListener("resize", updateStrip);
@@ -345,11 +447,13 @@ if (work) {
           }
         });
       },
-      { threshold: [0, 0.45] }
+      { threshold: [0, 0.45] },
     );
     tipObserver.observe(work.querySelector(".c-work__devices"));
     work.querySelector(".js-work-tip-close").addEventListener("click", hideTip);
-    screens.forEach((screen) => screen.addEventListener("scroll", hideTip, { passive: true }));
+    screens.forEach((screen) =>
+      screen.addEventListener("scroll", hideTip, { passive: true }),
+    );
   }
 }
 
@@ -368,7 +472,9 @@ if (contactForm) {
 
   contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    const fields = Array.from(contactForm.querySelectorAll("input[required], textarea[required]"));
+    const fields = Array.from(
+      contactForm.querySelectorAll("input[required], textarea[required]"),
+    );
     let firstInvalid = null;
     fields.forEach((field) => {
       const ok = field.checkValidity();
@@ -387,18 +493,30 @@ if (contactForm) {
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify(Object.fromEntries(new FormData(contactForm))),
       });
       const json = await response.json();
       if (response.ok && json.success !== false) {
-        setResult("Thank you! Your message is on its way. I’ll get back to you soon.", "success");
+        setResult(
+          "Thank you! Your message is on its way. I’ll get back to you soon.",
+          "success",
+        );
         contactForm.reset();
       } else {
-        setResult(json.message || "Something went wrong. Please try again.", "error");
+        setResult(
+          json.message || "Something went wrong. Please try again.",
+          "error",
+        );
       }
     } catch (error) {
-      setResult("Something went wrong. Please check your connection and try again.", "error");
+      setResult(
+        "Something went wrong. Please check your connection and try again.",
+        "error",
+      );
     } finally {
       sendButton.disabled = false;
       sendLabel.textContent = "Send";
@@ -410,11 +528,14 @@ if (contactForm) {
   const openButton = document.querySelector(".js-contact-open");
   if (contactDialog && openButton) {
     openButton.addEventListener("click", () => {
-      if (typeof contactDialog.showModal === "function") contactDialog.showModal();
+      if (typeof contactDialog.showModal === "function")
+        contactDialog.showModal();
       else contactDialog.setAttribute("open", "");
       contactForm.querySelector("input:not([type=hidden])")?.focus();
     });
-    document.querySelector(".js-contact-close").addEventListener("click", () => contactDialog.close());
+    document
+      .querySelector(".js-contact-close")
+      .addEventListener("click", () => contactDialog.close());
     // click on the dimmed backdrop closes it
     contactDialog.addEventListener("click", (e) => {
       if (e.target === contactDialog) contactDialog.close();
@@ -422,9 +543,13 @@ if (contactForm) {
     contactDialog.addEventListener("close", () => openButton.focus());
   }
 
-  contactForm.querySelectorAll("input, textarea").forEach((field) =>
-    field.addEventListener("input", () => field.closest(".c-contact__field")?.classList.remove("is-invalid"))
-  );
+  contactForm
+    .querySelectorAll("input, textarea")
+    .forEach((field) =>
+      field.addEventListener("input", () =>
+        field.closest(".c-contact__field")?.classList.remove("is-invalid"),
+      ),
+    );
 }
 
 // Skills: cards stack as you scroll; the counter, progress bar and menu follow the card on top
@@ -454,7 +579,8 @@ const fitSkillCards = () => {
 fitSkillCards();
 window.addEventListener("resize", fitSkillCards);
 window.addEventListener("load", fitSkillCards);
-if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitSkillCards);
+if (document.fonts && document.fonts.ready)
+  document.fonts.ready.then(fitSkillCards);
 
 if (skillsDeck && skillCards.length) {
   let arrivals = []; // scroll position at which each card reaches its sticky spot
@@ -467,7 +593,8 @@ if (skillsDeck && skillCards.length) {
     let offset = 0;
     arrivals = skillCards.map((card) => {
       const style = getComputedStyle(card);
-      const stickyTop = style.position === "sticky" ? parseFloat(style.top) : 96;
+      const stickyTop =
+        style.position === "sticky" ? parseFloat(style.top) : 96;
       const arrival = deckTop + offset - stickyTop;
       offset += card.offsetHeight + gap;
       return arrival;
@@ -482,7 +609,8 @@ if (skillsDeck && skillCards.length) {
       if (i === index) link.setAttribute("aria-current", "true");
       else link.removeAttribute("aria-current");
     });
-    if (skillsCurrent) skillsCurrent.textContent = String(index + 1).padStart(2, "0");
+    if (skillsCurrent)
+      skillsCurrent.textContent = String(index + 1).padStart(2, "0");
     if (skillsProgress)
       skillsProgress.style.transform = `scaleX(${(index + 1) / skillCards.length})`;
   };
@@ -567,7 +695,9 @@ if (wheelMenu && wheelOpen) {
   let wheelTimer = null;
   let wheelScrollY = 0;
 
-  const gap = () => parseFloat(getComputedStyle(wheelMenu).getPropertyValue("--wheel-gap")) || 150;
+  const gap = () =>
+    parseFloat(getComputedStyle(wheelMenu).getPropertyValue("--wheel-gap")) ||
+    150;
 
   const setWheel = (index, animatePane = true) => {
     wheelIndex = Math.max(0, Math.min(wheelItems.length - 1, index));
@@ -576,13 +706,15 @@ if (wheelMenu && wheelOpen) {
       const off = i - wheelIndex;
       const far = Math.abs(off);
       item.style.transform = `translateY(${off * step}px) scale(${far === 0 ? 1 : 0.6})`;
-      item.style.opacity = far === 0 ? 1 : far === 1 ? 0.85 : far === 2 ? 0.7 : 0.55;
+      item.style.opacity =
+        far === 0 ? 1 : far === 1 ? 0.85 : far === 2 ? 0.7 : 0.55;
       item.classList.toggle("is-current", far === 0);
       item.setAttribute("aria-current", far === 0 ? "true" : "false");
       item.tabIndex = far === 0 ? 0 : -1;
     });
     const item = wheelItems[wheelIndex];
-    if (wheelCount) wheelCount.textContent = String(wheelIndex + 1).padStart(2, "0");
+    if (wheelCount)
+      wheelCount.textContent = String(wheelIndex + 1).padStart(2, "0");
     wheelKicker.textContent = item.dataset.kicker;
     wheelText.textContent = item.dataset.text;
     wheelCtaLabel.textContent = item.dataset.cta;
@@ -642,12 +774,14 @@ if (wheelMenu && wheelOpen) {
     });
   });
 
-  wheelCta.addEventListener("click", (event) => go(wheelCta.getAttribute("href"), event));
+  wheelCta.addEventListener("click", (event) =>
+    go(wheelCta.getAttribute("href"), event),
+  );
   wheelOpeners.forEach((btn) =>
     btn.addEventListener("click", () => {
       wheelOpen = btn;
       openWheel();
-    })
+    }),
   );
   wheelClose.addEventListener("click", () => closeWheel());
 
@@ -660,7 +794,7 @@ if (wheelMenu && wheelOpen) {
       wheelLock = now;
       setWheel(wheelIndex + (event.deltaY > 0 ? 1 : -1));
     },
-    { passive: false }
+    { passive: false },
   );
 
   // Mouse drag: pull the wheel up or down; every 60px of drag turns it one step
@@ -699,11 +833,17 @@ if (wheelMenu && wheelOpen) {
         dragged = false;
       }
     },
-    true
+    true,
   );
 
   let touchY = null;
-  wheelArea.addEventListener("touchstart", (event) => { touchY = event.touches[0].clientY; }, { passive: true });
+  wheelArea.addEventListener(
+    "touchstart",
+    (event) => {
+      touchY = event.touches[0].clientY;
+    },
+    { passive: true },
+  );
   wheelArea.addEventListener("touchend", (event) => {
     if (touchY === null) return;
     const dy = touchY - event.changedTouches[0].clientY;
@@ -720,15 +860,24 @@ if (wheelMenu && wheelOpen) {
       wheelItems[wheelIndex].focus({ preventScroll: true });
     } else if (event.key === "Tab") {
       // keep focus inside the open menu
-      const focusables = [...wheelMenu.querySelectorAll("a[href], button")].filter((el) => el.tabIndex !== -1);
+      const focusables = [
+        ...wheelMenu.querySelectorAll("a[href], button"),
+      ].filter((el) => el.tabIndex !== -1);
       const first = focusables[0];
       const last = focusables[focusables.length - 1];
-      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     }
   });
 
-  window.addEventListener("resize", () => { if (!wheelMenu.hidden) setWheel(wheelIndex, false); });
+  window.addEventListener("resize", () => {
+    if (!wheelMenu.hidden) setWheel(wheelIndex, false);
+  });
   setWheel(0, false);
 }
 
@@ -741,7 +890,8 @@ if (capsule) {
 
   const updateCapsule = () => {
     capsuleTicking = false;
-    const show = window.scrollY > (capsuleHero ? capsuleHero.offsetHeight * 0.25 : 200);
+    const show =
+      window.scrollY > (capsuleHero ? capsuleHero.offsetHeight * 0.25 : 200);
     capsule.classList.toggle("is-visible", show);
     capsule.inert = !show;
   };
@@ -754,7 +904,7 @@ if (capsule) {
         window.requestAnimationFrame(updateCapsule);
       }
     },
-    { passive: true }
+    { passive: true },
   );
   window.addEventListener("resize", updateCapsule);
   updateCapsule();
@@ -806,7 +956,7 @@ if (toTop) {
         window.requestAnimationFrame(updateToTop);
       }
     },
-    { passive: true }
+    { passive: true },
   );
   window.addEventListener("resize", updateToTop);
   updateToTop();
@@ -814,7 +964,9 @@ if (toTop) {
 
 // Footer sign-off: write the signature in when it scrolls into view; tap the signature to replay
 const signoff = document.querySelector(".js-signoff");
-const signoffReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const signoffReduceMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
 
 if (signoff && !signoffReduceMotion && "IntersectionObserver" in window) {
   const playSignoff = () => {
@@ -830,7 +982,7 @@ if (signoff && !signoffReduceMotion && "IntersectionObserver" in window) {
         signoffObserver.disconnect();
       }
     },
-    { threshold: 0.4 }
+    { threshold: 0.4 },
   );
   signoffObserver.observe(signoff);
 
@@ -846,7 +998,9 @@ const themeSlider = document.querySelector(".js-theme-slider");
 if (themeSlider) {
   const root = document.documentElement;
   const knob = themeSlider.querySelector(".js-theme-knob");
-  const themeReduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const themeReduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
   let cut = 100; // % from the left where night begins: 100 = all day, 0 = all night
   let wasDark = false;
   let opener = null;
@@ -911,7 +1065,8 @@ if (themeSlider) {
     else if (e.key === "ArrowRight") setCut(cut + 5);
     else if (e.key === "Home") setCut(0);
     else if (e.key === "End") setCut(100);
-    else if (e.key === "Enter" && document.activeElement === knob) close(cut < 50);
+    else if (e.key === "Enter" && document.activeElement === knob)
+      close(cut < 50);
     else return;
     e.preventDefault();
   }
@@ -940,7 +1095,9 @@ if (themeSlider) {
   themeSlider.addEventListener("pointerup", endDrag);
   themeSlider.addEventListener("pointercancel", endDrag);
 
-  themeSlider.querySelector(".js-theme-cancel").addEventListener("click", () => close(wasDark));
+  themeSlider
+    .querySelector(".js-theme-cancel")
+    .addEventListener("click", () => close(wasDark));
 
   // Phones: dragging across the screen is awkward, so one tap simply flips the theme
   const themeTapOnly = window.matchMedia("(max-width: 767.9px)");
@@ -951,7 +1108,9 @@ if (themeSlider) {
     themeButtons.forEach((button) => {
       button.setAttribute(
         "aria-label",
-        themeTapOnly.matches ? `Switch to ${dark ? "day" : "night"}` : "Switch between day and night"
+        themeTapOnly.matches
+          ? `Switch to ${dark ? "day" : "night"}`
+          : "Switch between day and night",
       );
       if (themeTapOnly.matches) button.removeAttribute("aria-haspopup");
       else button.setAttribute("aria-haspopup", "dialog");

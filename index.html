@@ -72,7 +72,8 @@
     <!-- custom styles  -->
     <link rel="stylesheet" href="/css/styles.css" />
 
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <title>Elly Famkar | Front-End Developer & Designer Portfolio</title>
 
@@ -135,7 +136,12 @@
           >
             <path d="M12 2v4"></path>
             <path d="M6 13a6 6 0 0 1 12 0z" stroke-linejoin="round"></path>
-            <circle class="c-theme-toggle__bulb" cx="12" cy="15.5" r="2.4"></circle>
+            <circle
+              class="c-theme-toggle__bulb"
+              cx="12"
+              cy="15.5"
+              r="2.4"
+            ></circle>
           </svg>
           <span class="c-theme-toggle__cord" aria-hidden="true"></span>
         </button>
@@ -222,7 +228,12 @@
             >
               <path d="M12 2v4"></path>
               <path d="M6 13a6 6 0 0 1 12 0z" stroke-linejoin="round"></path>
-              <circle class="c-theme-toggle__bulb" cx="12" cy="15.5" r="2.4"></circle>
+              <circle
+                class="c-theme-toggle__bulb"
+                cx="12"
+                cy="15.5"
+                r="2.4"
+              ></circle>
             </svg>
             <span class="c-theme-toggle__cord" aria-hidden="true"></span>
           </button>
@@ -1847,6 +1858,30 @@
         <p class="c-signoff__copy">© 2026 Elly Famkar</p>
       </div>
     </footer>
+
+    <!-- Goodbye card: a friendly thank-you each time the pointer heads for the tabs (desktop) -->
+    <aside
+      class="c-goodbye js-goodbye"
+      role="dialog"
+      aria-labelledby="goodbye-title"
+      aria-describedby="goodbye-text"
+      hidden
+    >
+      <button
+        type="button"
+        class="c-goodbye__close js-goodbye-close"
+        aria-label="Close"
+      >
+        &times;
+      </button>
+      <span class="c-goodbye__logo" aria-hidden="true"
+        ><span>E</span><span class="c-goodbye__logo-outline">F</span></span
+      >
+      <p class="c-goodbye__title" id="goodbye-title">Leaving already?</p>
+      <p class="c-goodbye__text" id="goodbye-text">
+        Thanks for stopping by, it was lovely having you here ✨
+      </p>
+    </aside>
 
     <script defer src="/js/app.js"></script>
   </body>
